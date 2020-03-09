@@ -18,6 +18,7 @@ const IndexPage = () => (
     <Link to="/geo">Go to geo page</Link>
     <Link to="/rect">Go to rect page</Link>
     <Link to="/rect-gl">Go to rect GL page</Link>
+    <Link to="/ray-tracing">Go to ray tracing page</Link>
   </Layout>
 )
 
