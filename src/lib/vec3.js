@@ -30,7 +30,7 @@ class vec3 {
   }
 
   identical() {
-    return this
+    return new vec3(this.e[0], this.e[1], this.e[2])
   }
   opposite() {
     return new vec3(-this.e[0], -this.e[1], -this.e[2])
@@ -43,42 +43,42 @@ class vec3 {
   // }
 
   addVector(v) {
-    this.e[0] += v.e[0]
-    this.e[1] += v.e[1]
-    this.e[2] += v.e[2]
-    return this
+    const identical = this.identical()
+    identical.e[0] += v.e[0]
+    identical.e[1] += v.e[1]
+    identical.e[2] += v.e[2]
+    return identical
   }
   subtractVector(v) {
-    this.e[0] -= v.e[0]
-    this.e[1] -= v.e[1]
-    this.e[2] -= v.e[2]
-    return this
+    const identical = this.identical()
+    identical.e[0] -= v.e[0]
+    identical.e[1] -= v.e[1]
+    identical.e[2] -= v.e[2]
+    return identical
   }
   multiplyVector(v) {
-    this.e[0] *= v.e[0]
-    this.e[1] *= v.e[1]
-    this.e[2] *= v.e[2]
-    return this
+    const identical = this.identical()
+    identical.e[0] *= v.e[0]
+    identical.e[1] *= v.e[1]
+    identical.e[2] *= v.e[2]
+    return identical
   }
-  // divideVector(v) {
-  //   this.e[0] /= v.e[0]
-  //   this.e[1] /= v.e[1]
-  //   this.e[2] /= v.e[2]
-  //   return this
-  // }
+  // divideVector(v) {}
 
   multiplyScalar(t) {
-    this.e[0] *= t
-    this.e[1] *= t
-    this.e[2] *= t
-    return this
+    const identical = this.identical()
+    identical.e[0] *= t
+    identical.e[1] *= t
+    identical.e[2] *= t
+    return identical
   }
   divideScaler(t) {
+    const identical = this.identical()
     const k = 1 / t
-    this.e[0] *= k
-    this.e[1] *= k
-    this.e[2] *= k
-    return this
+    identical.e[0] *= k
+    identical.e[1] *= k
+    identical.e[2] *= k
+    return identical
   }
 
   length() {
@@ -95,10 +95,11 @@ class vec3 {
       Math.sqrt(
         this.e[0] * this.e[0] + this.e[1] * this.e[1] + this.e[2] * this.e[2]
       )
-    this.e[0] *= k
-    this.e[1] *= k
-    this.e[2] *= k
-    return this
+    const identical = this.identical()
+    identical.e[0] *= k
+    identical.e[1] *= k
+    identical.e[2] *= k
+    return identical
   }
 }
 
@@ -109,45 +110,6 @@ class vec3 {
 // operator<<(os, vec3){
 //   console.log(this.e[0],this.e[1],this.e[2])
 //   return os
-// }
-
-// function makeUnitVector() {
-//   const k =
-//     1 /
-//     Math.sqrt(
-//       this.e[0] * this.e[0] + this.e[1] * this.e[1] + this.e[2] * this.e[2]
-//     )
-//   this.e[0] *= k
-//   this.e[1] *= k
-//   this.e[2] *= k
-// }
-
-// operactor+(v1,v2){
-//   return vec3(v1.e[0]+v2.e[0], v1.e[1]+v2.e[1], v1.e[2]+v2.e[2])
-// }
-
-// operator-(v1,v2){
-//   return vec3(v1.e[0]-v2.e[0], v1.e[1]-v2.e[1], v1.e[2]-v2.e[2])
-// }
-
-// operator*(v1,v2){
-//   return vec3(v1.e[0]*v2.e[0], v1.e[1]*v2.e[1], v1.e[2]*v2.e[2])
-// }
-
-// operator/(v1,v2){
-//   return vec3(v1.e[0]/v2.e[0], v1.e[1]/v2.e[1], v1.e[2]/v2.e[2])
-// }
-
-// operator*(t, v){
-//   return vec3(t*v.e[0], t*v.e[1], t*v.e[2])
-// }
-
-// operator/(v, t){
-//   return vec3(v.e[0]/t, v.e[1]/t, v.e[2]/t)
-// }
-
-// operator*(v, t){
-//   return vec3(t*v.e[0], t*v.e[1], t*v.e[2])
 // }
 
 export function dot(v1, v2) {
@@ -162,47 +124,8 @@ export function cross(v1, v2) {
   )
 }
 
-// operator+=(v){
-//   e[0] += v.e[0]
-//   e[1] += v.e[1]
-//   e[2] += v.e[2]
-//   return this
-// }
-// operator*=(v){
-//   e[0] *= v.e[0]
-//   e[1] *= v.e[1]
-//   e[2] *= v.e[2]
-//   return this
-// }
-// operator/=(v){
-//   e[0] /= v.e[0]
-//   e[1] /= v.e[1]
-//   e[2] /= v.e[2]
-//   return this
-// }
-// operator-=(v){
-//   e[0] -= v.e[0]
-//   e[1] -= v.e[1]
-//   e[2] -= v.e[2]
-//   return this
-// }
-
-// operator*=(t){
-//   e[0] *= t
-//   e[1] *= t
-//   e[2] *= t
-//   return this
-// }
-// operator/=(t){
-//   k = 1/t
-//   e[0] *= k
-//   e[1] *= k
-//   e[2] *= k
-//   return this
-// }
-
 export function unitVector(v) {
-  return v.divideScaler(v.length())
+  return v.identical().divideScaler(v.length())
 }
 
 export default function(x, y, z) {
