@@ -34,24 +34,16 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `posts`,
-        path: `${__dirname}/src/pages/posts`,
+        path: `${__dirname}/src/pages/posts/`,
       },
     },
     {
       resolve: "gatsby-plugin-page-creator",
       options: {
-        path: `${__dirname}/src/pages/posts`,
+        path: `${__dirname}/src/pages/posts/`,
       },
     },
-    // `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -77,6 +69,21 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-chakra-ui",
+      options: {
+        /**
+         * @property {boolean} [isResettingCSS=true]
+         * if false, this plugin will not use `<CSSReset />
+         */
+        isResettingCSS: true,
+        /**
+         * @property {boolean} [isUsingColorMode=true]
+         * if false, this plugin will not use <ColorModeProvider />
+         */
+        isUsingColorMode: true,
       },
     },
   ],
