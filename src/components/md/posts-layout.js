@@ -1,9 +1,13 @@
 import React from "react"
-import { MDXProvider } from "@mdx-js/react"
-import { Link } from "gatsby"
-
-const shortcodes = { Link, }
+import { Provider } from "./provider"
+import Header from "../header"
+import Footer from "../footer"
 
 export default ({ children }) => (
-  <MDXProvider components={shortcodes}>{children}</MDXProvider>
+  <div>
+    <Header siteTitle="Village" />
+    <h1>Posts Layout</h1>
+    <Provider>{children}</Provider>
+    <Footer />
+  </div>
 )
