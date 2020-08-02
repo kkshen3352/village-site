@@ -4,9 +4,15 @@ import { Link as GatsbyLink } from "gatsby"
 import { Box, List, ListItem, Link, Image, Code } from "@chakra-ui/core"
 import { jsx, css } from "@emotion/core"
 import CustomHeading from "./custom-heading"
+import CodeBlock from "./code-block"
 
 const shortcodes = { Link }
 
+export default props => (
+  <MDXProvider components={components}>
+    <main {...props}></main>
+  </MDXProvider>
+)
 const components = {
   h1: props => <CustomHeading as="h1" size="2xl" {...props} />,
   h2: props => <CustomHeading as="h2" size="xl" {...props} />,
@@ -29,7 +35,7 @@ const components = {
   pre: props => (
     <Box as="pre" mb="1.45rem" backgroundColor="gray.100" {...props} />
   ),
-  code: props => <Code variantColor="gray.100" {...props} />,
+  code: props => <CodeBlock variantColor="gray.100" {...props} />,
 
   table: props => <Box as="table" {...props} />,
   thead: props => <Box as="thead" {...props} />,
