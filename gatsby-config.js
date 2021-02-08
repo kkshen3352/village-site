@@ -140,7 +140,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-chakra-ui",
+      resolve: "@chakra-ui/gatsby-plugin",
       options: {
         /**
          * @property {boolean} [isResettingCSS=true]

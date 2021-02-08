@@ -1,5 +1,5 @@
 import React from "react"
-import { Flex } from "@chakra-ui/core"
+import { Flex } from "@chakra-ui/react"
 
 const Footer = () => (
   <Flex bg="blue.50" align="center" justify="center">

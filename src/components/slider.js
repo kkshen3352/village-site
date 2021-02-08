@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 
+// TODO use chakra ui
 const Slider = ({
   name,
   min,
