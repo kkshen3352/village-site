@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { Box, Heading, Flex, Text, Button } from "@chakra-ui/react"
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 const MenuItems = ({ children }) => (
   <Text mt={{ base: 4, lg: 0 }} mr={6} display="block">
@@ -66,6 +67,7 @@ const Header = ({ siteTitle, ...props }) => {
         </Flex>
 
         <Box
+          align="center"
           display={{ base: show ? "block" : "none", lg: "flex" }}
           width={{ md: "full", lg: "auto" }}
           alignItems={{ lg: "center" }}
@@ -81,8 +83,11 @@ const Header = ({ siteTitle, ...props }) => {
           mt={{ base: 4, lg: 0 }}
           alignItems={{ lg: "center" }}
         >
-          <Button bg="transparent" border="1px">
-            Button
+          <Button 
+          display={{ base: "flex", lg: "flex" }}
+          margin="0 auto"
+          align="center" justify="center" bg="transparent" border="1px">
+            <MoonIcon />
           </Button>
         </Box>
       </Box>
