@@ -25,7 +25,7 @@ const Header = ({ siteTitle, ...props }) => {
         justify={{ lg: "space-between" }}
         wrap="wrap"
         padding="1.5rem"
-        bg="teal.500"
+        bg="black.000"
         color="white"
         
         {...props}
@@ -79,9 +79,10 @@ const Header = ({ siteTitle, ...props }) => {
           alignItems={{ lg: "center" }}
           flexGrow={1}
         >
-          <MenuItems>Docs</MenuItems>
-          <MenuItems>Examples</MenuItems>
-          <MenuItems>Blog</MenuItems>
+          <MenuItems>首頁</MenuItems>
+          <MenuItems>文章</MenuItems>
+          <MenuItems>演示</MenuItems>
+          <MenuItems>關於我</MenuItems>
         </Box>
 
         <Box
