@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import { Box, Heading, Flex, Text, Button } from "@chakra-ui/react"
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
+import kklogo from "../images/kklogo.png"
+import { Image } from "@chakra-ui/react"
 
 const MenuItems = ({ children }) => (
   <Text mt={{ base: 4, lg: 0 }} mr={6} display="block">
@@ -25,6 +27,7 @@ const Header = ({ siteTitle, ...props }) => {
         padding="1.5rem"
         bg="teal.500"
         color="white"
+        
         {...props}
       >
         <Flex align="center" mr={5}>
@@ -43,7 +46,10 @@ const Header = ({ siteTitle, ...props }) => {
                   textDecoration: `none`,
                 }}
               >
-                {siteTitle}
+                <Image src={kklogo} alt="kklogo"
+                objectFit="center"
+                boxSize="150px"
+                />
               </Link>
             </Heading>
           </Box>
