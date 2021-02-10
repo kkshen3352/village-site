@@ -27,25 +27,16 @@ const Header = ({ siteTitle, ...props }) => {
         padding="1.5rem"
         bg="black.000"
         color="white"
-        
         {...props}
       >
         <Flex align="center" mr={5}>
           <Box
-            style={{
-              margin: `0 auto`,
-              maxWidth: 960,
-              padding: `1.45rem 1.0875rem`,
-            }}
+            margin="0 auto"
+            maxWidth="960px"
+            padding="1.45rem 1.0875rem"
           >
             <Heading as="h1" size="2xl">
-              <Link
-                to="/"
-                style={{
-                  color: `white`,
-                  textDecoration: `none`,
-                }}
-              >
+              <Link to="/">
                 <Image src={kklogo} alt="kklogo"
                 objectFit="center"
                 boxSize="150px"
@@ -79,10 +70,10 @@ const Header = ({ siteTitle, ...props }) => {
           alignItems={{ lg: "center" }}
           flexGrow={1}
         >
-          <MenuItems>首頁</MenuItems>
-          <MenuItems>文章</MenuItems>
-          <MenuItems>演示</MenuItems>
-          <MenuItems>關於我</MenuItems>
+          <MenuItems><Link to="/">首頁</Link></MenuItems>
+          <MenuItems><Link to="/docs">文章</Link></MenuItems>
+          <MenuItems><Link to="/demo">演示</Link></MenuItems>
+          <MenuItems><Link to="/about">關於我</Link></MenuItems>
         </Box>
 
         <Box
@@ -93,7 +84,11 @@ const Header = ({ siteTitle, ...props }) => {
           <Button 
           display={{ base: "flex", lg: "flex" }}
           margin="0 auto"
-          align="center" justify="center" bg="transparent" border="1px">
+          marginRight="10px"
+          align="center" 
+          justify="center" 
+          bg="transparent" 
+          border="1px">
             <MoonIcon />
           </Button>
         </Box>
