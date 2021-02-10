@@ -27,7 +27,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-stylus`,
     `gatsby-plugin-glslify`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
@@ -52,7 +51,9 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
           posts: require.resolve("./src/components/md/posts-layout.js"),
-          default: require.resolve("./src/components/md/default-page-layout.js"),
+          default: require.resolve(
+            "./src/components/md/default-page-layout.js"
+          ),
         },
         // shouldBlockNodeFromTransformation(node) {
         //   return (
