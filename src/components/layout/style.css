@@ -7,9 +7,6 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  position: absolute;
-  /* position: relative; */
-  padding-bottom: 0;
 }
 article,
 aside,
