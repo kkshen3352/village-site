@@ -1,3 +1,8 @@
+---
+title: "Highlight Test"
+date: "2021-01-11"
+author: Villager Liao
+---
 
 ```javascript
 // In your gatsby-config.js
@@ -5,11 +10,9 @@ plugins: [
   {
     resolve: `gatsby-transformer-remark`,
     options: {
-      plugins: [
-        `gatsby-remark-prismjs`,
-      ]
-    }
-  }
+      plugins: [`gatsby-remark-prismjs`],
+    },
+  },
 ]
 ```
 
@@ -19,11 +22,9 @@ plugins: [
   {
     resolve: `gatsby-transformer-remark`,
     options: {
-      plugins: [
-        `gatsby-remark-prismjs`,
-      ]
-    }
-  }
+      plugins: [`gatsby-remark-prismjs`],
+    },
+  },
 ]
 ```
 
@@ -76,11 +77,9 @@ plugins: [
   {
     resolve: `gatsby-transformer-remark`,
     options: {
-      plugins: [
-        `gatsby-remark-prismjs`,
-      ]
-    }
-  }
+      plugins: [`gatsby-remark-prismjs`],
+    },
+  },
 ]
 ```
 
