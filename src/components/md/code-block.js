@@ -15,7 +15,7 @@ import palenight from "prism-react-renderer/themes/palenight"
 
 // TODO github for light, palenight for dark theme
 export default ({ children, className }) => {
-  const language = className.replace(/language-/, "")
+  const language = className?.replace(/language-/, "")
   return (
     <Highlight
       {...defaultProps}

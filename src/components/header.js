@@ -5,6 +5,7 @@ import { Box, Flex, Heading } from "@chakra-ui/react"
 import { HamburgerIcon  } from '@chakra-ui/icons'
 import kklogo from "../images/kklogo.png"
 import { Image } from "@chakra-ui/react"
+import Layout from "../components/layout"
 
 import {
   Menu,
@@ -14,17 +15,7 @@ import {
   IconButton,
 } from "@chakra-ui/react"
 
-
-
-// const MenuItems = ({ children }) => (
-//   <Text mt={{ base: 4, lg: 0 }} mr={6} display="block">
-//     {children}
-//   </Text>
-// )
-
 const Header = ({ siteTitle, ...props }) => {
-  const [show, setShow] = React.useState(false)
-
   return (
     <header>
       <Box
@@ -52,13 +43,15 @@ const Header = ({ siteTitle, ...props }) => {
         </Box>
         </Heading>
         <Box display={{ base: "none", lg: "flex" }}>
+        
         <Box margin="1rem"><Link to="/">首頁</Link></Box>
-        <Box margin="1rem"><Link to="/docs">文章</Link></Box>
         <Box margin="1rem"><Link to="/demo">演示</Link></Box>
         <Box margin="1rem"><Link to="/about">關於我</Link></Box>
+        
         </Box>
         
-        <Box display={{ base: "block", lg: "none" }} 
+        <Box 
+        display={{ base: "block", lg: "none" }} 
         margin="1rem"
         position="absolute"
         right="0"
@@ -68,15 +61,13 @@ const Header = ({ siteTitle, ...props }) => {
             as={IconButton}
             aria-label="Options"
             icon={<HamburgerIcon />}
-            size="xs"
+            size="lg"
             variant="outline"
           />
           <MenuList
           color="black"
-          
           >
             <MenuItem justifyContent="center"><Link to="/">首頁</Link></MenuItem>
-            <MenuItem justifyContent="center"><Link to="/docs">文章</Link></MenuItem>
             <MenuItem justifyContent="center"><Link to="/demo">演示</Link></MenuItem>
             <MenuItem justifyContent="center"><Link to="/about">關於我</Link></MenuItem>
           </MenuList>
