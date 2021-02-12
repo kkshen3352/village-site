@@ -10,7 +10,7 @@ const SecondPage = ({ data }) => {
    return (
     <Layout>
       <SEO title={title} />
-      <h1>Demo</h1>
+      <h1>Demo1</h1>
       <h1>Author: {author}</h1>
       <p>{description}</p>
       <Link to="/">Go back to the homepage</Link>
