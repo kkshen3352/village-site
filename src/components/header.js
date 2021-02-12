@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { Box, Flex, Heading } from "@chakra-ui/react"
-import { HamburgerIcon  } from '@chakra-ui/icons'
+import { HamburgerIcon } from "@chakra-ui/icons"
 import kklogo from "../images/kklogo.png"
 import { Image } from "@chakra-ui/react"
 import {
@@ -12,6 +12,13 @@ import {
   MenuItem,
   IconButton,
 } from "@chakra-ui/react"
+
+const Links = [
+  { name: "首頁", path: "/" },
+  { name: "文章", path: "/article" },
+  { name: "演示", path: "/demo" },
+  { name: "關於我", path: "/about" },
+]
 
 const Header = ({ siteTitle, ...props }) => {
   return (
@@ -29,48 +36,47 @@ const Header = ({ siteTitle, ...props }) => {
         {...props}
       >
         <Flex align="center" mr={5}>
-        <Heading as="h1" size="2xl">
-        <Box margin="1rem">  
-        <Link to="/">
-          <Image src={kklogo} alt="kklogo"
-          padding="0px"
-          objectFit="center"
-          boxSize="80px"
-          />
-        </Link>
-        </Box>
-        </Heading>
-        <Box display={{ base: "none", lg: "flex" }}>
-        <Box margin="1rem"><Link to="/">首頁</Link></Box>
-        <Box margin="1rem"><Link to="/demo">演示</Link></Box>
-        <Box margin="1rem"><Link to="/about">關於我</Link></Box>
-        
-        </Box>
-        
-        <Box 
-        display={{ base: "block", lg: "none" }} 
-        margin="1rem"
-        position="absolute"
-        right="0"
-        >
-        <Menu>
-          <MenuButton
-            as={IconButton}
-            aria-label="Options"
-            icon={<HamburgerIcon />}
-            size="lg"
-            variant="outline"
-          />
-          <MenuList
-          color="black"
-          >
-            <MenuItem justifyContent="center"><Link to="/">首頁</Link></MenuItem>
-            <MenuItem justifyContent="center"><Link to="/demo">演示</Link></MenuItem>
-            <MenuItem justifyContent="center"><Link to="/about">關於我</Link></MenuItem>
-          </MenuList>
-        </Menu>
-        </Box>
-      </Flex>
+          <Heading as="h1" size="2xl">
+            <Box margin="1rem">
+              <Link to="/">
+                <Image
+                  src={kklogo}
+                  alt="kklogo"
+                  padding="0px"
+                  objectFit="center"
+                  boxSize="80px"
+                />
+              </Link>
+            </Box>
+          </Heading>
+          <Box display={{ base: "none", lg: "flex" }}>
+            {Links.map(Links => (
+              <Box margin="1rem">
+                <Link to={Links.path}>{Links.name}</Link>
+              </Box>
+            ))}
+          </Box>
+            <Menu>
+              <MenuButton
+                display={{ base: "block", lg: "none" }}
+                margin="1rem"
+                position="absolute"
+                right="0"
+                as={IconButton}
+                aria-label="Options"
+                icon={<HamburgerIcon />}
+                size="lg"
+                variant="outline"
+              />
+              <MenuList color="black">
+                {Links.map(Links => (
+                  <MenuItem justifyContent="center">
+                    <Link to={Links.path}>{Links.name}</Link>
+                  </MenuItem>
+                ))}
+              </MenuList>
+            </Menu>
+        </Flex>
       </Box>
     </header>
   )

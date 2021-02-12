@@ -5,9 +5,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const SecondPage = ({ data }) => {
-  const { site :{ siteMetadata: { title, description, author } } } = data;
+  const {
+    site: {
+      siteMetadata: { title, description, author },
+    },
+  } = data
 
-   return (
+  return (
     <Layout>
       <SEO title={title} />
       <h1>Demo1</h1>

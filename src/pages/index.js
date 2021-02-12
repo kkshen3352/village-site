@@ -66,7 +66,6 @@ function IndexPage({ data }) {
       <Link to="/rect-gl">Go to rect GL page</Link>
       <Link to="/ray-tracing">Go to ray tracing page</Link>
     </Layout>
-    
   )
 }
 

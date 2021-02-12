@@ -1,13 +1,26 @@
 import React from "react"
-import { Flex } from "@chakra-ui/react"
+import { Box, Flex } from "@chakra-ui/react"
 
 const Footer = () => (
-  <Flex bg="black.000" align="center" justify="center"
-  color="white" h="100px" position="relative" pb="0">
+  <Flex
+    bg="black.000"
+    align="center"
+    justify="center"
+    margin="0 auto"
+    color="white"
+    h="100px"
+    position="relative"
+    pb="0"
+  >
     <footer>
-      © {new Date().getFullYear()}, Built with
-      {` `}
-      <a href="https://www.gatsbyjs.org">關於我</a>
+      <Box>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">gatsby</a>
+      </Box>
+      <Box align="center" justify="center" margin="0 auto">
+        <a href="http://localhost:8000/about">關於我</a>
+      </Box>
     </footer>
   </Flex>
 )
