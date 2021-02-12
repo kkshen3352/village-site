@@ -5,8 +5,6 @@ import { Box, Flex, Heading } from "@chakra-ui/react"
 import { HamburgerIcon  } from '@chakra-ui/icons'
 import kklogo from "../images/kklogo.png"
 import { Image } from "@chakra-ui/react"
-import Layout from "../components/layout"
-
 import {
   Menu,
   MenuButton,
@@ -43,7 +41,6 @@ const Header = ({ siteTitle, ...props }) => {
         </Box>
         </Heading>
         <Box display={{ base: "none", lg: "flex" }}>
-        
         <Box margin="1rem"><Link to="/">首頁</Link></Box>
         <Box margin="1rem"><Link to="/demo">演示</Link></Box>
         <Box margin="1rem"><Link to="/about">關於我</Link></Box>
