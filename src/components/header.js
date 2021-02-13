@@ -50,9 +50,9 @@ const Header = ({ siteTitle, ...props }) => {
             </Box>
           </Heading>
           <Box display={{ base: "none", lg: "flex" }}>
-            {links.map((v,i) => (
-              <Box key={i} margin="1rem">
-                <Link to={v.path}>{v.name}</Link>
+            {links.map(({path,name},i) => (
+              <Box key={`key-${i}`} margin="1rem">
+                <Link to={path}>{name}</Link>
               </Box>
             ))}
           </Box>
@@ -69,9 +69,9 @@ const Header = ({ siteTitle, ...props }) => {
                 variant="outline"
               />
               <MenuList color="black">
-                {links.map((v,i) => (
-                  <MenuItem key={i} justifyContent="center">
-                    <Link to={v.path}>{v.name}</Link>
+                {links.map(({path,name},i) => (
+                  <MenuItem key={`key-${i}`} justifyContent="center">
+                    <Link to={path}>{name}</Link>
                   </MenuItem>
                 ))}
               </MenuList>
