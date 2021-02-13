@@ -13,7 +13,7 @@ import {
   IconButton,
 } from "@chakra-ui/react"
 
-const Links = [
+const links = [
   { name: "首頁", path: "/" },
   { name: "文章", path: "/article" },
   { name: "演示", path: "/demo" },
@@ -50,9 +50,9 @@ const Header = ({ siteTitle, ...props }) => {
             </Box>
           </Heading>
           <Box display={{ base: "none", lg: "flex" }}>
-            {Links.map(Links => (
-              <Box margin="1rem">
-                <Link to={Links.path}>{Links.name}</Link>
+            {links.map((v,i) => (
+              <Box key={i} margin="1rem">
+                <Link to={v.path}>{v.name}</Link>
               </Box>
             ))}
           </Box>
@@ -69,9 +69,9 @@ const Header = ({ siteTitle, ...props }) => {
                 variant="outline"
               />
               <MenuList color="black">
-                {Links.map(Links => (
-                  <MenuItem justifyContent="center">
-                    <Link to={Links.path}>{Links.name}</Link>
+                {links.map((v,i) => (
+                  <MenuItem key={i} justifyContent="center">
+                    <Link to={v.path}>{v.name}</Link>
                   </MenuItem>
                 ))}
               </MenuList>
