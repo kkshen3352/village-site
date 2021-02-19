@@ -2,10 +2,9 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { Box, Badge } from "@chakra-ui/react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import { TimeIcon, ViewIcon } from "@chakra-ui/icons"
 
-function IndexPageQuery({ data }) {
+function IndexPageQuery( {data} ) {
   const query = useStaticQuery(graphql`
     query IndexPageQuery {
       allMdx(sort: { order: DESC, fields: frontmatter___date }) {
@@ -53,16 +52,15 @@ function IndexPageQuery({ data }) {
                   {author}
                 </Badge>
               </Box>
-              <Box ad="h2">{title}</Box>
+              <Box as="h1" fontWeight="semibold" fontSize="xl">{title}</Box>
               <Box
                 mt="1"
-                fontWeight="semibold"
                 as="h2"
                 lineHeight="tight"
-                fontSize="xl"
+                fontSize="lg"
                 isTruncated
               >
-                {excerpt}
+                {excerpt} 
               </Box>
               <Box
                 d="flex"
@@ -73,7 +71,7 @@ function IndexPageQuery({ data }) {
               >
                 <Box as="span" color="gray.600" fontSize="sm">
                   <ViewIcon m="2" />
-                  {timeToRead}
+                  {timeToRead} min read
                   <Link to={`/posts/${slug}`}>Read More</Link>
                 </Box>
                 <Box
