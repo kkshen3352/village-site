@@ -10,7 +10,6 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "../header"
 import Footer from "../footer"
-import ArticleOverview from "../articleoverview"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -34,7 +33,6 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
-        <ArticleOverview />
         <main>{children}</main>
       </div>
       <Footer />

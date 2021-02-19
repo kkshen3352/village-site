@@ -8,7 +8,8 @@ function ArticleOverview() {
   const property = {
     imageUrl: "https://bit.ly/2Z4KKcF",
     imageAlt: "Rear view of modern home with pool",
-    title: "Modern home in city center in the heart of historic Los Angeles",
+    title:"Hello World",
+    excerpt: "Modern home in city center in the heart of historic Los Angeles",
     readingtime: "2 min read Read More",
     Author: "Villager Liao",
     time: "2021-02-11",
@@ -22,6 +23,7 @@ function ArticleOverview() {
             {property.Author}
           </Badge>
         </Box>
+        <Box ad="h2">{property.title}</Box>
         <Box
           mt="1"
           fontWeight="semibold"
@@ -30,7 +32,7 @@ function ArticleOverview() {
           fontSize="xl"
           isTruncated
         >
-          {property.title}
+          {property.excerpt}
         </Box>
         <Box d="flex" mt="2" alignItems="center" position="relative" mt="2">
           <Box as="span" color="gray.600" fontSize="sm">
