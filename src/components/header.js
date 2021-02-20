@@ -27,8 +27,10 @@ const Header = ({ siteTitle, ...props }) => {
       <Box
         as="nav"
         display="flex"
-        align={{ lg: "center" }}
-        justify={{ lg: "space-between" }}
+        // alignContent
+        alignContent={{ lg: "center" }}
+        // justifyItems
+        justifyItems={{ lg: "space-between" }}
         wrap="wrap"
         height="100px"
         padding="1rem"
