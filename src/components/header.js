@@ -13,6 +13,7 @@ import {
   IconButton,
 } from "@chakra-ui/react"
 
+
 const links = [
   { name: "首頁", path: "/" },
   { name: "文章", path: "/article" },
@@ -31,11 +32,11 @@ const Header = ({ siteTitle, ...props }) => {
         wrap="wrap"
         height="100px"
         padding="1rem"
-        bg="black.000"
+        background="black.000"
         color="white"
         {...props}
       >
-        <Flex align="center" mr={5}>
+        <Flex alignItems="center">
           <Heading as="h1" size="2xl">
             <Box margin="1rem">
               <Link to="/">
