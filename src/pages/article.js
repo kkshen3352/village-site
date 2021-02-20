@@ -4,7 +4,7 @@ import { Box, Badge } from "@chakra-ui/react"
 import Layout from "../components/layout"
 import { TimeIcon, ViewIcon } from "@chakra-ui/icons"
 
-function IndexPageQuery( {data} ) {
+function IndexPageQuery({ data }) {
   const query = useStaticQuery(graphql`
     query IndexPageQuery {
       allMdx(sort: { order: DESC, fields: frontmatter___date }) {
@@ -44,45 +44,44 @@ function IndexPageQuery( {data} ) {
             borderWidth="1px"
             borderRadius="lg"
             overflow="hidden"
-            m="5"
+            margin="5"
           >
-            <Box p="4">
+            <Box padding="4">
               <Box d="flex" alignItems="baseline">
-                <Badge borderRadius="full" px="1" colorScheme="teal">
+                <Badge borderRadius="full" colorScheme="teal">
                   {author}
                 </Badge>
               </Box>
-              <Box as="h1" fontWeight="semibold" fontSize="xl">{title}</Box>
+              <Box as="h1" fontWeight="semibold" fontSize="xl">
+                <Link to={`/posts/${slug}`}>{title}</Link>
+              </Box>
               <Box
-                mt="1"
-                as="h2"
+                marginTop="1"
+                as="p"
                 lineHeight="tight"
                 fontSize="lg"
                 isTruncated
               >
-                {excerpt} 
+                {excerpt}
               </Box>
               <Box
-                d="flex"
-                mt="2"
+                display="flex"
+                margintop="10"
                 alignItems="center"
                 position="relative"
-                mt="2"
               >
                 <Box as="span" color="gray.600" fontSize="sm">
-                  <ViewIcon m="2" />
+                  <ViewIcon margin="2" />
                   {timeToRead} min read
-                  <Link to={`/posts/${slug}`}>Read More</Link>
                 </Box>
                 <Box
                   as="span"
-                  ml="2"
                   color="gray.600"
                   fontSize="sm"
                   position="absolute"
                   right="0"
                 >
-                  <TimeIcon m="2" />
+                  <TimeIcon margin="2" />
                   {date}
                 </Box>
               </Box>

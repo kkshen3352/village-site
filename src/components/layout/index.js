@@ -29,17 +29,15 @@ const Layout = ({ children }) => {
       <Flex
         margin="0 auto"
         maxWidth="960px"
-        padding="0px 1.0875rem 1.45rem"
+        padding="1.45rem 1.0875rem 1.45rem"
         flexDirection="column"
         minHeight="80vh"
       >
-      <Box
-        flexGrow="1"
-      >
-        <main>{children}</main>
-      </Box>  
+        <Box flexGrow="1">
+          <main>{children}</main>
+        </Box>
       </Flex>
-      <Footer/>
+      <Footer />
     </>
   )
 }

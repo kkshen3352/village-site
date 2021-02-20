@@ -13,7 +13,6 @@ import {
   IconButton,
 } from "@chakra-ui/react"
 
-
 const links = [
   { name: "首頁", path: "/" },
   { name: "文章", path: "/article" },
@@ -27,9 +26,7 @@ const Header = ({ siteTitle, ...props }) => {
       <Box
         as="nav"
         display="flex"
-        // alignContent
         alignContent={{ lg: "center" }}
-        // justifyItems
         justifyItems={{ lg: "space-between" }}
         wrap="wrap"
         height="100px"
@@ -53,32 +50,32 @@ const Header = ({ siteTitle, ...props }) => {
             </Box>
           </Heading>
           <Box display={{ base: "none", lg: "flex" }}>
-            {links.map(({path,name},i) => (
+            {links.map(({ path, name }, i) => (
               <Box key={`key-${i}`} margin="1rem">
                 <Link to={path}>{name}</Link>
               </Box>
             ))}
           </Box>
-            <Menu>
-              <MenuButton
-                display={{ base: "block", lg: "none" }}
-                margin="1rem"
-                position="absolute"
-                right="0"
-                as={IconButton}
-                aria-label="Options"
-                icon={<HamburgerIcon />}
-                size="lg"
-                variant="outline"
-              />
-              <MenuList color="black">
-                {links.map(({path,name},i) => (
-                  <MenuItem key={`key-${i}`} justifyContent="center">
-                    <Link to={path}>{name}</Link>
-                  </MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
+          <Menu>
+            <MenuButton
+              display={{ base: "block", lg: "none" }}
+              margin="1rem"
+              position="absolute"
+              right="0"
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              size="lg"
+              variant="outline"
+            />
+            <MenuList color="black">
+              {links.map(({ path, name }, i) => (
+                <MenuItem key={`key-${i}`} justifyContent="center">
+                  <Link to={path}>{name}</Link>
+                </MenuItem>
+              ))}
+            </MenuList>
+          </Menu>
         </Flex>
       </Box>
     </header>
