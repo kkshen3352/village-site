@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import { Box, Badge } from "@chakra-ui/react"
 import Layout from "../components/layout"
 import { TimeIcon, ViewIcon } from "@chakra-ui/icons"
+import { SizeEnums, ColorEnums } from "../lib/style-utils"
 
 function IndexPageQuery({ data }) {
   const query = useStaticQuery(graphql`
@@ -23,10 +24,13 @@ function IndexPageQuery({ data }) {
     }
   `)
 
-  console.log(query)
   const {
     allMdx: { nodes },
   } = query
+
+  const { SMALL, LARGE, EXTRALARGE , EXTRAEXTRALARGE} = SizeEnums
+
+  const { GRAY } = ColorEnums
 
   function _renderPosts() {
     return nodes.map(
@@ -40,9 +44,9 @@ function IndexPageQuery({ data }) {
         return (
           <Box
             key={id}
-            maxW="xxl"
+            maxW={EXTRAEXTRALARGE}
             borderWidth="1px"
-            borderRadius="lg"
+            borderRadius={LARGE}
             overflow="hidden"
             margin="5"
           >
@@ -52,16 +56,10 @@ function IndexPageQuery({ data }) {
                   {author}
                 </Badge>
               </Box>
-              <Box as="h1" fontWeight="semibold" fontSize="xl">
+              <Box as="h1" fontWeight="semibold" fontSize={EXTRALARGE}>
                 <Link to={`/posts/${slug}`}>{title}</Link>
               </Box>
-              <Box
-                marginTop="1"
-                as="p"
-                lineHeight="tight"
-                fontSize="lg"
-                isTruncated
-              >
+              <Box marginTop="1" as="p" fontSize={LARGE}>
                 {excerpt}
               </Box>
               <Box
@@ -70,13 +68,13 @@ function IndexPageQuery({ data }) {
                 alignItems="center"
                 position="relative"
               >
-                <Box as="span" color="gray.600" fontSize="sm">
+                <Box as="span" color={GRAY} fontSize={SMALL}>
                   <ViewIcon margin="2" />
                   {timeToRead} min read
                 </Box>
                 <Box
                   as="span"
-                  color="gray.600"
+                  color={GRAY}
                   fontSize="sm"
                   position="absolute"
                   right="0"

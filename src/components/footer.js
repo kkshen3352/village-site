@@ -1,25 +1,21 @@
 import React from "react"
 import { Box, Flex } from "@chakra-ui/react"
 import { FaGithub, FaInstagram } from "react-icons/fa"
+import { ColorEnums } from "../lib/style-utils"
+
+const { BLACK, WHITE } = ColorEnums
 
 const Footer = () => (
   <Flex
-    bg="black.000"
-    align="center"
-    justify="center"
+    background={BLACK}
+    alignItems="center"
+    justifyContent="center"
     margin="0 auto"
-    color="white"
-    h="100px"
-    position="relative"
-    pb="0"
+    color={WHITE}
+    height="100px"
   >
     <footer>
-      <Box>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">gatsby</a>
-      </Box>
-      <Flex align="center" justify="center" margin="5px">
+      <Flex alignItems="center" justifyContent="center" margin="5px">
         <Box>
           <a href="https://github.com/kkshen3352">
             <FaGithub />
@@ -30,16 +26,12 @@ const Footer = () => (
             <FaInstagram />
           </a>
         </Box>
-        <Box marginLeft="10px">by kkshen</Box>
       </Flex>
-      <Flex align="center" justify="center" margin="5px">
-        <Box>
-          <a href="https://github.com/ClarityAcuity">
-            <FaGithub />
-          </a>
-        </Box>
-        <Box marginLeft="10px">by ClarityAcuity</Box>
-      </Flex>
+      <Box>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">gatsby</a>
+      </Box>
     </footer>
   </Flex>
 )

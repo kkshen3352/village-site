@@ -3,8 +3,6 @@ import PropTypes from "prop-types"
 import React from "react"
 import { Box, Flex, Heading } from "@chakra-ui/react"
 import { HamburgerIcon } from "@chakra-ui/icons"
-import kklogo from "../images/kklogo.png"
-import { Image } from "@chakra-ui/react"
 import {
   Menu,
   MenuButton,
@@ -12,13 +10,17 @@ import {
   MenuItem,
   IconButton,
 } from "@chakra-ui/react"
+import { SizeEnums, ColorEnums } from "../lib/style-utils"
 
 const links = [
-  { name: "首頁", path: "/" },
-  { name: "文章", path: "/article" },
+  { name: "文章", path: "/blog" },
   { name: "演示", path: "/demo" },
   { name: "關於我", path: "/about" },
 ]
+
+const { LARGE, EXTRALARGE } = SizeEnums
+
+const { BLACK, WHITE } = ColorEnums
 
 const Header = ({ siteTitle, ...props }) => {
   return (
@@ -27,31 +29,23 @@ const Header = ({ siteTitle, ...props }) => {
         as="nav"
         display="flex"
         alignContent={{ lg: "center" }}
-        justifyItems={{ lg: "space-between" }}
+        justifyContent={{ lg: "space-between" }}
         wrap="wrap"
         height="100px"
         padding="1rem"
-        background="black.000"
-        color="white"
+        background={BLACK}
+        color={WHITE}
         {...props}
       >
-        <Flex alignItems="center">
-          <Heading as="h1" size="2xl">
+        <Flex alignItems="center" width="960px" margin="0 auto">
+          <Heading as="h4" size={EXTRALARGE} marginLeft="1rem">
             <Box margin="1rem">
-              <Link to="/">
-                <Image
-                  src={kklogo}
-                  alt="kklogo"
-                  padding="0px"
-                  objectFit="center"
-                  boxSize="80px"
-                />
-              </Link>
+              <Link to="/">{siteTitle}</Link>
             </Box>
           </Heading>
-          <Box display={{ base: "none", lg: "flex" }}>
+          <Box display={{ base: "none", lg: "flex" }} marginTop="5px">
             {links.map(({ path, name }, i) => (
-              <Box key={`key-${i}`} margin="1rem">
+              <Box key={`key-${i}`} marginLeft="2rem">
                 <Link to={path}>{name}</Link>
               </Box>
             ))}
@@ -61,16 +55,28 @@ const Header = ({ siteTitle, ...props }) => {
               display={{ base: "block", lg: "none" }}
               margin="1rem"
               position="absolute"
-              right="0"
+              right="5"
               as={IconButton}
-              aria-label="Options"
+              aria-label="Menu"
               icon={<HamburgerIcon />}
-              size="lg"
+              size={LARGE}
               variant="outline"
+              _hover={{
+                background: "white",
+                color: "black",
+              }}
+              _active={{ background: "white", color: "black" }}
             />
             <MenuList color="black">
               {links.map(({ path, name }, i) => (
-                <MenuItem key={`key-${i}`} justifyContent="center">
+                <MenuItem
+                  key={`key-${i}`}
+                  justifyContent="center"
+                  _hover={{
+                    background: "black",
+                    color: "white",
+                  }}
+                >
                   <Link to={path}>{name}</Link>
                 </MenuItem>
               ))}
