@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Flex } from "@chakra-ui/react"
-import { FaGithub, FaInstagram } from "react-icons/fa"
 import { ColorEnums } from "../lib/style-utils"
+import { GitHubicon, Instagramicon } from "../lib/icon"
 
 const { BLACK, WHITE } = ColorEnums
 
@@ -18,12 +18,12 @@ const Footer = () => (
       <Flex alignItems="center" justifyContent="center" margin="5px">
         <Box>
           <a href="https://github.com/kkshen3352">
-            <FaGithub />
+            <GitHubicon />
           </a>
         </Box>
-        <Box marginLeft="10px">
+        <Box marginLeft="15px">
           <a href="https://www.instagram.com/kkshen3352/">
-            <FaInstagram />
+            <Instagramicon />
           </a>
         </Box>
       </Flex>
