@@ -13,9 +13,9 @@ import {
 import { SizeEnums, ColorEnums } from "../lib/style-utils"
 
 const links = [
-  { name: "文章", path: "/blog" },
-  { name: "演示", path: "/demo" },
-  { name: "關於我", path: "/about" },
+  { name: "Blog", path: "/blog" },
+  { name: "Demo", path: "/demo" },
+  { name: "About", path: "/about" },
 ]
 
 const { LARGE, EXTRALARGE } = SizeEnums

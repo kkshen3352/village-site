@@ -1,7 +1,8 @@
 import React from "react"
 import { Box, Flex } from "@chakra-ui/react"
 import { ColorEnums } from "../lib/style-utils"
-import { GitHubicon, Instagramicon } from "../lib/icon"
+import { GitHubicon } from "../lib/icon/githubicon"
+import { Instagramicon } from "../lib/icon/Instagramicon"
 
 const { BLACK, WHITE } = ColorEnums
 

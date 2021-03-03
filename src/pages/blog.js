@@ -28,7 +28,7 @@ function IndexPageQuery({ data }) {
     allMdx: { nodes },
   } = query
 
-  const { SMALL, LARGE, EXTRALARGE , EXTRAEXTRALARGE} = SizeEnums
+  const { SMALL, LARGE, EXTRALARGE , XXL} = SizeEnums
 
   const { GRAY } = ColorEnums
 
@@ -44,7 +44,7 @@ function IndexPageQuery({ data }) {
         return (
           <Box
             key={id}
-            maxW={EXTRAEXTRALARGE}
+            maxW={XXL}
             borderWidth="1px"
             borderRadius={LARGE}
             overflow="hidden"

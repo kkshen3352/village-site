@@ -3,7 +3,7 @@ export const SizeEnums = {
   BAIMIDDLE: "md",
   LARGE: "lg",
   EXTRALARGE: "xl",
-  EXTRAEXTRALARGE: "xxl",
+  XXL: "xxl",
 }
 
 export const ColorEnums = {
