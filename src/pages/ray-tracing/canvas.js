@@ -1,7 +1,7 @@
 import { mat4 } from "gl-matrix"
 import React from "react"
 import PureCanvas from "./pure-canvas"
-import render from "./render"
+import render from "../../lib/ray-tracing/render"
 
 class Canvas extends React.Component {
   constructor(props) {
