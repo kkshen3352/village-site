@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { Box, Flex } from "@chakra-ui/react"
 import Header from "../header"
 import Footer from "../footer"
 
@@ -22,19 +23,21 @@ const Layout = ({ children }) => {
     }
   `)
 
+  console.log(data.site);
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
+      <Flex
+        margin="0 auto"
+        maxWidth="960px"
+        padding="1.45rem 1.0875rem 1.45rem"
+        flexDirection="column"
+        minHeight="80vh"
       >
-        <main>{children}</main>
-      </div>
+        <Box flexGrow="1">
+          <main>{children}</main>
+        </Box>
+      </Flex>
       <Footer />
     </>
   )
