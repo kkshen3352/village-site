@@ -1,5 +1,5 @@
-import ray from "../ray"
-import vec3 from "../vec3"
+import ray from "../ray-tracing/ray"
+import vec3 from "../ray-tracing/vec3"
 
 describe("ray.js Ray class", () => {
   const A = vec3(1.0, 2.0, 3.0)

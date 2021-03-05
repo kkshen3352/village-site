@@ -1,7 +1,7 @@
-import ray from "../../lib/ray"
-import vec3, { unitVector, dot, cross } from "../../lib/vec3"
-import sphere from "../../lib/sphere"
-import hitableList from "../../lib/hitable-list"
+import ray from "./ray"
+import vec3, { unitVector, dot, cross } from "./vec3"
+import sphere from "./sphere"
+import hitableList from "./hitable-list"
 
 export function setRectangle(x, y, width, height) {
   const x1 = x

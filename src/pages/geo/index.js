@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Slider from "../../components/slider"
 import Canvas from "./canvas"
 import Camera from "./camera"
-import { projection, outline, graticule, land110, land50 } from "./utils"
+import { projection, outline, graticule, land110, land50 } from "../../lib/geo/utils"
 
 class GeoPage extends Component {
   constructor() {

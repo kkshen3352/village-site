@@ -1,6 +1,6 @@
-import ray from "../ray"
-import vec3 from "../vec3"
-import sphere from "../sphere"
+import ray from "../ray-tracing/ray"
+import vec3 from "../ray-tracing/vec3"
+import sphere from "../ray-tracing/sphere"
 
 describe("hitable-list.js HitableList class", () => {
   const sphere1 = sphere(vec3(0, 0, -1), 0.5)

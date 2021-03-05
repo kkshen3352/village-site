@@ -3,8 +3,8 @@ import * as d3geo from "d3-geo"
 import * as geoprojection from "d3-geo-projection"
 import { Library } from "@observablehq/stdlib"
 import * as topojson from "topojson"
-import land50m from "./land-50m.json"
-import land110m from "./land-110m.json"
+import land50m from "../../pages/geo/land-50m.json"
+import land110m from "../../pages/geo/land-110m.json"
 
 const observer = new Library()
 const { DOM, Generators } = observer

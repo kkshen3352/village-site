@@ -1,7 +1,7 @@
-import ray from "../ray"
-import vec3 from "../vec3"
-import sphere from "../sphere"
-import hitableList from "../hitable-list"
+import ray from "../ray-tracing/ray"
+import vec3 from "../ray-tracing/vec3"
+import sphere from "../ray-tracing/sphere"
+import hitableList from "../ray-tracing/hitable-list"
 
 describe("hitable-list.js HitableList class", () => {
   const world0 = []
