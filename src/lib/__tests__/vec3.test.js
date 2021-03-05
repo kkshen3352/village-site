@@ -1,4 +1,4 @@
-import vec3, { dot, cross, unitVector } from "../vec3"
+import vec3, { dot, cross, unitVector } from "../ray-tracing/vec3"
 
 describe("vec3.js", () => {
   const x1 = 1.0
