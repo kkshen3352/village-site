@@ -21,4 +21,4 @@ jobs:
           node-version: '14'
       - run: npm install
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
-      - run: npm run develop
+      - run: npm run test
