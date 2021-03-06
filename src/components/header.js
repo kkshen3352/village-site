@@ -19,10 +19,9 @@ const links = [
 ]
 
 const { LARGE, EXTRALARGE } = SizeEnums
-
 const { BLACK, WHITE } = ColorEnums
 
-const Header = ({ siteTitle, ...props }) => {
+const Header = ({ siteTitle }) => {
   return (
     <header>
       <Box
@@ -35,7 +34,6 @@ const Header = ({ siteTitle, ...props }) => {
         padding="1rem"
         background={BLACK}
         color={WHITE}
-        {...props}
       >
         <Flex alignItems="center" width="960px" margin="0 auto">
           <Heading as="h4" size={EXTRALARGE} marginLeft="1rem">
