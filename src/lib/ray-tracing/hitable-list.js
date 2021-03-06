@@ -1,6 +1,6 @@
-import hitable from "./hitable"
+import Hitable from "./hitable"
 
-class hitableList extends hitable {
+class HitableList extends Hitable {
   constructor(l, n) {
     super()
     this.list = l
@@ -23,5 +23,5 @@ class hitableList extends hitable {
 }
 
 export default function(list, listSize) {
-  return new hitableList(list, listSize)
+  return new HitableList(list, listSize)
 }

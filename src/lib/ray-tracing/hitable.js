@@ -1,6 +1,3 @@
-import vec3, { dot } from "./vec3"
-import ray from "./ray"
-
 /*
 const hitRecord = {
   t,
@@ -8,8 +5,8 @@ const hitRecord = {
   normal,
 };
 */
-class hitable {
+class Hitable {
   hit(ray, tMin, tMax, hitRecord) {}
 }
 
-export default hitable
+export default Hitable

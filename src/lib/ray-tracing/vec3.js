@@ -1,7 +1,7 @@
 /**
  * v(e) = e
  */
-class vec3 {
+class Vec3 {
   constructor(e0, e1, e2) {
     this.e = [e0, e1, e2]
   }
@@ -30,10 +30,10 @@ class vec3 {
   }
 
   identical() {
-    return new vec3(this.e[0], this.e[1], this.e[2])
+    return new Vec3(this.e[0], this.e[1], this.e[2])
   }
   opposite() {
-    return new vec3(-this.e[0], -this.e[1], -this.e[2])
+    return new Vec3(-this.e[0], -this.e[1], -this.e[2])
   }
   // operator[](i){
   //   return this.e[i]
@@ -117,7 +117,7 @@ export function dot(v1, v2) {
 }
 
 export function cross(v1, v2) {
-  return new vec3(
+  return new Vec3(
     v1.e[1] * v2.e[2] - v1.e[2] * v2.e[1],
     -(v1.e[0] * v2.e[2] - v1.e[2] * v2.e[0]),
     v1.e[0] * v2.e[1] - v1.e[1] * v2.e[0]
@@ -129,5 +129,5 @@ export function unitVector(v) {
 }
 
 export default function(x, y, z) {
-  return new vec3(x, y, z)
+  return new Vec3(x, y, z)
 }
