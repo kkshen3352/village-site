@@ -1,5 +1,5 @@
 import { dot } from "./vec3"
-import hitable from "./hitable"
+import Hitable from "./hitable"
 
 function recordHit(sphere, ray, t, record) {
   const { center, radius } = sphere
@@ -9,7 +9,7 @@ function recordHit(sphere, ray, t, record) {
   record.normal = p.subtractVector(center).divideScaler(radius)
 }
 
-class sphere extends hitable {
+class Sphere extends Hitable {
   constructor(c, r) {
     super()
     this.center = c
@@ -38,5 +38,5 @@ class sphere extends hitable {
 }
 
 export default function(center, radius) {
-  return new sphere(center, radius)
+  return new Sphere(center, radius)
 }

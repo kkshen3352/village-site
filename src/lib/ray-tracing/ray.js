@@ -1,9 +1,7 @@
-import vec3 from "./vec3"
-
 /**
  * p(t) = ​ A ​ + t* B
  */
-class ray {
+class Ray {
   constructor(A, B) {
     this.A = A
     this.B = B
@@ -20,5 +18,5 @@ class ray {
 }
 
 export default function(A, B) {
-  return new ray(A, B)
+  return new Ray(A, B)
 }
