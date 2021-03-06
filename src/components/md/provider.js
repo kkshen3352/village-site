@@ -63,7 +63,14 @@ const components = {
 }
 
 export const Provider = ({ children }) => (
-  <Box as="main" p={{ base: 8, lg: 16 }}>
+  <Box
+    margin="0 auto"
+    maxWidth="960px"
+    padding="1.45rem 1.0875rem 1.45rem"
+    flexDirection="column"
+    minHeight="80vh"
+    p={{ base: 8, lg: 16 }}
+  >
     <MDXProvider components={components}>{children}</MDXProvider>
   </Box>
 )

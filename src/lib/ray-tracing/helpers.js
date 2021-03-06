@@ -1,7 +1,8 @@
-import ray from "../../lib/ray"
-import vec3, { unitVector, dot, cross } from "../../lib/vec3"
-import sphere from "../../lib/sphere"
-import hitableList from "../../lib/hitable-list"
+import ray from "./ray"
+import vec3, { unitVector, dot, cross } from "./vec3"
+import sphere from "./sphere"
+import hitableList from "./hitable-list"
+import camara from "./camera"
 
 export function setRectangle(x, y, width, height) {
   const x1 = x
@@ -45,27 +46,28 @@ function color(ray, world) {
   }
 }
 
-export function getImage(width, height) {
+export function getImage(width, height, ns = 100) {
   const image = []
   const list1 = sphere(vec3(0, 0, -1), 0.5)
   const list2 = sphere(vec3(0, -100.5, -1), 100)
   const hitable = [list1, list2]
   const world = hitableList(hitable, hitable.length)
+  const eye = camara()
   const origin = vec3(0.0, 0.0, 0.0)
   const lowerLeftCorner = vec3(-2.0, -1.0, -1.0)
   const horizontal = vec3(4.0, 0.0, 0.0)
   const vertical = vec3(0.0, 2.0, 0.0)
   for (let j = height - 1; j >= 0; j--) {
     for (let i = 0; i < width; i++) {
-      const u = i / width
-      const v = j / height
-      const r = ray(
-        origin,
-        lowerLeftCorner
-          .addVector(horizontal.multiplyScalar(u))
-          .addVector(vertical.multiplyScalar(v))
-      )
-      const col = color(r, world)
+      let col = vec3(0, 0, 0)
+      for (let s = 0; s < ns; s++) {
+        const u = (i + Math.random()) / width
+        const v = (j + Math.random()) / height
+        const r = eye.getRay(u, v)
+        // const p = r.pointAtParameter(2.0)
+        col = col.addVector(color(r, world))
+      }
+      col = col.divideScaler(ns)
       const ir = 255.99 * col.e[0]
       const ig = 255.99 * col.e[1]
       const ib = 255.99 * col.e[2]
