@@ -1,10 +1,11 @@
-import siteMetadata from "./user-config"
-
+import siteUserdata from "./user-config"
 const capitalize = require(`remark-capitalize`)
 const emoji = require(`remark-emoji`)
 
 module.exports = {
-  siteMetadata,
+  siteMetadata: {
+    siteUserdata,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

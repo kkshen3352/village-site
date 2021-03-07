@@ -28,7 +28,7 @@ function IndexPageQuery({ data }) {
     allMdx: { nodes },
   } = query
 
-  const { SMALL, LARGE, EXTRALARGE , XXL} = SizeEnums
+  const { SMALL, LARGE, EXTRALARGE, XXL } = SizeEnums
 
   const { GRAY } = ColorEnums
 

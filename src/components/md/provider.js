@@ -68,7 +68,7 @@ export const Provider = ({ children }) => (
     maxWidth="960px"
     padding="1.45rem 1.0875rem 1.45rem"
     flexDirection="column"
-    minHeight="80vh"
+    minHeight={{base: "75.7vh",lg: "76.3vh"}}
     p={{ base: 8, lg: 16 }}
   >
     <MDXProvider components={components}>{children}</MDXProvider>

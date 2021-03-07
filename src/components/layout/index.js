@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
+  console.log(data);
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
         maxWidth="960px"
         padding="1.45rem 1.0875rem 1.45rem"
         flexDirection="column"
-        minHeight="80vh"
+        minHeight={{ base: "75.7vh", lg: "76.3vh" }}
       >
         <Box flexGrow="1">
           <main>{children}</main>
