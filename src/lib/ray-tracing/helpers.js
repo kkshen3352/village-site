@@ -44,8 +44,8 @@ function color(r, world, depth) {
   )
   if (hitAnything) {
     const { material } = hitRecord
-    let { isScatter, scattered, attenuation } = material.scatter(r, hitRecord)
-    if (depth < 5 && isScatter) {
+    const { isScatter, scattered, attenuation } = material.scatter(r, hitRecord)
+    if (depth < 50 && isScatter) {
       return attenuation.multiplyVector(color(scattered, world, depth + 1))
     } else {
       return vec3(0, 0, 0)
@@ -67,8 +67,8 @@ export function getImage(width, height, ns = 100) {
     100,
     lambertian(vec3(0.8, 0.8, 0.0))
   )
-  const list3 = sphere(vec3(1, 0, -1), 0.5, metal(vec3(0.8, 0.6, 0.2)))
-  const list4 = sphere(vec3(-1, 0, -1), 0.5, metal(vec3(0.8, 0.8, 0.8)))
+  const list3 = sphere(vec3(1, 0, -1), 0.5, metal(vec3(0.8, 0.6, 0.2), 1.0))
+  const list4 = sphere(vec3(-1, 0, -1), 0.5, metal(vec3(0.8, 0.8, 0.8), 0.3))
   const hitable = [list1, list2, list3, list4]
   const world = hitableList(hitable, hitable.length)
   const eye = camara()

@@ -35,14 +35,15 @@ class Lambertian extends Material {
 }
 
 class Metal extends Material {
-  constructor(a) {
+  constructor(a, f) {
     super()
     this.albedo = a
+    this.fuzz = f < 1 ? f : 1
   }
   scatter(rayIn, hitRecord) {
     const { p, normal } = hitRecord
     const reflected = reflect(unitVector(rayIn.direction()), normal)
-    const scattered = ray(p, reflected)
+    const scattered = ray(p, reflected.addVector(randomInUnitSphere().multiplyScalar(this.fuzz)))
     const attenuation = this.albedo
     return {
       isScatter: dot(scattered.direction(), normal) > 0,
@@ -53,4 +54,4 @@ class Metal extends Material {
 }
 
 export const lambertian = a => new Lambertian(a)
-export const metal = a => new Metal(a)
+export const metal = (a, f) => new Metal(a, f)
