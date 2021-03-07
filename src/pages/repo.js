@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react"
 import { Box, Badge } from "@chakra-ui/react"
 import { Link } from "@chakra-ui/react"
-import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { ExternalLinkIcon } from "@chakra-ui/icons"
 import Layout from "../components/layout"
 import { request } from "@octokit/request"
 import { TimeIcon, TriangleDownIcon } from "@chakra-ui/icons"
 import { SizeEnums, ColorEnums } from "../lib/style-utils"
-
 const { LARGE, EXTRALARGE, XXL } = SizeEnums
 const { GRAY } = ColorEnums
 
-function RepoPage() {
+const RepoPage = () => {
   const [getData, setgetData] = useState([])
   async function getProjectRequest() {
     const result = await request({
@@ -32,7 +31,8 @@ function RepoPage() {
       <Box
         as="h1"
         color="back"
-        textShadow="2px 2px #bbb" m="6"
+        textShadow="2px 2px #bbb"
+        m="6"
         height="670px"
         display="flex"
         alignItems="center"
@@ -68,7 +68,10 @@ function RepoPage() {
                   </Badge>
                 </Box>
                 <Box as="h1" fontWeight="semibold" fontSize={EXTRALARGE}>
-                  <Link href={html_url}>{name}<ExternalLinkIcon mx="2px" /></Link>
+                  <Link href={html_url}>
+                    {name}
+                    <ExternalLinkIcon mx="2px" />
+                  </Link>
                 </Box>
                 <Box
                   margin="1.5rem 0"
