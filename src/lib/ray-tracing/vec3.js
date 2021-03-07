@@ -128,6 +128,10 @@ export function unitVector(v) {
   return v.identical().divideScaler(v.length())
 }
 
+export function reflect(v, n) {
+  return v.subtractVector(n.multiplyScalar(2*dot(v, n)))
+}
+
 export default function(x, y, z) {
   return new Vec3(x, y, z)
 }
