@@ -25,6 +25,18 @@ function hitSphere(center, radius, ray) {
   }
 }
 
+function randomInUnitSphere() {
+    let p = vec3()
+    do {
+      p = vec3(
+        Math.random(),
+        Math.random(),
+        Math.random()
+      ).subtractVector(vec3(1, 1, 1))
+    } while (p.squaredLength() >= 1.0)
+    return p
+}
+
 function color(r, world, step = 10) {
   const { hitAnything, closestSoFar, hitRecord } = world.hit(
     r,
@@ -33,16 +45,8 @@ function color(r, world, step = 10) {
     {}
   )
   if (hitAnything && step) {
-    let diffuse = vec3()
-    do {
-      diffuse = vec3(
-        Math.random(),
-        Math.random(),
-        Math.random()
-      ).subtractVector(vec3(1, 1, 1))
-    } while (diffuse.squaredLength() >= 1.0)
     const { p, normal } = hitRecord
-    const target = p.addVector(normal).addVector(diffuse)
+    const target = p.addVector(normal).addVector(randomInUnitSphere())
     const nextRay = ray(p, target.subtractVector(p))
     return color(nextRay, world, step - 1).multiplyScalar(0.5)
   } else {
@@ -54,17 +58,13 @@ function color(r, world, step = 10) {
   }
 }
 
-export function getImage(width, height, ns = 10) {
+export function getImage(width, height, ns = 100) {
   const image = []
   const list1 = sphere(vec3(0, 0, -1), 0.5)
   const list2 = sphere(vec3(0, -100.5, -1), 100)
   const hitable = [list1, list2]
   const world = hitableList(hitable, hitable.length)
   const eye = camara()
-  const origin = vec3(0.0, 0.0, 0.0)
-  const lowerLeftCorner = vec3(-2.0, -1.0, -1.0)
-  const horizontal = vec3(4.0, 0.0, 0.0)
-  const vertical = vec3(0.0, 2.0, 0.0)
   for (let j = height - 1; j >= 0; j--) {
     for (let i = 0; i < width; i++) {
       let col = vec3(0, 0, 0)
