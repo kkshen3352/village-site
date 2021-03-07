@@ -2,7 +2,7 @@ import vec3, { unitVector, dot, cross } from "./vec3"
 import sphere from "./sphere"
 import hitableList from "./hitable-list"
 import camara from "./camera"
-import { lambertian, metal } from "./hitable"
+import { lambertian, metal } from "./material"
 
 export function setRectangle(x, y, width, height) {
   const x1 = x

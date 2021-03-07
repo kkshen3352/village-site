@@ -1,4 +1,4 @@
-import { Hitable } from "./hitable"
+import Hitable from "./hitable"
 
 class HitableList extends Hitable {
   constructor(l, n) {

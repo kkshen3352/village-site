@@ -1,5 +1,5 @@
 import { dot } from "./vec3"
-import { Hitable } from "./hitable"
+import Hitable from "./hitable"
 
 function recordHit(sphere, ray, t, record) {
   const { center, radius, material } = sphere
