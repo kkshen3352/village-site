@@ -25,28 +25,36 @@ function hitSphere(center, radius, ray) {
   }
 }
 
-function color(ray, world) {
+function color(r, world, step = 10) {
   const { hitAnything, closestSoFar, hitRecord } = world.hit(
-    ray,
+    r,
     0.0,
     Infinity,
     {}
   )
-  if (hitAnything) {
-    const normal = hitRecord.normal
-    return vec3(normal.x() + 1, normal.y() + 1, normal.z() + 1).multiplyScalar(
-      0.5
-    )
+  if (hitAnything && step) {
+    let diffuse = vec3()
+    do {
+      diffuse = vec3(
+        Math.random(),
+        Math.random(),
+        Math.random()
+      ).subtractVector(vec3(1, 1, 1))
+    } while (diffuse.squaredLength() >= 1.0)
+    const { p, normal } = hitRecord
+    const target = p.addVector(normal).addVector(diffuse)
+    const nextRay = ray(p, target.subtractVector(p))
+    return color(nextRay, world, step - 1).multiplyScalar(0.5)
   } else {
-    const unitDirection = unitVector(ray.direction())
-    const t = 0.5 * (unitDirection.y() + 1)
+    const unitDirection = unitVector(r.direction())
+    const t = 0.5 * (unitDirection.y() + 1.0)
     return vec3(1.0, 1.0, 1.0)
       .multiplyScalar(1.0 - t)
       .addVector(vec3(0.5, 0.7, 1.0).multiplyScalar(t))
   }
 }
 
-export function getImage(width, height, ns = 100) {
+export function getImage(width, height, ns = 10) {
   const image = []
   const list1 = sphere(vec3(0, 0, -1), 0.5)
   const list2 = sphere(vec3(0, -100.5, -1), 100)
@@ -68,9 +76,9 @@ export function getImage(width, height, ns = 100) {
         col = col.addVector(color(r, world))
       }
       col = col.divideScaler(ns)
-      const ir = 255.99 * col.e[0]
-      const ig = 255.99 * col.e[1]
-      const ib = 255.99 * col.e[2]
+      const ir = 255.99 * Math.sqrt(col.e[0])
+      const ig = 255.99 * Math.sqrt(col.e[1])
+      const ib = 255.99 * Math.sqrt(col.e[2])
       image.push(ir)
       image.push(ig)
       image.push(ib)
