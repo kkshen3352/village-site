@@ -1,8 +1,8 @@
-import ray from "./ray"
 import vec3, { unitVector, dot, cross } from "./vec3"
 import sphere from "./sphere"
 import hitableList from "./hitable-list"
 import camara from "./camera"
+import { lambertian, metal } from "./material"
 
 export function setRectangle(x, y, width, height) {
   const x1 = x
@@ -25,30 +25,31 @@ function hitSphere(center, radius, ray) {
   }
 }
 
-function randomInUnitSphere() {
-    let p = vec3()
-    do {
-      p = vec3(
-        Math.random(),
-        Math.random(),
-        Math.random()
-      ).subtractVector(vec3(1, 1, 1))
-    } while (p.squaredLength() >= 1.0)
-    return p
+export function randomInUnitSphere() {
+  let p = vec3()
+  do {
+    p = vec3(Math.random(), Math.random(), Math.random()).subtractVector(
+      vec3(1, 1, 1)
+    )
+  } while (p.squaredLength() >= 1.0)
+  return p
 }
 
-function color(r, world, step = 10) {
+function color(r, world, depth) {
   const { hitAnything, closestSoFar, hitRecord } = world.hit(
     r,
     0.0,
     Infinity,
     {}
   )
-  if (hitAnything && step) {
-    const { p, normal } = hitRecord
-    const target = p.addVector(normal).addVector(randomInUnitSphere())
-    const nextRay = ray(p, target.subtractVector(p))
-    return color(nextRay, world, step - 1).multiplyScalar(0.5)
+  if (hitAnything) {
+    const { material } = hitRecord
+    const { isScatter, scattered, attenuation } = material.scatter(r, hitRecord)
+    if (depth < 50 && isScatter) {
+      return attenuation.multiplyVector(color(scattered, world, depth + 1))
+    } else {
+      return vec3(0, 0, 0)
+    }
   } else {
     const unitDirection = unitVector(r.direction())
     const t = 0.5 * (unitDirection.y() + 1.0)
@@ -60,9 +61,15 @@ function color(r, world, step = 10) {
 
 export function getImage(width, height, ns = 100) {
   const image = []
-  const list1 = sphere(vec3(0, 0, -1), 0.5)
-  const list2 = sphere(vec3(0, -100.5, -1), 100)
-  const hitable = [list1, list2]
+  const list1 = sphere(vec3(0, 0, -1), 0.5, lambertian(vec3(0.8, 0.3, 0.3)))
+  const list2 = sphere(
+    vec3(0, -100.5, -1),
+    100,
+    lambertian(vec3(0.8, 0.8, 0.0))
+  )
+  const list3 = sphere(vec3(1, 0, -1), 0.5, metal(vec3(0.8, 0.6, 0.2), 1.0))
+  const list4 = sphere(vec3(-1, 0, -1), 0.5, metal(vec3(0.8, 0.8, 0.8), 0.3))
+  const hitable = [list1, list2, list3, list4]
   const world = hitableList(hitable, hitable.length)
   const eye = camara()
   for (let j = height - 1; j >= 0; j--) {
@@ -73,7 +80,7 @@ export function getImage(width, height, ns = 100) {
         const v = (j + Math.random()) / height
         const r = eye.getRay(u, v)
         // const p = r.pointAtParameter(2.0)
-        col = col.addVector(color(r, world))
+        col = col.addVector(color(r, world, 0))
       }
       col = col.divideScaler(ns)
       const ir = 255.99 * Math.sqrt(col.e[0])

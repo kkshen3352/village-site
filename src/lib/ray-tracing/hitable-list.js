@@ -7,7 +7,8 @@ class HitableList extends Hitable {
     this.listSize = n
   }
   hit(ray, tMin, tMax, hitRecord) {
-    let tempRecord = {}
+    const { material } = hitRecord
+    let tempRecord = { material }
     let hitAnything = false
     let closestSoFar = tMax
     for (let i = 0; i < this.listSize; i++) {
