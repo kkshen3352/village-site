@@ -25,21 +25,33 @@ function hitSphere(center, radius, ray) {
   }
 }
 
-function color(ray, world) {
+function randomInUnitSphere() {
+    let p = vec3()
+    do {
+      p = vec3(
+        Math.random(),
+        Math.random(),
+        Math.random()
+      ).subtractVector(vec3(1, 1, 1))
+    } while (p.squaredLength() >= 1.0)
+    return p
+}
+
+function color(r, world, step = 10) {
   const { hitAnything, closestSoFar, hitRecord } = world.hit(
-    ray,
+    r,
     0.0,
     Infinity,
     {}
   )
-  if (hitAnything) {
-    const normal = hitRecord.normal
-    return vec3(normal.x() + 1, normal.y() + 1, normal.z() + 1).multiplyScalar(
-      0.5
-    )
+  if (hitAnything && step) {
+    const { p, normal } = hitRecord
+    const target = p.addVector(normal).addVector(randomInUnitSphere())
+    const nextRay = ray(p, target.subtractVector(p))
+    return color(nextRay, world, step - 1).multiplyScalar(0.5)
   } else {
-    const unitDirection = unitVector(ray.direction())
-    const t = 0.5 * (unitDirection.y() + 1)
+    const unitDirection = unitVector(r.direction())
+    const t = 0.5 * (unitDirection.y() + 1.0)
     return vec3(1.0, 1.0, 1.0)
       .multiplyScalar(1.0 - t)
       .addVector(vec3(0.5, 0.7, 1.0).multiplyScalar(t))
@@ -53,10 +65,6 @@ export function getImage(width, height, ns = 100) {
   const hitable = [list1, list2]
   const world = hitableList(hitable, hitable.length)
   const eye = camara()
-  const origin = vec3(0.0, 0.0, 0.0)
-  const lowerLeftCorner = vec3(-2.0, -1.0, -1.0)
-  const horizontal = vec3(4.0, 0.0, 0.0)
-  const vertical = vec3(0.0, 2.0, 0.0)
   for (let j = height - 1; j >= 0; j--) {
     for (let i = 0; i < width; i++) {
       let col = vec3(0, 0, 0)
@@ -68,9 +76,9 @@ export function getImage(width, height, ns = 100) {
         col = col.addVector(color(r, world))
       }
       col = col.divideScaler(ns)
-      const ir = 255.99 * col.e[0]
-      const ig = 255.99 * col.e[1]
-      const ib = 255.99 * col.e[2]
+      const ir = 255.99 * Math.sqrt(col.e[0])
+      const ig = 255.99 * Math.sqrt(col.e[1])
+      const ib = 255.99 * Math.sqrt(col.e[2])
       image.push(ir)
       image.push(ig)
       image.push(ib)
