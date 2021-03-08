@@ -15,14 +15,14 @@ import { SizeEnums, ColorEnums } from "../lib/style-utils"
 const links = [
   { name: "Blog", path: "/blog" },
   { name: "Demo", path: "/demo" },
+  { name: "Repo", path: "/repo" },
   { name: "About", path: "/about" },
 ]
 
 const { LARGE, EXTRALARGE } = SizeEnums
-
 const { BLACK, WHITE } = ColorEnums
 
-const Header = ({ siteTitle, ...props }) => {
+const Header = ({ siteTitle }) => {
   return (
     <header>
       <Box
@@ -35,12 +35,13 @@ const Header = ({ siteTitle, ...props }) => {
         padding="1rem"
         background={BLACK}
         color={WHITE}
-        {...props}
       >
         <Flex alignItems="center" width="960px" margin="0 auto">
           <Heading as="h4" size={EXTRALARGE} marginLeft="1rem">
             <Box margin="1rem">
-              <Link to="/">{siteTitle}</Link>
+              <Link to="/" width={{ base: "240px", ms: "300px", lg: "390px" }}>
+                {siteTitle}
+              </Link>
             </Box>
           </Heading>
           <Box display={{ base: "none", lg: "flex" }} marginTop="5px">
@@ -50,7 +51,7 @@ const Header = ({ siteTitle, ...props }) => {
               </Box>
             ))}
           </Box>
-          <Menu>
+          <Menu closeOnSelect={false}>
             <MenuButton
               display={{ base: "block", lg: "none" }}
               margin="1rem"
@@ -61,6 +62,7 @@ const Header = ({ siteTitle, ...props }) => {
               icon={<HamburgerIcon />}
               size={LARGE}
               variant="outline"
+              background="black"
               _hover={{
                 background: "white",
                 color: "black",
@@ -69,16 +71,17 @@ const Header = ({ siteTitle, ...props }) => {
             />
             <MenuList color="black">
               {links.map(({ path, name }, i) => (
-                <MenuItem
-                  key={`key-${i}`}
-                  justifyContent="center"
-                  _hover={{
-                    background: "black",
-                    color: "white",
-                  }}
-                >
-                  <Link to={path}>{name}</Link>
-                </MenuItem>
+                <Link key={`key-${i}`} to={path}>
+                  <MenuItem
+                    justifyContent="center"
+                    _hover={{
+                      background: "black",
+                      color: "white",
+                    }}
+                  >
+                    {name}
+                  </MenuItem>
+                </Link>
               ))}
             </MenuList>
           </Menu>

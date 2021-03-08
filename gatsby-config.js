@@ -1,13 +1,9 @@
+const siteMetadata = require(`./user-config`)
 const capitalize = require(`remark-capitalize`)
 const emoji = require(`remark-emoji`)
 
 module.exports = {
-  pathPrefix: "/village-site",
-  siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-  },
+  siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
