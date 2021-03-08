@@ -71,16 +71,17 @@ const Header = ({ siteTitle }) => {
             />
             <MenuList color="black">
               {links.map(({ path, name }, i) => (
-                <MenuItem
-                  key={`key-${i}`}
-                  justifyContent="center"
-                  _hover={{
-                    background: "black",
-                    color: "white",
-                  }}
-                >
-                  <Link to={path}>{name}</Link>
-                </MenuItem>
+                <Link key={`key-${i}`} to={path}>
+                  <MenuItem
+                    justifyContent="center"
+                    _hover={{
+                      background: "black",
+                      color: "white",
+                    }}
+                  >
+                    {name}
+                  </MenuItem>
+                </Link>
               ))}
             </MenuList>
           </Menu>

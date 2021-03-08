@@ -4,7 +4,6 @@ import { Link } from "@chakra-ui/react"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
 import Layout from "../components/layout"
 import { request } from "@octokit/request"
-import { TimeIcon } from "@chakra-ui/icons"
 import { SizeEnums, ColorEnums } from "../lib/style-utils"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -27,6 +26,7 @@ const RepoPage = () => {
       method: "GET",
       url: `/users/${data.site.siteMetadata.username}/repos`,
       username: `${data.site.siteMetadata.username}`,
+      sort: "updated",
     })
     return result
   }
@@ -62,7 +62,7 @@ const RepoPage = () => {
                   </Badge>
                 </Box>
                 <Box as="h1" fontWeight="semibold" fontSize={EXTRALARGE}>
-                  <Link href={html_url}>
+                  <Link href={html_url} isExternal>
                     {name}
                     <ExternalLinkIcon mx="2px" />
                   </Link>
@@ -92,16 +92,12 @@ const RepoPage = () => {
                     position="absolute"
                     right="0"
                   >
-                    <TimeIcon margin="2" marginTop="10px" />{" "}
+                    Latest Updated:{" "}
                     {updated_at.slice(0, 4) +
-                      "/" +
-                      updated_at.slice(5, 7) +
-                      "/" +
-                      updated_at.slice(8, 10) +
-                      " " +
                       "-" +
-                      " " +
-                      updated_at.slice(11, 16)}
+                      updated_at.slice(5, 7) +
+                      "-" +
+                      updated_at.slice(8, 10)}
                   </Box>
                 </Box>
               </Box>
