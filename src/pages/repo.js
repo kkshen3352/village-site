@@ -8,16 +8,14 @@ import { TimeIcon, TriangleDownIcon } from "@chakra-ui/icons"
 import { SizeEnums, ColorEnums } from "../lib/style-utils"
 const { LARGE, EXTRALARGE, XXL } = SizeEnums
 const { GRAY } = ColorEnums
-const gitData = require("../../user-config")
+const gitList = require("../../user-config")
 
 const RepoPage = () => {
   const [getData, setgetData] = useState([])
 
   async function getProjectRequest() {
-    const gitusers = gitData[`usergit`]
-    console.log("gitusers", gitusers)
+    const gitusers = gitList[`usergit`]
     const result = await request(gitusers)
-    console.log("data result:", result)
     return result
   }
 
