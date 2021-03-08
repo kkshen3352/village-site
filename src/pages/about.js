@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link } from "@chakra-ui/react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -9,7 +9,7 @@ import { Instagramicon } from "../icon/Instagramicon"
 const SecondPage = ({ data }) => {
   const {
     site: {
-      siteMetadata: { title, description, author, github, instagram },
+      siteMetadata: { title, description, author, username },
     },
   } = data
 
@@ -20,18 +20,15 @@ const SecondPage = ({ data }) => {
       <h1>Author: {author}</h1>
       <p>{description}</p>
       <br />
-      <Link to={github}>
+      <Link href={`https://github.com/${username}`}>
         <GitHubicon />
         github
       </Link>
       <br />
-      <Link to={instagram}>
+      <Link href={`https://www.instagram.com/${username}`}>
         <Instagramicon />
         instagram
       </Link>
-      <hr />
-      <br />
-      <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
 }
@@ -45,8 +42,7 @@ export const query = graphql`
         title
         description
         author
-        github
-        instagram
+        username
       }
     }
   }

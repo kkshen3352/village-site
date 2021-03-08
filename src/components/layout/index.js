@@ -18,13 +18,12 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
-          github
-          instagram
+          username
         }
       }
     }
   `)
-  console.log(data);
+  
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
@@ -40,8 +39,7 @@ const Layout = ({ children }) => {
         </Box>
       </Flex>
       <Footer
-        githubicon={data.site.siteMetadata.github}
-        instagramicon={data.site.siteMetadata.instagram}
+        username={data.site.siteMetadata.username}
       />
     </>
   )

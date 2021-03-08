@@ -4,49 +4,45 @@ import { Link } from "@chakra-ui/react"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
 import Layout from "../components/layout"
 import { request } from "@octokit/request"
-import { TimeIcon, TriangleDownIcon } from "@chakra-ui/icons"
+import { TimeIcon } from "@chakra-ui/icons"
 import { SizeEnums, ColorEnums } from "../lib/style-utils"
+import { useStaticQuery, graphql } from "gatsby"
+
 const { LARGE, EXTRALARGE, XXL } = SizeEnums
 const { GRAY } = ColorEnums
-const gitList = require("../../user-config")
-
 const RepoPage = () => {
-  const [getData, setgetData] = useState([])
+  const [repoData, setrepoData] = useState([])
+  const data = useStaticQuery(graphql`
+    query useStaticQuery {
+      site {
+        siteMetadata {
+          username
+        }
+      }
+    }
+  `)
 
   async function getProjectRequest() {
-    const gitusers = gitList[`usergit`]
-    const result = await request(gitusers)
+    const result = await request({
+      method: "GET",
+      url: `/users/${data.site.siteMetadata.username}/repos`,
+      username: `${data.site.siteMetadata.username}`,
+    })
     return result
   }
 
-  useEffect(async function() {
-    const result = await getProjectRequest()
-    setgetData(result?.data)
+  useEffect(() => {
+    async function resRepo() {
+      const result = await getProjectRequest()
+      setrepoData(result?.data)
+    }
+    resRepo()
   }, [])
 
   return (
     <Layout>
-      <Box
-        as="h1"
-        color="back"
-        textShadow="2px 2px #bbb"
-        m="6"
-        height="670px"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        fontSize={{ base: "26px", lg: "48px" }}
-        margin="1rem"
-        marginTop="0"
-        width={{ base: "345px", lg: "895px" }}
-      >
-        Welcome to KKshen repo
-      </Box>
-      <Box display="flex" alignItems="center" justifyContent="center">
-        <TriangleDownIcon />
-      </Box>
       <Box>
-        {getData.map(
+        {repoData.map(
           (
             { name, description, html_url, updated_at, owner: { login } },
             n
@@ -113,9 +109,6 @@ const RepoPage = () => {
           )
         )}
       </Box>
-      <Link to="/repo">
-        <Box textAlign="center">Go Top</Box>
-      </Link>
     </Layout>
   )
 }

@@ -51,7 +51,7 @@ const Header = ({ siteTitle }) => {
               </Box>
             ))}
           </Box>
-          <Menu>
+          <Menu closeOnSelect={false}>
             <MenuButton
               display={{ base: "block", lg: "none" }}
               margin="1rem"
@@ -62,6 +62,7 @@ const Header = ({ siteTitle }) => {
               icon={<HamburgerIcon />}
               size={LARGE}
               variant="outline"
+              background="black"
               _hover={{
                 background: "white",
                 color: "black",

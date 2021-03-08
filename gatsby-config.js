@@ -1,5 +1,4 @@
 const siteMetadata = require(`./user-config`)
-console.log(siteMetadata);
 const capitalize = require(`remark-capitalize`)
 const emoji = require(`remark-emoji`)
 

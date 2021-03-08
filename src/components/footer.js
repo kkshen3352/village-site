@@ -1,12 +1,12 @@
 import React from "react"
-import { Box, Flex } from "@chakra-ui/react"
+import { Box, Flex, Link } from "@chakra-ui/react"
 import { ColorEnums } from "../lib/style-utils"
 import { GitHubicon } from "../icon/githubicon"
 import { Instagramicon } from "../icon/Instagramicon"
 
 const { BLACK, WHITE } = ColorEnums
 
-const Footer = ({ githubicon, instagramicon }) => {
+const Footer = ({ username }) => {
   return (
     <Flex
       background={BLACK}
@@ -19,14 +19,14 @@ const Footer = ({ githubicon, instagramicon }) => {
       <footer>
         <Flex alignItems="center" justifyContent="center" margin="5px">
           <Box>
-            <a href={githubicon}>
+            <Link href={`https://github.com/${username}`}>
               <GitHubicon />
-            </a>
+            </Link>
           </Box>
           <Box marginLeft="15px">
-            <a href={instagramicon}>
+            <Link href={`https://www.instagram.com/${username}`}>
               <Instagramicon />
-            </a>
+            </Link>
           </Box>
         </Flex>
         <Box>
