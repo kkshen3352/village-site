@@ -3,6 +3,7 @@ const capitalize = require(`remark-capitalize`)
 const emoji = require(`remark-emoji`)
 
 module.exports = {
+  pathPrefix: "/village-site",
   siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,
