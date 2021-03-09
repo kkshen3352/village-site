@@ -1,8 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Box } from "@chakra-ui/react"
+import { Box, IconButton, Flex } from "@chakra-ui/react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { EmailIcon, PhoneIcon } from "@chakra-ui/icons"
 
 const SecondPage = ({ data }) => {
   const {
@@ -14,8 +15,12 @@ const SecondPage = ({ data }) => {
   return (
     <Layout>
       <SEO title={title} />
-      <Box as="h1" fontSize="28px">About Me</Box>
-      <Box as="h3" fontSize="18px">Author: {username}</Box>
+      <Box as="h1" fontSize="28px">
+        About Me
+      </Box>
+      <Box as="h3" fontSize="18px">
+        Author: {username}
+      </Box>
       <br />
       <Box as="p">
         我是廖育聖，2020年四月開始學習JavaScript，HTML、CSS，接著九月中旬報名資策會前端工程師班，並且學習es6、jquery、php7/mysql、react框架...等。
@@ -32,6 +37,33 @@ const SecondPage = ({ data }) => {
         做為另一個目標！有許多的知識能夠從網路上搜尋並且學習知識！且資訊爆炸的年代，若有影像以及網頁的牽絆，我能夠與他人分享更多資訊並開發自己的網站，讓更多人可以看見這個視界，我以這個方向為目標！
       </Box>
       <br />
+      <Box as="h3">聯絡方式:</Box>
+      <Flex margin="1">
+        <IconButton
+          variant="outline"
+          colorScheme="teal"
+          aria-label="Call Sage"
+          fontSize="20px"
+          icon={<EmailIcon />}
+          marginRight="10px"
+        />
+        <Box as="p" marginTop="5px">
+          h73423352@gmail.com
+        </Box>
+      </Flex>
+      <Flex margin="1">
+        <IconButton
+          variant="outline"
+          colorScheme="teal"
+          aria-label="Call Sage"
+          fontSize="20px"
+          icon={<PhoneIcon />}
+          marginRight="10px"
+        />
+        <Box as="p" marginTop="5px">
+          0972938185
+        </Box>
+      </Flex>
     </Layout>
   )
 }

@@ -8,6 +8,7 @@ function IndexPage() {
     <Layout m="5">
       <SEO title="Home" />
       <h1>Hello World</h1>
+      <h3>首頁建置中~</h3>
     </Layout>
   )
 }
