@@ -19,12 +19,12 @@ const Footer = ({ username }) => {
       <footer>
         <Flex alignItems="center" justifyContent="center" margin="5px">
           <Box>
-            <Link href={`https://github.com/${username}`}>
+            <Link href={`https://github.com/${username}`} isExternal>
               <GitHubicon />
             </Link>
           </Box>
           <Box marginLeft="15px">
-            <Link href={`https://www.instagram.com/${username}`}>
+            <Link href={`https://www.instagram.com/${username}`} isExternal>
               <Instagramicon />
             </Link>
           </Box>
