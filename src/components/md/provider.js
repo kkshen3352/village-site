@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { Link as GatsbyLink } from "gatsby"
-import { Box, List, ListItem, Link, Image, Code } from "@chakra-ui/core"
-import { jsx, css } from "@emotion/core"
+import { Box, List, ListItem, Link, Image, Code } from "@chakra-ui/react"
+import { jsx, css } from "@emotion/react"
 import CustomHeading from "./custom-heading"
 import CodeBlock from "./code-block"
 
@@ -35,7 +35,7 @@ const components = {
   pre: props => (
     <Box as="pre" mb="1.45rem" backgroundColor="gray.100" {...props} />
   ),
-  code: props => <CodeBlock variantColor="gray.100" {...props} />,
+  code: props => <CodeBlock colorScheme="gray.100" {...props} />,
 
   table: props => <Box as="table" {...props} />,
   thead: props => <Box as="thead" {...props} />,
@@ -63,7 +63,14 @@ const components = {
 }
 
 export const Provider = ({ children }) => (
-  <Box as="main" p={{ base: 8, lg: 16 }}>
+  <Box
+    margin="0 auto"
+    maxWidth="960px"
+    padding="1.45rem 1.0875rem 1.45rem"
+    flexDirection="column"
+    minHeight={{base: "75.7vh",lg: "76.3vh"}}
+    p={{ base: 8, lg: 16 }}
+  >
     <MDXProvider components={components}>{children}</MDXProvider>
   </Box>
 )

@@ -1,19 +1,21 @@
 import { dot } from "./vec3"
-import hitable from "./hitable"
+import Hitable from "./hitable"
 
 function recordHit(sphere, ray, t, record) {
-  const { center, radius } = sphere
+  const { center, radius, material } = sphere
   const p = ray.pointAtParameter(t)
   record.t = t
   record.p = p
   record.normal = p.subtractVector(center).divideScaler(radius)
+  record.material = material
 }
 
-class sphere extends hitable {
-  constructor(c, r) {
+class Sphere extends Hitable {
+  constructor(c, r, material) {
     super()
     this.center = c
     this.radius = r
+    this.material = material
   }
   hit(ray, tMin, tMax, hitRecord) {
     const oc = ray.origin().subtractVector(this.center)
@@ -37,6 +39,6 @@ class sphere extends hitable {
   }
 }
 
-export default function(center, radius) {
-  return new sphere(center, radius)
+export default function(center, radius, material) {
+  return new Sphere(center, radius, material)
 }

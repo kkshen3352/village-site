@@ -1,90 +1,91 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { Box, Heading, Flex, Text, Button } from "@chakra-ui/core"
+import { Box, Flex, Heading } from "@chakra-ui/react"
+import { HamburgerIcon } from "@chakra-ui/icons"
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  IconButton,
+} from "@chakra-ui/react"
+import { SizeEnums, ColorEnums } from "../lib/style-utils"
 
-const MenuItems = ({ children }) => (
-  <Text mt={{ base: 4, lg: 0 }} mr={6} display="block">
-    {children}
-  </Text>
-)
+const links = [
+  { name: "Blog", path: "/blog" },
+  { name: "Demo", path: "/demo" },
+  { name: "Repo", path: "/repo" },
+  { name: "About", path: "/about" },
+]
 
-const Header = ({ siteTitle, ...props }) => {
-  const [show, setShow] = React.useState(false)
-  const handleToggle = () => setShow(!show)
+const { LARGE, EXTRALARGE } = SizeEnums
+const { BLACK, WHITE } = ColorEnums
 
+const Header = ({ siteTitle }) => {
   return (
     <header>
       <Box
         as="nav"
-        display={{ base: "block", lg: "flex" }}
-        align={{ lg: "center" }}
-        justify={{ lg: "space-between" }}
+        display="flex"
+        alignContent={{ lg: "center" }}
+        justifyContent={{ lg: "space-between" }}
         wrap="wrap"
-        padding="1.5rem"
-        bg="teal.500"
-        color="white"
-        {...props}
+        height="100px"
+        padding="1rem"
+        background={BLACK}
+        color={WHITE}
       >
-        <Flex align="center" mr={5}>
-          <Box
-            style={{
-              margin: `0 auto`,
-              maxWidth: 960,
-              padding: `1.45rem 1.0875rem`,
-            }}
-          >
-            <Heading as="h1" size="2xl">
-              <Link
-                to="/"
-                style={{
-                  color: `white`,
-                  textDecoration: `none`,
-                }}
-              >
+        <Flex alignItems="center" width="960px" margin="0 auto">
+          <Heading as="h4" size={EXTRALARGE} marginLeft="1rem">
+            <Box margin="1rem">
+              <Link to="/" width={{ base: "240px", ms: "300px", lg: "390px" }}>
                 {siteTitle}
               </Link>
-            </Heading>
+            </Box>
+          </Heading>
+          <Box display={{ base: "none", lg: "flex" }} marginTop="5px">
+            {links.map(({ path, name }, i) => (
+              <Box key={`key-${i}`} marginLeft="2rem">
+                <Link to={path}>{name}</Link>
+              </Box>
+            ))}
           </Box>
-
-          <Box flex={{ base: 1 }} width={{ base: "full" }} />
-
-          <Box
-            display={{ base: "flex", lg: "none" }}
-            onClick={handleToggle}
-          >
-            <svg
-              fill="white"
-              width="36px"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </Box>
+          <Menu closeOnSelect={false}>
+            <MenuButton
+              display={{ base: "block", lg: "none" }}
+              margin="1rem"
+              position="absolute"
+              right="5"
+              as={IconButton}
+              aria-label="Menu"
+              icon={<HamburgerIcon />}
+              size={LARGE}
+              variant="outline"
+              background="black"
+              _hover={{
+                background: "white",
+                color: "black",
+              }}
+              _active={{ background: "white", color: "black" }}
+            />
+            <MenuList color="black">
+              {links.map(({ path, name }, i) => (
+                <Link key={`key-${i}`} to={path}>
+                  <MenuItem
+                    justifyContent="center"
+                    _hover={{
+                      background: "black",
+                      color: "white",
+                    }}
+                  >
+                    {name}
+                  </MenuItem>
+                </Link>
+              ))}
+            </MenuList>
+          </Menu>
         </Flex>
-
-        <Box
-          display={{ base: show ? "block" : "none", lg: "flex" }}
-          width={{ md: "full", lg: "auto" }}
-          alignItems={{ lg: "center" }}
-          flexGrow={1}
-        >
-          <MenuItems>Docs</MenuItems>
-          <MenuItems>Examples</MenuItems>
-          <MenuItems>Blog</MenuItems>
-        </Box>
-
-        <Box
-          display={{ base: show ? "block" : "none", lg: "flex" }}
-          mt={{ base: 4, lg: 0 }}
-          alignItems={{ lg: "center" }}
-        >
-          <Button bg="transparent" border="1px">
-            Button
-          </Button>
-        </Box>
       </Box>
     </header>
   )

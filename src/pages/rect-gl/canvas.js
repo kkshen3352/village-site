@@ -1,7 +1,7 @@
 import { mat4 } from "gl-matrix"
 import React from "react"
 import PureCanvas from "./pure-canvas"
-import { vsSource, fsSource, initShaderProgram } from "./shader"
+import { vsSource, fsSource, initShaderProgram } from "../../lib/rect-gl/shader"
 
 class Canvas extends React.Component {
   constructor(props) {
