@@ -32,7 +32,8 @@ function IndexPage({ data }) {
             {pathPrefix.slice(1, 12)}.
           </Box>
         </Box>
-        <svg
+        <Box
+          as="svg"
           width="888"
           height="809"
           viewBox="0 0 888 809"
@@ -103,7 +104,7 @@ function IndexPage({ data }) {
             ry="8"
             fill="#BCE939"
           ></ellipse>
-        </svg>
+        </Box>
       </Flex>
       <Flex
         maxWidth={{ base: "560px", lg: "960px" }}
