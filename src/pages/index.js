@@ -32,8 +32,7 @@ function IndexPage({ data }) {
             {pathPrefix.slice(1, 12)}.
           </Box>
         </Box>
-        <Box
-          as="svg"
+        <svg
           width="888"
           height="809"
           viewBox="0 0 888 809"
@@ -41,7 +40,7 @@ function IndexPage({ data }) {
           xmlns="http://www.w3.org/2000/svg"
           class="css-jkl1fc"
         >
-          <Box
+          <circle
             as="circle"
             cx="441"
             cy="413"
@@ -49,7 +48,7 @@ function IndexPage({ data }) {
             transform="rotate(-180 441 413)"
             stroke="#F5F5F5"
             stroke-width="1.5"
-          ></Box>
+          />
           <path
             d="M105.75 413C105.75 227.846 255.846 77.75 441 77.75C626.153 77.75 776.25 227.846 776.25 413C776.25 598.153 626.153 748.25 441 748.25C255.846 748.25 105.75 598.153 105.75 413Z"
             stroke="#F0F0F2"
@@ -104,7 +103,7 @@ function IndexPage({ data }) {
             ry="8"
             fill="#BCE939"
           ></ellipse>
-        </Box>
+        </svg>
       </Flex>
       <Flex
         maxWidth={{ base: "560px", lg: "960px" }}
