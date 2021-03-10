@@ -2,7 +2,8 @@ import React from "react"
 import { Icon } from "@chakra-ui/react"
 
 export const Reacticon = props => (
-  <Icon objectFit="cover" {...props}>
+  <Icon objectFit="cover"
+   {...props}>
     <path
       color="#61dafb"
       fill="currentColor"
