@@ -38,8 +38,8 @@ function IndexPage({ data }) {
           height="809"
           viewBox="0 0 888 809"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="css-jkl1fc"
+          // xmlns="http://www.w3.org/2000/svg"
+          color="white"
         >
           <circle
             as="circle"
