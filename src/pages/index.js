@@ -6,7 +6,8 @@ import { graphql } from "gatsby"
 import { Reacticon } from "../icon/reacticon"
 import { Gatsbyicon } from "../icon/gatsbyicon"
 import { Chakraicon } from "../icon/chakrsicon"
-import { Grqphqlicon } from "../icon/grqphqlicon"
+import { Graphqlicon } from "../icon/graphqlicon"
+import { Emotionicon } from "../icon/emotionicon"
 
 function IndexPage({ data }) {
   const {
@@ -135,32 +136,18 @@ function IndexPage({ data }) {
               Chakra
             </Box>
           </Flex>
-          {/* <Box
-            as="img"
-            src="https://www.vectorlogo.zone/logos/graphql/graphql-ar21.svg"
-            alt="GrqphQl"
-            objectFit="cover"
-            width="120px"
-            height="40px"
-            marginLeft="5px"
-          /> */}
-          <Box width="130px">
-            <Grqphqlicon />
-          </Box>
-          <Box display="flex" width="120px" height="40px">
-            <Box
-              as="img"
-              src="https://emotion.sh/static/a76dfa0d18a0536af9e917cdb8f873b9/58e7f/emotion.png"
-              alt="Emotion"
-              width="35xp"
-              height="35px"
-              objectFit="cover"
-              marginTop="-5px"
-            />
+          <Flex width="120px" height="40px">
+            <Graphqlicon />
+            <Box as="p" fontSize="23px" color="#e10098">
+              Graphql
+            </Box>
+          </Flex>
+          <Flex width="120px" height="40px">
+            <Emotionicon />
             <Box as="p" fontSize="23px" color="#D36AC2">
               Emotion
             </Box>
-          </Box>
+          </Flex>
         </Flex>
       </Flex>
     </Layout>
