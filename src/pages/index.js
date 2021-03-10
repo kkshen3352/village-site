@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Box, Flex } from "@chakra-ui/react"
 import { graphql } from "gatsby"
+import { Reacticon } from "../icon/reacticon"
 
 function IndexPage({ data }) {
   const {
@@ -104,6 +105,74 @@ function IndexPage({ data }) {
             fill="#BCE939"
           ></ellipse>
         </Box>
+      </Flex>
+      <Flex
+        maxWidth={{ base: "560px", lg: "960px" }}
+        alignItems="center"
+        justifyContent="center"
+        margin="0 auto"
+      >
+        <Flex
+          paddingTop="1rem"
+          marginTop="1rem"
+          display={{ base: "display", lg: "flex" }}
+          alignItems="center"
+          justifyContent="center"
+          margin="0 auto"
+        >
+          <Flex width="120px" height="40px">
+            <Reacticon width="10" height="10" />
+            <Box as="p" fontSize="23px" marginLeft="5px">
+              React
+            </Box>
+          </Flex>
+          <Flex width="120px" height="40px">
+            <Box
+              as="img"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfMpoO1zZjWZUxgcOndP_ksCe5weBpXf51VA&usqp=CAU"
+              alt="Gatsby"
+              width="30px"
+              height="30px"
+              objectFit="cover"
+            />
+            <Box as="p" fontSize="23px" marginLeft="5px" marginRight="5px">
+              Gatsby
+            </Box>
+          </Flex>
+          <Box
+            as="img"
+            src="https://raw.githubusercontent.com/chakra-ui/chakra-ui/main/logo/logo-colored@2x.png?raw=true"
+            alt="chakra"
+            objectFit="center"
+            marginRight="5px"
+            maxWidth="100%"
+            width="120px"
+            height="40px"
+          />
+          <Box
+            as="img"
+            src="https://www.vectorlogo.zone/logos/graphql/graphql-ar21.svg"
+            alt="GrqphQl"
+            objectFit="cover"
+            width="120px"
+            height="40px"
+            marginLeft="5px"
+          />
+          <Flex width="120px" height="40px">
+            <Box
+              as="img"
+              src="https://emotion.sh/static/a76dfa0d18a0536af9e917cdb8f873b9/58e7f/emotion.png"
+              alt="Emotion"
+              width="35xp"
+              height="35px"
+              objectFit="cover"
+              marginTop="-5px"
+            />
+            <Box as="p" fontSize="23px" color="#D36AC2">
+              Emotion
+            </Box>
+          </Flex>
+        </Flex>
       </Flex>
     </Layout>
   )
