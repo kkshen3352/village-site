@@ -1,0 +1,49 @@
+body,
+html,
+div {
+  padding: 0px;
+  margin: 0px;
+}
+
+.box {
+  width: 320px;
+  height: 490px;
+  background: #000;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.value {
+  width: 270px;
+  font-size: 36px;
+  background: #4e4d4d;
+  color: yellow;
+  margin: 20px 5px;
+  border: none;
+}
+
+.boxdiv {
+  width: 60px;
+  height: 60px;
+  background: #606060;
+  color: white;
+  float: left;
+  margin: 5px;
+  border-radius: 50%;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 28px;
+  font-family: Arial;
+}
+
+.box div:auto {
+  height: 130px;
+  line-height: 130px;
+  border-radius: 60px;
+}
+
+.box div:nth-of-type() {
+  margin-right: 0px;
+}

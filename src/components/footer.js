@@ -14,6 +14,7 @@ const Footer = ({ username }) => {
       justifyContent="center"
       margin="0 auto"
       color={WHITE}
+      width="100%"
       height="100px"
     >
       <footer>
