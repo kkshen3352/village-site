@@ -9,7 +9,6 @@ import Calculator from "../components/calculator"
 const SecondPage = () => {
   return (
     <Layout>
-      {/* <Counter /> */}
       <Box as="h3">
         計算機(React-class-Calculator)
         <Calculator />
