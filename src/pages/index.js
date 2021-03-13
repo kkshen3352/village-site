@@ -41,38 +41,38 @@ function IndexPage({ data }) {
       </Flex>
       <Flex>
         <Flex
-          paddingTop="1rem"
-          marginTop="1rem"
+          paddingTop="-0"
+          marginTop="0"
           display={{ base: "display", lg: "flex" }}
           alignItems="center"
           justifyContent="center"
           margin="0 auto"
         >
-          <Flex width="120px" height="40px">
+          <Flex height="40px" margin="10px">
             <Reacticon width="10" height="10" />
-            <Box as="p" fontSize="23px" marginLeft="5px">
+            <Box as="p" fontSize="23px">
               React
             </Box>
           </Flex>
-          <Flex width="120px" height="40px">
+          <Flex height="40px" margin="10px">
             <Gatsbyicon width="100" height="10" />
-            <Box as="p" fontSize="23px" marginLeft="-105px">
+            <Box as="p" fontSize="23px">
               Gatsby
             </Box>
           </Flex>
-          <Flex width="120px" height="40px">
+          <Flex height="40px" margin="10px">
             <Chakraicon />
             <Box as="p" fontSize="23px">
               Chakra
             </Box>
           </Flex>
-          <Flex width="120px" height="40px">
+          <Flex height="40px" margin="10px">
             <Graphqlicon />
             <Box as="p" fontSize="23px" color="#e10098">
               Graphql
             </Box>
           </Flex>
-          <Flex width="120px" height="40px">
+          <Flex height="40px" margin="10px">
             <Emotionicon />
             <Box as="p" fontSize="23px" color="#D36AC2">
               Emotion

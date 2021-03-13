@@ -16,10 +16,15 @@ const SecondPage = ({ data }) => {
   return (
     <Layout>
       <SEO title={title} />
-      <Box as="h1" fontSize="28px" textAlign={{ base: "center", lg: "left" }}>
+      <Box
+        as="h1"
+        fontSize="28px"
+        marginLeft={{ lg: "33px" }}
+        textAlign={{ base: "center", lg: "left" }}
+      >
         About Me
       </Box>
-      <Flex alignItems="center" justifyContent="center" margin="1rem">
+      <Flex margin="1rem">
         <Box paddingRight="2rem">
           <Box
             as="img"
@@ -33,8 +38,8 @@ const SecondPage = ({ data }) => {
             {username}
           </Box>
         </Box>
-        <Flex flexDirection="column">
-          <Flex margin="1">
+        <Flex flexDirection="column" fontSize={{ base: "14px", lg: "20px" }}>
+          <Flex margin="1" marginTop={{ lg: "35px" }}>
             <IconButton
               variant="outline"
               colorScheme="teal"
@@ -63,22 +68,32 @@ const SecondPage = ({ data }) => {
         </Flex>
       </Flex>
       <br />
-      <Box as="h3" fontSize="28px">
-        自傳
-      </Box>
       <Box as="p">
-        我是廖育聖，2020年四月開始學習JavaScript，HTML、CSS，接著九月中旬報名資策會前端工程師班，並且學習es6、jquery、php7/mysql、react框架...等。
+        嗨 !
+        我是廖育聖，2020年四月開始學習JavaScript，HTML、CSS，接著九月中旬報名資策會前端工程師班，並且學習程式語言，如JavaScript
+        /
+        es6、jquery、php7/mysql、react框架...等程式語言與技術，到現階段有了這個個人網站。
         <br />
         <br />
-        我在資策會實作php小專案中和履歷react框架專案，實際團隊合作協作的經驗與他人溝通的能力，同時有專業的講師的指導，明白了該怎麼做，流程的覽圖，並持續精進自我能力。
+        我在資策會中實作『php小專案』(CRUD)和『旅歷』專案(React.js)，實際的團隊合作協作的經驗與他人溝通的能力，同時有專業的講師的指導，明白了該怎麼做，流程的覽圖，並持續精進自我能力。
         <br />
         <br />
-        我的興趣是攝影，自朋友推坑入手單眼相機後，便開始自主學習和google及數位世代學習攝影，而我選擇風景為主，從p模式到m手動模式，一步一步。
-        另外我有經營自己的ig，圖片作品1000+，每日發圖，就像每天coding，健康又美麗。
+        近期的目標與學習： <br />
+        1.實作React-Redux 計算機。
+        <br />
+        2.持續更新個人網站。
+        <br />
+        3.接觸不同的框架，例：vue.js。
+        <br />
+        4.Discord前端社群(分享前後端知識)。
+        <br />
+        5.實作更多的程式並Demo到個人網站上。
         <br />
         <br />
-        我想，攝影和網頁之間也能有什麼故事？從而親人的推坑之下，決定學習JavaScript
-        做為另一個目標！有許多的知識能夠從網路上搜尋並且學習知識！且資訊爆炸的年代，若有影像以及網頁的牽絆，我能夠與他人分享更多資訊並開發自己的網站，讓更多人可以看見這個視界，我以這個方向為目標！
+        我的興趣是攝影，自朋友推坑入手單眼相機後，便開始自主學習及網路社群文章分享，展開數位世代學習攝影，而我選擇風景為主，從p模式到m手動模式，一步一步著手；另外我有經營自己的ig，圖片作品1000+，每日發圖，就像每天coding，健康又美麗。
+        <br />
+        <br />
+        我想，攝影和網頁之間也能有什麼故事？從而親人的推坑之下，決定學習JavaScript做為另一個目標！有許多的知識能夠從網路社群上搜尋並且學習知識！且資訊爆炸的年代，若有影像以及網頁的牽絆，我能夠與他人分享更多資訊並持續開發個人的網站，讓更多人可以看見這個視界，我以這個方向為目標！
       </Box>
     </Layout>
   )

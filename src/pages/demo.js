@@ -4,11 +4,19 @@ import { Box } from "@chakra-ui/react"
 import Layout from "../components/layout"
 import Calculator from "../components/calculator"
 // import ReduxCalculator from "../components/redux-calculator"
-// import Counter from "../components/test"
+
+// import TodoApp from "../components/test"
+// import { Provider } from "react-redux"
+// import { createStore } from "redux"
+
+// let store = createStore(TodoApp)
 
 const SecondPage = () => {
   return (
     <Layout>
+      {/* <Provider store={store}>
+        <TodoApp />
+      </Provider> */}
       <Box as="h3">
         計算機(React-class-Calculator)
         <Calculator />

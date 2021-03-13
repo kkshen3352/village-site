@@ -13,7 +13,7 @@ import {
 import { SizeEnums, ColorEnums } from "../lib/style-utils"
 
 const links = [
-  { name: "Blog", path: "/blog" },
+  // { name: "Blog", path: "/blog" },
   { name: "Demo", path: "/demo" },
   { name: "Repo", path: "/repo" },
   { name: "About", path: "/about" },

@@ -2,12 +2,7 @@ import React from "react"
 import { Icon } from "@chakra-ui/react"
 
 export const Gatsbyicon = props => (
-  <Icon
-    objectFit="cover"
-    // height="120"
-    viewBox="0 0 106 28"
-    {...props}
-  >
+  <Icon objectFit="cover" viewBox="0 0 28 28" {...props}>
     <path
       color="#663399"
       fill="currentColor"
