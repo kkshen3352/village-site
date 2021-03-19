@@ -7,12 +7,10 @@ class Calculator extends Component {
   }
 
   render() {
-    const { value, btns, addElem, clear, equal, back } = this.props
+    const { input, btns, addElem, clear, equal, back } = this.props
     return (
       <div className="box">
-        <div>
-          <input type="text" value={value} className="value" />
-        </div>
+        <div className="valueInput">{input}</div>
         <div>
           {btns.map((item, key) => {
             if (item === "C") {
@@ -24,9 +22,9 @@ class Calculator extends Component {
             } else if (item === "=") {
               return (
                 <button
-                  onClick={equal.bind(this, value)}
+                  onClick={equal.bind(this, input)}
                   key={key}
-                  className="boxdiv2"
+                  className="boxdiv"
                 >
                   {item}
                 </button>
@@ -34,7 +32,7 @@ class Calculator extends Component {
             } else if (item === "b") {
               return (
                 <button
-                  onClick={back.bind(this, value)}
+                  onClick={back.bind(this, input)}
                   key={key}
                   className="boxdiv"
                 >

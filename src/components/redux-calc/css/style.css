@@ -14,7 +14,7 @@ div {
   border-radius: 20px;
 }
 
-.value {
+.valueInput {
   width: 270px;
   font-size: 36px;
   background: #4e4d4d;
@@ -55,8 +55,12 @@ div {
   font-family: Arial;
 }
 
-/* .box div:auto {
+.box div:auto {
   height: 130px;
   line-height: 130px;
   border-radius: 60px;
-} */
+}
+
+.box div:nth-of-type() {
+  margin-right: 0px;
+}

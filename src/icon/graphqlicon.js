@@ -1,7 +1,7 @@
 import React from "react"
 import { Image } from "@chakra-ui/react"
 
-export const Graphqlicon = props => (
+export const Graphqlicon = () => (
   <Image
     boxSize="40px"
     color="#e10098"

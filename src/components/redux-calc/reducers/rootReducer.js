@@ -4,7 +4,7 @@ import { EQUAL } from "../actions/actionsType"
 import { BACK } from "../actions/actionsType"
 
 const calcState = {
-  value: 0,
+  input: 0,
   btns: [
     "7",
     "8",
@@ -29,28 +29,28 @@ const calcState = {
 }
 
 export default function(state = calcState, action) {
-  // console.log('state',state.value);
+  // console.log('state',state.input);
   // console.log('action.type',action.type);
   switch (action.type) {
     case ADD_ELEM:
       return {
         ...state,
-        value: state.value === 0 ? action.text : state.value + action.text,
+        input: state.input === 0 ? action.text : state.input + action.text,
       }
     case CLEAR:
       return {
         ...state,
-        value: 0,
+        input: 0,
       }
     case EQUAL:
       return {
         ...state,
-        value: eval(action.value),
+        input: eval(action.input),
       }
     case BACK:
       return {
         ...state,
-        value: state.value.substring(0, state.value.length - 1),
+        input: state.input.substring(0, state.input.length - 1),
       }
     default:
       return state

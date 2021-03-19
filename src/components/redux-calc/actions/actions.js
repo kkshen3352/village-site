@@ -5,7 +5,7 @@ import { BACK } from "./actionsType"
 
 export const mapStateToProps = state => {
   return {
-    value: state.value,
+    input: state.input,
     btns: state.btns,
   }
 }
@@ -22,10 +22,10 @@ export const mapDispatchToProps = dispatch => {
         type: CLEAR,
       })
     },
-    equal: value => {
+    equal: input => {
       dispatch({
         type: EQUAL,
-        value,
+        input,
       })
     },
     back: text => {
