@@ -40,6 +40,21 @@ div {
   font-family: Arial;
 }
 
+.boxdiv2 {
+  width: 120px;
+  height: 60px;
+  background: #606060;
+  color: white;
+  float: left;
+  margin: 5px;
+  border-radius: 35px;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 28px;
+  font-family: Arial;
+}
+
 /* .box div:auto {
   height: 130px;
   line-height: 130px;

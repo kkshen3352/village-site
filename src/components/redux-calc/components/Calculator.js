@@ -7,7 +7,7 @@ class Calculator extends Component {
   }
 
   render() {
-    const { value, btns, addElem, clear, equal } = this.props
+    const { value, btns, addElem, clear, equal, back } = this.props
     return (
       <div className="box">
         <div>
@@ -25,6 +25,16 @@ class Calculator extends Component {
               return (
                 <button
                   onClick={equal.bind(this, value)}
+                  key={key}
+                  className="boxdiv2"
+                >
+                  {item}
+                </button>
+              )
+            } else if (item === "b") {
+              return (
+                <button
+                  onClick={back.bind(this, value)}
                   key={key}
                   className="boxdiv"
                 >

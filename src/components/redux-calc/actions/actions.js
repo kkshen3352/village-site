@@ -1,6 +1,7 @@
 import { ADD_ELEM } from "./actionsType"
 import { CLEAR } from "./actionsType"
 import { EQUAL } from "./actionsType"
+import { BACK } from "./actionsType"
 
 export const mapStateToProps = state => {
   return {
@@ -25,6 +26,12 @@ export const mapDispatchToProps = dispatch => {
       dispatch({
         type: EQUAL,
         value,
+      })
+    },
+    back: text => {
+      dispatch({
+        type: BACK,
+        text,
       })
     },
   }
