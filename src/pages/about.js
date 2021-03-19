@@ -9,7 +9,10 @@ import Kshenimg from "../images/S__16711685.jpg"
 const SecondPage = ({ data }) => {
   const {
     site: {
-      siteMetadata: { title, description, author, username },
+      siteMetadata: { title, 
+        // description, 
+        // author, 
+        username },
     },
   } = data
 

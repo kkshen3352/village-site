@@ -2,24 +2,29 @@ import React from "react"
 // import { Link } from "gatsby"
 import { Box } from "@chakra-ui/react"
 import Layout from "../components/layout"
-import Calculator from "../components/calculator"
-// import ReduxCalculator from "../components/redux-calculator"
-
-// import TodoApp from "../components/test"
-// import { Provider } from "react-redux"
+// import Calculator from "../components/calculator"
+//
+// import Counter from "../components/counter"
 // import { createStore } from "redux"
-
-// let store = createStore(TodoApp)
+// import counterReducer from "../components/counter/reducers"
+// const store2 = createStore(counterReducer)
+//
+import App from "../components/redux-calc/index"
 
 const SecondPage = () => {
   return (
     <Layout>
-      {/* <Provider store={store}>
-        <TodoApp />
-      </Provider> */}
-      <Box as="h3">
-        計算機(React-class-Calculator)
-        <Calculator />
+      {/* <Box as="h1" fontSize="32px">
+        Redux Counter
+      </Box>
+      <Counter
+        value={store2.getState()}
+        onIncrement={() => store2.dispatch({ type: "INCREMENT" })}
+        onDecrement={() => store2.dispatch({ type: "DECREMENT" })}
+      /> */}
+      <Box as="h1" fontSize="32px">
+        Redux Calculator
+        <App />
       </Box>
       {/* <Box as="h3">
         計算機(Redux-React-hooks-Calculator)

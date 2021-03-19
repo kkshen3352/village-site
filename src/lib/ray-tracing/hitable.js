@@ -7,8 +7,8 @@ const hitRecord = {
 };
 */
 class Hitable {
-  constructor() {}
-  hit(ray, tMin, tMax, hitRecord) {}
+  // constructor() {}
+  // hit(ray, tMin, tMax, hitRecord) {}
 }
 
 export default Hitable

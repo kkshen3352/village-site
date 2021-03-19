@@ -37,7 +37,7 @@ const RepoPage = () => {
       setrepoData(result?.data)
     }
     resRepo()
-  }, [])
+  },)
 
   return (
     <Layout>
