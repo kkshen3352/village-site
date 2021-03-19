@@ -31,9 +31,16 @@ const calcState = {
 export default function(state = calcState, action) {
   switch (action.type) {
     case ADD_ELEM:
-      return {
-        ...state,
-        input: state.input === 0 ? action.text : state.input + action.text,
+      if (state.input.length === 13) {
+        return {
+          ...state,
+          input: 0,
+        }
+      } else {
+        return {
+          ...state,
+          input: state.input === 0 ? action.text : state.input + action.text,
+        }
       }
 
     case CLEAR:
