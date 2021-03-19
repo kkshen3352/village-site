@@ -24,7 +24,7 @@ class Calculator extends Component {
                 <button
                   onClick={equal.bind(this, input)}
                   key={key}
-                  className="boxdiv"
+                  className="boxdiv2"
                 >
                   {item}
                 </button>

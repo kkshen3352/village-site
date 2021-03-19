@@ -29,14 +29,13 @@ const calcState = {
 }
 
 export default function(state = calcState, action) {
-  // console.log('state',state.input);
-  // console.log('action.type',action.type);
   switch (action.type) {
     case ADD_ELEM:
       return {
         ...state,
         input: state.input === 0 ? action.text : state.input + action.text,
       }
+
     case CLEAR:
       return {
         ...state,
@@ -48,10 +47,18 @@ export default function(state = calcState, action) {
         input: eval(action.input),
       }
     case BACK:
-      return {
-        ...state,
-        input: state.input.substring(0, state.input.length - 1),
+      if (state.input.length > 1) {
+        return {
+          ...state,
+          input: state.input.substring(0, state.input.length - 1),
+        }
+      } else {
+        return {
+          ...state,
+          input: 0,
+        }
       }
+
     default:
       return state
   }
