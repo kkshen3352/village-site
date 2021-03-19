@@ -1,3 +1,4 @@
+import { round } from "mathjs"
 import { ADD_ELEM } from "../actions/actionsType"
 import { CLEAR } from "../actions/actionsType"
 import { EQUAL } from "../actions/actionsType"
@@ -55,9 +56,10 @@ export default function(state = calcState, action) {
         input: 0,
       }
     case EQUAL:
+      const maths = eval(action.input)
       return {
         ...state,
-        input: eval(action.input),
+        input: round(maths,4),
       }
     case BACK:
       if (state.input.length > 1) {
