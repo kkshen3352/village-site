@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+// import History from "./history"
 import "../css/style.css"
 
 class Calculator extends Component {
@@ -7,10 +8,24 @@ class Calculator extends Component {
   }
 
   render() {
-    const { input, btns, addElem, clear, equal, back } = this.props
+    const {
+      input,
+      btns,
+      addElem,
+      clear,
+      equal,
+      back,
+      calc,
+      history,
+    } = this.props
+
     return (
       <div className="box">
-        <div className="valueInput">{input}</div>
+        <div className="flex valueInput">
+          <div className="history-text">{history}</div>
+          <div className="input-text">{input}</div>
+        </div>
+
         <div>
           {btns.map((item, key) => {
             if (item === "C") {
@@ -33,6 +48,16 @@ class Calculator extends Component {
               return (
                 <button
                   onClick={back.bind(this, input)}
+                  key={key}
+                  className="boxdiv"
+                >
+                  {item}
+                </button>
+              )
+            } else if (item === ".") {
+              return (
+                <button
+                  onClick={calc.bind(this, input)}
                   key={key}
                   className="boxdiv"
                 >

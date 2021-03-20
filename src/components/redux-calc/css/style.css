@@ -1,6 +1,6 @@
 .box {
   width: 320px;
-  height: 490px;
+  height: 515px;
   background-color: rgb(185, 185, 185);
   /* background: rgb(0, 174, 255); */
   margin: 20px;
@@ -63,3 +63,24 @@
 .box div:nth-of-type() {
   margin-right: 0px;
 } */
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  height: 84px;
+  max-height: 100%;
+  position: relative;
+}
+
+.history-text {
+  font-size: 18px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+.input-text {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  color: white;
+}

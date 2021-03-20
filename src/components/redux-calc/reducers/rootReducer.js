@@ -1,11 +1,13 @@
-import { round } from "mathjs"
+import { floor, round } from "mathjs"
 import { ADD_ELEM } from "../actions/actionsType"
 import { CLEAR } from "../actions/actionsType"
 import { EQUAL } from "../actions/actionsType"
 import { BACK } from "../actions/actionsType"
+import { CALC } from "../actions/actionsType"
 
 const calcState = {
   input: 0,
+  history: "",
   btns: [
     "7",
     "8",
@@ -30,26 +32,28 @@ const calcState = {
 }
 
 export default function(state = calcState, action) {
-  console.log("state", state.input)
+  console.log("state", state)
   switch (action.type) {
     case ADD_ELEM:
       if (state.input.length === 13) {
         return {
           ...state,
           input: 0,
+          history: 0,
         }
       } else if (state.input === 0) {
         return {
           ...state,
           input: state.input === 0 ? action.text - state.input : action.text,
+          history: state.input === 0 ? action.text - state.input : action.text,
         }
       } else {
         return {
           ...state,
           input: state.input === 0 ? action.text : state.input + action.text,
+          history: state.input === 0 ? action.text : state.input + action.text,
         }
       }
-
     case CLEAR:
       return {
         ...state,
@@ -59,7 +63,8 @@ export default function(state = calcState, action) {
       const maths = eval(action.input)
       return {
         ...state,
-        input: round(maths,4),
+        input: round(maths, 4),
+        history: state.input + "=",
       }
     case BACK:
       if (state.input.length > 1) {
@@ -73,7 +78,25 @@ export default function(state = calcState, action) {
           input: 0,
         }
       }
-
+    case CALC:
+      if (state.input.length > 0) {
+        return {
+          ...state,
+          input: action.text,
+        }
+      }
+      //  else if(action.text === ""){
+      //   return {
+      //     ...state,
+      //     input: state.input+"1",
+      //   }
+      // }
+      else {
+        return {
+          ...state,
+          input: state.input + ".",
+        }
+      }
     default:
       return state
   }
