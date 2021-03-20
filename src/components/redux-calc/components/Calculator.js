@@ -15,7 +15,7 @@ class Calculator extends Component {
       clear,
       equal,
       back,
-      calc,
+      // calc,
       history,
     } = this.props
 
@@ -54,17 +54,19 @@ class Calculator extends Component {
                   {item}
                 </button>
               )
-            } else if (item === ".") {
-              return (
-                <button
-                  onClick={calc.bind(this, input)}
-                  key={key}
-                  className="boxdiv"
-                >
-                  {item}
-                </button>
-              )
-            } else {
+            } 
+            // else if (item === ".") {
+            //   return (
+            //     <button
+            //       onClick={calc.bind(this, input)}
+            //       key={key}
+            //       className="boxdiv"
+            //     >
+            //       {item}
+            //     </button>
+            //   )
+            // } 
+            else {
               return (
                 <button
                   onClick={addElem.bind(this, item)}

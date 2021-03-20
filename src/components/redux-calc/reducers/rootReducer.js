@@ -1,4 +1,4 @@
-import { floor, round } from "mathjs"
+import { round } from "mathjs"
 import { ADD_ELEM } from "../actions/actionsType"
 import { CLEAR } from "../actions/actionsType"
 import { EQUAL } from "../actions/actionsType"
@@ -58,45 +58,56 @@ export default function(state = calcState, action) {
       return {
         ...state,
         input: 0,
+        history: "",
       }
     case EQUAL:
       const maths = eval(action.input)
-      return {
-        ...state,
-        input: round(maths, 4),
-        history: state.input + "=",
+      if (state.input.length < 1) {
+        return {
+          ...state,
+          history: state.input + "=",
+        }
+      } else {
+        return {
+          ...state,
+          input: round(maths, 4),
+        }
       }
     case BACK:
       if (state.input.length > 1) {
         return {
           ...state,
           input: state.input.substring(0, state.input.length - 1),
+          history: state.input.substring(0, state.input.length - 1),
         }
       } else {
         return {
           ...state,
           input: 0,
+          history: "",
         }
       }
-    case CALC:
-      if (state.input.length > 0) {
-        return {
-          ...state,
-          input: action.text,
-        }
-      }
-      //  else if(action.text === ""){
-      //   return {
-      //     ...state,
-      //     input: state.input+"1",
-      //   }
-      // }
-      else {
-        return {
-          ...state,
-          input: state.input + ".",
-        }
-      }
+    // case CALC:
+    //   if (state.input.length > 0) {
+    //     return {
+    //       ...state,
+    //       input: action.text,
+    //       history: action.text,
+    //     }
+    //   }
+    //  else if(action.text === ""){
+    //   return {
+    //     ...state,
+    //     input: state.input+"1",
+    //   }
+    // }
+    // else {
+    //   return {
+    //     ...state,
+    //     input: state.input + ".",
+    //     history: state.input + ".",
+    //   }
+    // }
     default:
       return state
   }
