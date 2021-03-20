@@ -32,7 +32,7 @@ const calcState = {
 }
 
 export default function(state = calcState, action) {
-  console.log("state", state)
+  const maths = eval(action.input)
   switch (action.type) {
     case ADD_ELEM:
       if (state.input.length === 13) {
@@ -44,7 +44,8 @@ export default function(state = calcState, action) {
       } else if (state.input === 0) {
         return {
           ...state,
-          input: state.input === 0 ? action.text - state.input : action.text,
+          input:
+            state.input === 0 ? action.text - state.input : round(maths, 4),
           history: state.input === 0 ? action.text - state.input : action.text,
         }
       } else {
@@ -61,7 +62,6 @@ export default function(state = calcState, action) {
         history: "",
       }
     case EQUAL:
-      const maths = eval(action.input)
       if (state.input.length < 1) {
         return {
           ...state,
