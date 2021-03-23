@@ -35,12 +35,6 @@ function SecondPageQuert({
   const { SMALL, LARGE, EXTRALARGE, XXL } = SizeEnums
   const { GRAY } = ColorEnums
 
-  // const renderPosts =() => {
-  //   return (
-
-  //   )
-  // }
-
   return (
     <Layout>
       <Flex display={{ base: "column", lg: "flex" }}>
