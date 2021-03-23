@@ -1,6 +1,6 @@
 import React from "react"
 // import { Link } from "gatsby"
-import { Box, Flex, Link } from "@chakra-ui/react"
+import { Link, Box, Flex } from "@chakra-ui/react"
 import Layout from "../components/layout"
 import { SizeEnums, ColorEnums } from "../lib/style-utils"
 import { TimeIcon } from "@chakra-ui/icons"
@@ -67,10 +67,7 @@ function SecondPageQuert({
               {main.map(({ text, ation }, i) => (
                 <Box key={i}>
                   <Flex margin="5px" paddingTop="5px">
-                    <Box
-                      fontWeight="semibold"
-                      marginRight="15px"
-                    >
+                    <Box fontWeight="semibold" marginRight="15px">
                       ● {text}
                     </Box>
                     <Box>{ation}</Box>
