@@ -54,10 +54,9 @@ const Header = ({ siteTitle }) => {
               </Box>
             ))}
           </Box>
-          <IconButton
+          <Box
             onClick={toggleColorMode}
             size="sm"
-            colorScheme="blue"
             position="absolute"
             size="lg"
             right={{ base: "6.5rem", lg: "2rem" }}
@@ -79,7 +78,7 @@ const Header = ({ siteTitle }) => {
                 Light
               </IconButton>
             )}
-          </IconButton>
+          </Box>
           <Menu closeOnSelect={false}>
             <MenuButton
               display={{ base: "block", lg: "none" }}
