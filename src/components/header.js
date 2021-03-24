@@ -1,15 +1,18 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { Box, Flex, Heading, Button, useColorMode } from "@chakra-ui/react"
-import { HamburgerIcon } from "@chakra-ui/icons"
 import {
+  Box,
+  Flex,
+  Heading,
+  useColorMode,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
   IconButton,
 } from "@chakra-ui/react"
+import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons"
 import { SizeEnums, ColorEnums } from "../lib/style-utils"
 
 const links = [
@@ -51,16 +54,32 @@ const Header = ({ siteTitle }) => {
               </Box>
             ))}
           </Box>
-          <Button
+          <IconButton
             onClick={toggleColorMode}
             size="sm"
             colorScheme="blue"
             position="absolute"
-            right="1rem"
-            display={{ base: "none", lg: "flex" }}
+            size="lg"
+            right={{ base: "6.5rem", lg: "2rem" }}
           >
-            Toggle {colorMode === "light" ? "Dark" : "Light"}
-          </Button>
+            {colorMode === "light" ? (
+              <IconButton
+                aria-label="Search database"
+                color="black"
+                icon={<SunIcon />}
+              >
+                Dark
+              </IconButton>
+            ) : (
+              <IconButton
+                aria-label="Search database"
+                color="white"
+                icon={<MoonIcon />}
+              >
+                Light
+              </IconButton>
+            )}
+          </IconButton>
           <Menu closeOnSelect={false}>
             <MenuButton
               display={{ base: "block", lg: "none" }}
@@ -82,7 +101,6 @@ const Header = ({ siteTitle }) => {
 
             <MenuList
               color="black"
-              height="180px"
               margin="0 auto"
               textAlign="center"
               alignItems="center"
@@ -101,15 +119,6 @@ const Header = ({ siteTitle }) => {
                   </MenuItem>
                 </Link>
               ))}
-              <Button
-                onClick={toggleColorMode}
-                size="sm"
-                background="none"
-                display={{ lg: "none" }}
-                marginTop="5px"
-              >
-                Toggle {colorMode === "light" ? "Dark" : "Light"}
-              </Button>
             </MenuList>
           </Menu>
         </Flex>

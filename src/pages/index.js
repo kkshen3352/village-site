@@ -25,7 +25,11 @@ function IndexPage({ data }) {
           justifyContent="center"
           margin="0 auto"
         >
-          <Box as="h1" fontSize={{ base: "21", lg: "48px" }}>
+          <Box
+            as="h1"
+            fontSize={{ base: "21px", lg: "48px" }}
+            textAlign="center"
+          >
             Hi people
           </Box>
           <Box
@@ -33,7 +37,7 @@ function IndexPage({ data }) {
             fontSize={{ base: "21px", lg: "48px" }}
             color="{##8a4baf}"
           >
-            Welcome to yoBoxur new {""}
+            Welcome to the new {""}
             {pathPrefix.slice(1, 12)}.
           </Box>
         </Box>

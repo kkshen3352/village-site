@@ -5,7 +5,7 @@ export const Indexbk = () => (
   <Box
     as="svg"
     width="888"
-    height="809"
+    height={{ base: "349px", lg: "809" }}
     viewBox="0 0 888 809"
     fill="none"
     color="white"

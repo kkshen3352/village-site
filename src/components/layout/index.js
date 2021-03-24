@@ -23,24 +23,24 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  
+
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Flex
-        margin="0 auto"
-        maxWidth="960px"
-        padding="1.45rem 1.0875rem 1.45rem"
-        flexDirection="column"
-        minHeight={{ base: "75.7vh", lg: "78.7vh" }}
-      >
-        <Box flexGrow="1">
-          <main>{children}</main>
-        </Box>
-      </Flex>
-      <Footer
-        username={data.site.siteMetadata.username}
-      />
+      <Box height="100%">
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <Flex
+          margin="0 auto"
+          maxWidth="960px"
+          padding="1.45rem 1.0875rem 1.45rem"
+          flexDirection="column"
+          minHeight="100%"
+        >
+          <Box paddingBottom="100px">
+            <main>{children}</main>
+          </Box>
+        </Flex>
+        <Footer username={data.site.siteMetadata.username} />
+      </Box>
     </>
   )
 }
