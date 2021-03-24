@@ -22,7 +22,7 @@ function SecondPageQuert({
       ation: (
         <Link
           href={`https://github.com/kkshen3352/kkshen-site/tree/develop/src/components/redux-calc`}
-          style={{ color: "blue" }}
+          style={{ color:"teal" }}
           isExternal
         >
           點我觀看程式碼

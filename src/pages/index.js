@@ -25,7 +25,11 @@ function IndexPage({ data }) {
           justifyContent="center"
           margin="0 auto"
         >
-          <Box as="h1" fontSize={{ base: "21", lg: "48px" }}>
+          <Box
+            as="h1"
+            fontSize={{ base: "21px", lg: "48px" }}
+            textAlign="center"
+          >
             Hi people
           </Box>
           <Box
