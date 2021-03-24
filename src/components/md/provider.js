@@ -66,12 +66,16 @@ const components = {
 
 export const Provider = ({ children }) => (
   <Box
-    margin="0 auto"
-    maxWidth="960px"
-    padding="1.45rem 1.0875rem 1.45rem"
-    flexDirection="column"
-    minHeight={{base: "75.7vh",lg: "76.3vh"}}
-    p={{ base: 8, lg: 16 }}
+    // margin="0 auto"
+    // maxWidth="960px"
+    // padding="1.45rem 1.0875rem 1.45rem"
+    // flexDirection="column"
+    // minHeight={{base: "75.7vh",lg: "76.3vh"}}
+    // minHeight="100%"
+    // position="absolute"
+    // position="relative"
+    // buttom="0"
+    // p={{ base: 8, lg: 16 }}
   >
     <MDXProvider components={components}>{children}</MDXProvider>
   </Box>
