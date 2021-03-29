@@ -74,7 +74,7 @@ export default function(state = calcState, action) {
           ...state,
           history: state.input + "=",
         }
-      } else if (state.input.indexOf("^") === 1) {
+      } else if (state.input.indexOf("^") && true ) {
         const SQUARES = eval(action.input.replace("^", "**"))
         return {
           ...state,
