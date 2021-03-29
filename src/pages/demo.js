@@ -1,15 +1,12 @@
 import React from "react"
-// import { Link } from "gatsby"
 import { Link, Box, Flex } from "@chakra-ui/react"
 import Layout from "../components/layout"
-import { SizeEnums, ColorEnums } from "../lib/style-utils"
-import { TimeIcon } from "@chakra-ui/icons"
+import { SizeEnums } from "../lib/style-utils"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
 import App from "../components/redux-calc/index"
 
 function SecondPageQuert({
   title = "React-Redux 實現計算機",
-  // slug = "https://github.com/kkshen3352/kkshen-site/tree/develop/src/components/redux-calc",
   date = "2021-03-21",
   main = [
     { text: "紀錄計算過程", ation: "顯示計算過程" },
@@ -22,7 +19,7 @@ function SecondPageQuert({
       ation: (
         <Link
           href={`https://github.com/kkshen3352/kkshen-site/tree/develop/src/components/redux-calc`}
-          style={{ color:"teal" }}
+          style={{ color: "teal" }}
           isExternal
         >
           點我觀看程式碼
@@ -33,7 +30,6 @@ function SecondPageQuert({
   ],
 }) {
   const { SMALL, LARGE, EXTRALARGE, XXL } = SizeEnums
-  const { GRAY } = ColorEnums
 
   return (
     <Layout>
@@ -83,14 +79,13 @@ function SecondPageQuert({
             >
               <Box
                 as="span"
-                color={GRAY}
                 fontSize="sm"
                 position="absolute"
                 paddingTop="40px"
                 buttom="-10px"
                 right="0"
               >
-                <TimeIcon margin="2" />
+                Latest Updated:
                 {date}
               </Box>
             </Box>

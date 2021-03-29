@@ -53,31 +53,31 @@ function IndexPage({ data }) {
           margin="0 auto"
         >
           <Flex height="40px" margin="10px">
-            <Reacticon width="10" height="10" />
+            <Reacticon width="10" height="10" marginRight="5px"/>
             <Box as="p" fontSize="23px">
               React
             </Box>
           </Flex>
           <Flex height="40px" margin="10px">
-            <Gatsbyicon width="100" height="10" />
+            <Gatsbyicon width="100" height="10" marginRight="5px"/>
             <Box as="p" fontSize="23px">
               Gatsby
             </Box>
           </Flex>
           <Flex height="40px" margin="10px">
-            <Chakraicon />
+            <Chakraicon marginRight="5px"/>
             <Box as="p" fontSize="23px">
               Chakra
             </Box>
           </Flex>
           <Flex height="40px" margin="10px">
-            <Graphqlicon />
+            <Graphqlicon marginRight="5px"/>
             <Box as="p" fontSize="23px" color="#e10098">
               Graphql
             </Box>
           </Flex>
           <Flex height="40px" margin="10px">
-            <Emotionicon />
+            <Emotionicon marginRight="5px"/>
             <Box as="p" fontSize="23px" color="#D36AC2">
               Emotion
             </Box>

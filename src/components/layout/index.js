@@ -26,18 +26,16 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Box height="100%">
+      <Box>
         <Header siteTitle={data.site.siteMetadata.title} />
         <Flex
           margin="0 auto"
           maxWidth="960px"
           padding="1.45rem 1.0875rem 1.45rem"
           flexDirection="column"
-          minHeight="100%"
+          minHeight="calc(100vh - 200px)"
         >
-          <Box paddingBottom="100px">
-            <main>{children}</main>
-          </Box>
+          <main>{children}</main>
         </Flex>
         <Footer username={data.site.siteMetadata.username} />
       </Box>
