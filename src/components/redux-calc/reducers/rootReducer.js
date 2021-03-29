@@ -74,7 +74,7 @@ export default function(state = calcState, action) {
           ...state,
           history: state.input + "=",
         }
-      } else if (state.input.indexOf("^") && true ) {
+      } else if (state.input.indexOf("^") && true) {
         const SQUARES = eval(action.input.replace("^", "**"))
         return {
           ...state,
@@ -100,12 +100,6 @@ export default function(state = calcState, action) {
           history: "",
         }
       }
-    // case SQUARE:
-    //   return {
-    //     ...state,
-    //     input: state.input + action.text,
-    //   }
-
     default:
       return state
   }
