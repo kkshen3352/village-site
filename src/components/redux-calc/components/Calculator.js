@@ -8,16 +8,7 @@ class Calculator extends Component {
   }
 
   render() {
-    const {
-      input,
-      btns,
-      addElem,
-      clear,
-      equal,
-      back,
-      // calc,
-      history,
-    } = this.props
+    const { input, btns, addElem, clear, equal, back, history } = this.props
 
     return (
       <div className="box">
@@ -54,19 +45,28 @@ class Calculator extends Component {
                   {item}
                 </button>
               )
-            } 
-            // else if (item === ".") {
-            //   return (
-            //     <button
-            //       onClick={calc.bind(this, input)}
-            //       key={key}
-            //       className="boxdiv"
-            //     >
-            //       {item}
-            //     </button>
-            //   )
-            // } 
-            else {
+            } else if (item === "^") {
+              return (
+                <button
+                  onClick={addElem.bind(this, item)}
+                  key={key}
+                  className="boxdiv"
+                >
+                  x<sup>y</sup>
+                </button>
+              )
+            } else if (item === "?") {
+              return (
+                <button
+                  style={{ visibility: "hidden" }}
+                  onClick={addElem.bind(this, item)}
+                  key={key}
+                  className="boxdiv"
+                >
+                  ?
+                </button>
+              )
+            } else {
               return (
                 <button
                   onClick={addElem.bind(this, item)}

@@ -1,14 +1,19 @@
+import { active } from "d3-transition"
 import { round } from "mathjs"
 import { ADD_ELEM } from "../actions/actionsType"
 import { CLEAR } from "../actions/actionsType"
 import { EQUAL } from "../actions/actionsType"
 import { BACK } from "../actions/actionsType"
-import { CALC } from "../actions/actionsType"
+// import { CALC } from "../actions/actionsType"
 
 const calcState = {
   input: 0,
   history: "",
   btns: [
+    "?",
+    "?",
+    "?",
+    "C",
     "7",
     "8",
     "9",
@@ -25,13 +30,15 @@ const calcState = {
     "0",
     ".",
     "+",
-    "C",
+    "^",
     "b",
     "=",
   ],
 }
 
 export default function(state = calcState, action) {
+  console.log("input", state.input)
+  console.log("act", action.input)
   const maths = eval(action.input)
   switch (action.type) {
     case ADD_ELEM:
@@ -67,6 +74,12 @@ export default function(state = calcState, action) {
           ...state,
           history: state.input + "=",
         }
+      } else if (state.input.indexOf("^") === 1) {
+        const SQUARES = eval(action.input.replace("^", "**"))
+        return {
+          ...state,
+          input: SQUARES,
+        }
       } else {
         return {
           ...state,
@@ -87,27 +100,12 @@ export default function(state = calcState, action) {
           history: "",
         }
       }
-    // case CALC:
-    //   if (state.input.length > 0) {
-    //     return {
-    //       ...state,
-    //       input: action.text,
-    //       history: action.text,
-    //     }
-    //   }
-    //  else if(action.text === ""){
+    // case SQUARE:
     //   return {
     //     ...state,
-    //     input: state.input+"1",
+    //     input: state.input + action.text,
     //   }
-    // }
-    // else {
-    //   return {
-    //     ...state,
-    //     input: state.input + ".",
-    //     history: state.input + ".",
-    //   }
-    // }
+
     default:
       return state
   }

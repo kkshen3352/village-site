@@ -7,10 +7,11 @@ import App from "../components/redux-calc/index"
 
 function SecondPageQuert({
   title = "React-Redux 實現計算機",
-  date = "2021-03-21",
+  date = "2021-03-30",
   main = [
     { text: "紀錄計算過程", ation: "顯示計算過程" },
     { text: "四則運算", ation: "四則運算" },
+    { text: "平方", ation: "平方計算" },
     { text: "BACK", ation: "按鍵退格" },
     { text: "CLEAR", ation: "清除計算" },
     { text: "等於『=』", ation: "四捨五入後的近似值.取小數點四位數" },
