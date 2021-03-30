@@ -16,6 +16,12 @@ function SecondPageQuert({
     { text: "CLEAR", ation: "清除計算" },
     { text: "等於『=』", ation: "四捨五入後的近似值.取小數點四位數" },
     {
+      text: "NEW!Middleware",
+      ation:
+        (
+        <Box>當每一次按按鈕(action)被 dispatch 的時候，會計算出新的 state 並儲存下來。state 無法自己改變，它只能因應特定 action 的結果而改變。F12開發者模式可觀看</Box>),
+    },
+    {
       text: "github",
       ation: (
         <Link

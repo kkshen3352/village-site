@@ -1,10 +1,8 @@
-import { active } from "d3-transition"
 import { round } from "mathjs"
 import { ADD_ELEM } from "../actions/actionsType"
 import { CLEAR } from "../actions/actionsType"
 import { EQUAL } from "../actions/actionsType"
 import { BACK } from "../actions/actionsType"
-// import { CALC } from "../actions/actionsType"
 
 const calcState = {
   input: 0,
@@ -37,12 +35,10 @@ const calcState = {
 }
 
 export default function(state = calcState, action) {
-  console.log("input", state.input)
-  console.log("act", action.input)
   const maths = eval(action.input)
   switch (action.type) {
     case ADD_ELEM:
-      if (state.input.length === 13) {
+      if (state.input === 13) {
         return {
           ...state,
           input: 0,
