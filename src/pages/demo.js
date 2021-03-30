@@ -7,7 +7,7 @@ import App from "../components/redux-calc/index"
 
 function SecondPageQuert({
   title = "React-Redux 實現計算機",
-  date = "2021-03-30",
+  date = "2021-03-31",
   main = [
     { text: "紀錄計算過程", ation: "顯示計算過程" },
     { text: "四則運算", ation: "四則運算" },
