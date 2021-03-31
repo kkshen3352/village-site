@@ -3,6 +3,7 @@ import { ADD_ELEM } from "../actions/actionsType"
 import { CLEAR } from "../actions/actionsType"
 import { EQUAL } from "../actions/actionsType"
 import { BACK } from "../actions/actionsType"
+import { CALC } from "../actions/actionsType"
 
 const calcState = {
   input: 0,
@@ -10,7 +11,7 @@ const calcState = {
   btns: [
     "?",
     "?",
-    "?",
+    "%",
     "C",
     "7",
     "8",
@@ -35,7 +36,6 @@ const calcState = {
 }
 
 export default function(state = calcState, action) {
-  const maths = eval(action.input)
   switch (action.type) {
     case ADD_ELEM:
       if (state.input === 13) {
@@ -44,18 +44,25 @@ export default function(state = calcState, action) {
           input: 0,
           history: 0,
         }
-      } else if (state.input === 0) {
-        return {
-          ...state,
-          input:
-            state.input === 0 ? action.text - state.input : round(maths, 4),
-          history: state.input === 0 ? action.text - state.input : action.text,
-        }
       } else {
         return {
           ...state,
           input: state.input === 0 ? action.text : state.input + action.text,
           history: state.input === 0 ? action.text : state.input + action.text,
+        }
+      }
+    case CALC:
+      if (state.input.length > 0) {
+        return {
+          ...state,
+          input: state.input === 0 ? action.text : state.input + action.text,
+          history: state.input === 0 ? action.text : state.input + action.text,
+        }
+      } else {
+        return {
+          ...state,
+          input: 0 + action.text,
+          history: state.input + action.text,
         }
       }
     case CLEAR:
@@ -65,6 +72,7 @@ export default function(state = calcState, action) {
         history: "",
       }
     case EQUAL:
+      const maths = eval(action.input)
       if (state.input.length < 1) {
         return {
           ...state,
@@ -79,7 +87,7 @@ export default function(state = calcState, action) {
       } else {
         return {
           ...state,
-          input: round(maths, 4),
+          input: round(maths),
         }
       }
     case BACK:

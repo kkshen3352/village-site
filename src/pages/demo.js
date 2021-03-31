@@ -11,15 +11,22 @@ function SecondPageQuert({
   main = [
     { text: "紀錄計算過程", ation: "顯示計算過程" },
     { text: "四則運算", ation: "四則運算" },
+    { text: "餘數", ation: "餘數計算" },
     { text: "平方", ation: "平方計算" },
-    { text: "BACK", ation: "按鍵退格" },
-    { text: "CLEAR", ation: "清除計算" },
-    { text: "等於『=』", ation: "四捨五入後的近似值.取小數點四位數" },
+    { text: "BACK『b』", ation: "按鍵退格" },
+    { text: "CLEAR『C』", ation: "清除計算" },
+    { text: "等於『=』", ation: "四捨五入後的近似值" },
     {
-      text: "NEW!Middleware",
-      ation:
-        (
-        <Box>當每一次按按鈕(action)被 dispatch 的時候，會計算出新的 state 並儲存下來。state 無法自己改變，它只能因應特定 action 的結果而改變。F12開發者模式可觀看</Box>),
+      text: "Middleware",
+      ation: (
+        <Box>
+          當每一次按按鈕(action)被 dispatch
+          的時候，會計算出新的state並儲存下來。 state
+          無法自己改變，它只能因應特定 action的結果而改變。
+          <br />
+          F12開發者模式可觀看
+        </Box>
+      ),
     },
     {
       text: "github",
@@ -69,11 +76,19 @@ function SecondPageQuert({
             >
               {main.map(({ text, ation }, i) => (
                 <Box key={i}>
-                  <Flex margin="5px" paddingTop="5px">
-                    <Box fontWeight="semibold" marginRight="15px">
+                  <Flex
+                    margin="5px"
+                    paddingTop="5px"
+                    fontSize={{ base: "14px", lg: "18px" }}
+                  >
+                    <Box
+                      fontWeight="semibold"
+                      width={{ base: "200px", lg: "150px" }}
+                      marginRight={{ base: "5px", lg: "15px" }}
+                    >
                       ● {text}
                     </Box>
-                    <Box>{ation}</Box>
+                    <Box width="330px">{ation}</Box>
                   </Flex>
                 </Box>
               ))}

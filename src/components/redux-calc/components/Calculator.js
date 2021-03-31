@@ -8,7 +8,16 @@ class Calculator extends Component {
   }
 
   render() {
-    const { input, btns, addElem, clear, equal, back, history } = this.props
+    const {
+      input,
+      btns,
+      addElem,
+      clear,
+      equal,
+      back,
+      history,
+      calc,
+    } = this.props
 
     return (
       <div className="box">
@@ -53,6 +62,16 @@ class Calculator extends Component {
                   className="boxdiv"
                 >
                   x<sup>y</sup>
+                </button>
+              )
+            } else if (item === ".") {
+              return (
+                <button
+                  onClick={calc.bind(this, item)}
+                  key={key}
+                  className="boxdiv"
+                >
+                  .
                 </button>
               )
             } else if (item === "?") {

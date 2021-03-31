@@ -87,7 +87,6 @@ const RepoPage = () => {
                     display="flex"
                     alignItems="center"
                     justifyItems="center"
-                    color={GRAY}
                     fontSize="sm"
                     position="absolute"
                     right="0"
