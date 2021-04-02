@@ -24,8 +24,8 @@ author: kkshen
 
 從清天宮循著石板步道拾級而上，翠綠竹林夾道，幽靜純樸，沿路可欣賞數十萬年前所形成的火山地形，是一處天然的地質教室。山頂觀景平台展望極佳，擁有 270 度的大視野，可眺望觀音山、八里、淡水河出海口、林口火力發電廠、竹圍等地。
 
-## Images
+##
 
-![kkshen](http://localhost:8000/images/DSC_5275.jpg "kkshen images")
+![kkshen](https://scontent.ftpe8-1.fna.fbcdn.net/v/t1.6435-9/167900385_4656124414404354_7607733789275877562_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=0debeb&_nc_ohc=FQrgVqYkpN0AX89vNpC&_nc_ht=scontent.ftpe8-1.fna&oh=4cf32375a21a118d5291c18ee6874751&oe=608BA922 "路邊撿來的竹仗")
 
 ##### 資料來源:[健行筆記](https://hiking.biji.co/index.php?q=trail&act=detail&id=660)
