@@ -40,6 +40,7 @@ const CustomHeading = ({ as, size, children, ...props }) => {
       `}
       as={as}
       size={size}
+      margin="15px"
       display="flex"
       justifyContent="flex-start"
       alignItems="center"

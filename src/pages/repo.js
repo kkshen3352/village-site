@@ -8,7 +8,6 @@ import { SizeEnums, ColorEnums } from "../lib/style-utils"
 import { useStaticQuery, graphql } from "gatsby"
 
 const { LARGE, EXTRALARGE, XXL } = SizeEnums
-const { GRAY } = ColorEnums
 const RepoPage = () => {
   const [repoData, setrepoData] = useState([])
   const data = useStaticQuery(graphql`

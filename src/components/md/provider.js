@@ -1,8 +1,13 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 // import { Link as GatsbyLink } from "gatsby"
-import { Box, List, ListItem, Link, Image, 
-  // Code 
+import {
+  Box,
+  List,
+  ListItem,
+  Link,
+  Image,
+  // Code
 } from "@chakra-ui/react"
 // import { jsx, css } from "@emotion/react"
 import CustomHeading from "./custom-heading"
@@ -16,18 +21,30 @@ export default props => (
   </MDXProvider>
 )
 const components = {
-  h1: props => <CustomHeading as="h1" size="2xl" {...props} />,
-  h2: props => <CustomHeading as="h2" size="xl" {...props} />,
-  h3: props => <CustomHeading as="h3" size="lg" {...props} />,
-  h4: props => <CustomHeading as="h4" size="md" {...props} />,
-  h5: props => <CustomHeading as="h5" size="sm" {...props} />,
-  h6: props => <CustomHeading as="h6" size="xs" {...props} />,
+  h1: props => (
+    <CustomHeading as="h1" size="2xl" marginLeft="-1.5rem" {...props} />
+  ),
+  h2: props => (
+    <CustomHeading as="h2" size="xl" marginLeft="-1.5rem" {...props} />
+  ),
+  h3: props => (
+    <CustomHeading as="h3" size="lg" marginLeft="-1.5rem" {...props} />
+  ),
+  h4: props => (
+    <CustomHeading as="h4" size="md" marginLeft="-1.5rem" {...props} />
+  ),
+  h5: props => (
+    <CustomHeading as="h5" size="sm" marginLeft="-1.5rem" {...props} />
+  ),
+  h6: props => (
+    <CustomHeading as="h6" size="xs" marginLeft="-1.5rem" {...props} />
+  ),
 
   p: props => <p style={{ fontSize: "18px", lineHeight: 1.6 }} {...props} />,
 
   ol: props => <List as="ol" styleType="decimal" {...props} />,
   ul: props => <List as="ul" {...props} styleType="disc" />,
-  li: props => <ListItem {...props} />,
+  li: props => <ListItem {...props} marginLeft="1rem" />,
 
   a: props => <Link color="#0366d6" {...props} />,
 
@@ -35,8 +52,15 @@ const components = {
 
   // ``` ``` => <pre><code></code></pre>, ` ` => <code></code>
   pre: props => (
-    <Box as="pre" mb="1.45rem" backgroundColor="gray.100" {...props} />
+    <Box
+      as="pre"
+      mb="1.45rem"
+      backgroundColor="gray.100"
+      overflow="auto"
+      {...props}
+    />
   ),
+  // inlineCode: props => <Code colorScheme="gray.100" {...props} />,
   code: props => <CodeBlock colorScheme="gray.100" {...props} />,
 
   table: props => <Box as="table" {...props} />,
@@ -66,9 +90,9 @@ const components = {
 
 export const Provider = ({ children }) => (
   <Box
-    // margin="0 auto"
-    // maxWidth="960px"
-    // padding="1.45rem 1.0875rem 1.45rem"
+    margin="0 auto"
+    maxWidth="960px"
+    padding="1.45rem 1.0875rem 1.45rem"
     // flexDirection="column"
     // minHeight={{base: "75.7vh",lg: "76.3vh"}}
     // minHeight="100%"
