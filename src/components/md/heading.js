@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 // import { Link as GatsbyLink } from "gatsby"
 import { Heading, Link } from "@chakra-ui/react"
-import { 
+import {
   // jsx,
-   css } from "@emotion/react"
+  css,
+} from "@emotion/react"
 
 const OctIcon = () => (
   <svg
@@ -21,7 +22,7 @@ const OctIcon = () => (
   </svg>
 )
 
-const CustomHeading = ({ as, size, children, ...props }) => {
+export default ({ as, size, children, ...props }) => {
   const [isHover, setIsHover] = useState(false)
   const visibility = isHover ? "visible" : "hidden"
 
@@ -40,6 +41,7 @@ const CustomHeading = ({ as, size, children, ...props }) => {
       `}
       as={as}
       size={size}
+      margin="15px"
       display="flex"
       justifyContent="flex-start"
       alignItems="center"
@@ -48,9 +50,9 @@ const CustomHeading = ({ as, size, children, ...props }) => {
       {...props}
     >
       <Link
-        id={`user-content-${as}`}
+        id={`user-content-${children}`}
         className="anchor"
-        href={`#${as}`}
+        href={`#${children}`}
         aria-hidden="true"
       >
         <OctIcon />
@@ -59,5 +61,3 @@ const CustomHeading = ({ as, size, children, ...props }) => {
     </Heading>
   )
 }
-
-export default CustomHeading
