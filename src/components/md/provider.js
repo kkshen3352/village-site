@@ -1,46 +1,46 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
+// import { Link as GatsbyLink } from "gatsby"
 import {
   Box,
   List,
   ListItem,
   Link,
   Image,
-  Text,
   // Code
 } from "@chakra-ui/react"
 // import { jsx, css } from "@emotion/react"
-import Heading from "./Heading"
+import CustomHeading from "./custom-heading"
 import CodeBlock from "./code-block"
 
 const shortcodes = { Link }
 
-// export default props => (
-//   <MDXProvider components={components}>
-//     <main {...props}></main>
-//   </MDXProvider>
-// )
+export default props => (
+  <MDXProvider components={components}>
+    <main {...props}></main>
+  </MDXProvider>
+)
 const components = {
   h1: props => (
-    <Heading as="h1" size="2xl" marginLeft="-1.25rem" {...props} />
+    <CustomHeading as="h1" size="2xl" marginLeft="-1.25rem" {...props} />
   ),
   h2: props => (
-    <Heading as="h2" size="xl" marginLeft="-1.25rem" {...props} />
+    <CustomHeading as="h2" size="xl" marginLeft="-1.25rem" {...props} />
   ),
   h3: props => (
-    <Heading as="h3" size="lg" marginLeft="-1.25rem" {...props} />
+    <CustomHeading as="h3" size="lg" marginLeft="-1.25rem" {...props} />
   ),
   h4: props => (
-    <Heading as="h4" size="md" marginLeft="-1.25rem" {...props} />
+    <CustomHeading as="h4" size="md" marginLeft="-1.25rem" {...props} />
   ),
   h5: props => (
-    <Heading as="h5" size="sm" marginLeft="-1.25rem" {...props} />
+    <CustomHeading as="h5" size="sm" marginLeft="-1.25rem" {...props} />
   ),
   h6: props => (
-    <Heading as="h6" size="xs" marginLeft="-1.25rem" {...props} />
+    <CustomHeading as="h6" size="xs" marginLeft="-1.25rem" {...props} />
   ),
 
-  p: props => <Text {...props} />,
+  p: props => <p style={{ fontSize: "18px", lineHeight: 1.6 }} {...props} />,
 
   ol: props => <List as="ol" styleType="decimal" {...props} />,
   ul: props => <List as="ul" {...props} styleType="disc" />,
@@ -53,15 +53,16 @@ const components = {
   // ``` ``` => <pre><code></code></pre>, ` ` => <code></code>
   pre: props => (
     <Box
-      // as="pre"
+      as="pre"
       mb="1.45rem"
       backgroundColor="gray.100"
       overflow="auto"
       {...props}
     />
   ),
-  
+  // inlineCode: props => <Code colorScheme="gray.100" {...props} />,
   code: props => <CodeBlock colorScheme="gray.100" {...props} />,
+
   table: props => <Box as="table" {...props} />,
   thead: props => <Box as="thead" {...props} />,
   tr: props => <Box as="tr" {...props} />,
