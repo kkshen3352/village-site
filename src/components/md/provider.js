@@ -22,29 +22,29 @@ export default props => (
 )
 const components = {
   h1: props => (
-    <CustomHeading as="h1" size="2xl" marginLeft="-1.5rem" {...props} />
+    <CustomHeading as="h1" size="2xl" marginLeft="-1.25rem" {...props} />
   ),
   h2: props => (
-    <CustomHeading as="h2" size="xl" marginLeft="-1.5rem" {...props} />
+    <CustomHeading as="h2" size="xl" marginLeft="-1.25rem" {...props} />
   ),
   h3: props => (
-    <CustomHeading as="h3" size="lg" marginLeft="-1.5rem" {...props} />
+    <CustomHeading as="h3" size="lg" marginLeft="-1.25rem" {...props} />
   ),
   h4: props => (
-    <CustomHeading as="h4" size="md" marginLeft="-1.5rem" {...props} />
+    <CustomHeading as="h4" size="md" marginLeft="-1.25rem" {...props} />
   ),
   h5: props => (
-    <CustomHeading as="h5" size="sm" marginLeft="-1.5rem" {...props} />
+    <CustomHeading as="h5" size="sm" marginLeft="-1.25rem" {...props} />
   ),
   h6: props => (
-    <CustomHeading as="h6" size="xs" marginLeft="-1.5rem" {...props} />
+    <CustomHeading as="h6" size="xs" marginLeft="-1.25rem" {...props} />
   ),
 
   p: props => <p style={{ fontSize: "18px", lineHeight: 1.6 }} {...props} />,
 
   ol: props => <List as="ol" styleType="decimal" {...props} />,
   ul: props => <List as="ul" {...props} styleType="disc" />,
-  li: props => <ListItem {...props} marginLeft="1rem" />,
+  li: props => <ListItem {...props} marginLeft="1re2m" />,
 
   a: props => <Link color="#0366d6" {...props} />,
 
@@ -93,13 +93,6 @@ export const Provider = ({ children }) => (
     margin="0 auto"
     maxWidth="960px"
     padding="1.45rem 1.0875rem 1.45rem"
-    // flexDirection="column"
-    // minHeight={{base: "75.7vh",lg: "76.3vh"}}
-    // minHeight="100%"
-    // position="absolute"
-    // position="relative"
-    // buttom="0"
-    // p={{ base: 8, lg: 16 }}
   >
     <MDXProvider components={components}>{children}</MDXProvider>
   </Box>
