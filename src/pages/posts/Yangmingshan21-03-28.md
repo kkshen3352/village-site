@@ -26,6 +26,6 @@ author: kkshen
 
 ##
 
-<!-- ![images](https://scontent.ftpe7-2.fna.fbcdn.net/v/t1.6435-9/167900385_4656124414404354_7607733789275877562_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=0debeb&_nc_ohc=FQrgVqYkpN0AX-F5RJL&_nc_ht=scontent.ftpe7-2.fna&oh=dc4355c76a558bb812dc505fd3f5beb8&oe=608F9DA2 "路邊撿來的竹仗") -->
+![images](https://scontent.ftpe7-2.fna.fbcdn.net/v/t1.6435-9/167900385_4656124414404354_7607733789275877562_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=0debeb&_nc_ohc=FQrgVqYkpN0AX-F5RJL&_nc_ht=scontent.ftpe7-2.fna&oh=dc4355c76a558bb812dc505fd3f5beb8&oe=608F9DA2 "路邊撿來的竹仗")
 
 ##### 資料來源:[健行筆記](https://hiking.biji.co/index.php?q=trail&act=detail&id=660)
