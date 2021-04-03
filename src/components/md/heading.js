@@ -27,37 +27,39 @@ export default ({ as, size, children, ...props }) => {
   const visibility = isHover ? "visible" : "hidden"
 
   return (
-    <Heading
-      css={css`
-        .anchor {
-          padding-right: 4px;
-          line-height: 1;
-        }
-        .octicon-link {
-          color: #1b1f23;
-          vertical-align: middle;
-          visibility: ${visibility};
-        }
-      `}
-      as={as}
-      size={size}
-      margin="15px"
-      display="flex"
-      justifyContent="flex-start"
-      alignItems="center"
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}
-      {...props}
-    >
-      <Link
-        id={`user-content-${children}`}
-        className="anchor"
-        href={`#${children}`}
-        aria-hidden="true"
+    <>
+      <Heading
+        css={css`
+          .anchor {
+            padding-right: 4px;
+            line-height: 1;
+          }
+          .octicon-link {
+            color: #1b1f23;
+            vertical-align: middle;
+            visibility: ${visibility};
+          }
+        `}
+        as={as}
+        size={size}
+        margin="15px"
+        display="flex"
+        justifyContent="flex-start"
+        alignItems="center"
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+        {...props}
       >
-        <OctIcon />
-      </Link>
-      {children}
-    </Heading>
+        <Link
+          id={`user-content-${children}`}
+          className="anchor"
+          href={`#${children}`}
+          aria-hidden="true"
+        >
+          <OctIcon />
+        </Link>
+        {children}
+      </Heading>
+    </>
   )
 }
