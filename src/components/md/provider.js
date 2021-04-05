@@ -7,10 +7,11 @@ import {
   ListItem,
   Link,
   Image,
+  Heading,
   // Code
 } from "@chakra-ui/react"
 // import { jsx, css } from "@emotion/react"
-import CustomHeading from "./custom-heading"
+// import Custom-heading from "./custom-heading"
 import CodeBlock from "./code-block"
 
 const shortcodes = { Link }
@@ -21,24 +22,12 @@ export default props => (
   </MDXProvider>
 )
 const components = {
-  h1: props => (
-    <CustomHeading as="h1" size="2xl" marginLeft="-1.25rem" {...props} />
-  ),
-  h2: props => (
-    <CustomHeading as="h2" size="xl" marginLeft="-1.25rem" {...props} />
-  ),
-  h3: props => (
-    <CustomHeading as="h3" size="lg" marginLeft="-1.25rem" {...props} />
-  ),
-  h4: props => (
-    <CustomHeading as="h4" size="md" marginLeft="-1.25rem" {...props} />
-  ),
-  h5: props => (
-    <CustomHeading as="h5" size="sm" marginLeft="-1.25rem" {...props} />
-  ),
-  h6: props => (
-    <CustomHeading as="h6" size="xs" marginLeft="-1.25rem" {...props} />
-  ),
+  h1: props => <Heading as="h1" size="2xl" {...props} />,
+  h2: props => <Heading as="h2" size="xl" {...props} />,
+  h3: props => <Heading as="h3" size="lg" {...props} />,
+  h4: props => <Heading as="h4" size="md" {...props} />,
+  h5: props => <Heading as="h5" size="sm" {...props} />,
+  h6: props => <Heading as="h6" size="xs" {...props} />,
 
   p: props => <p style={{ fontSize: "18px", lineHeight: 1.6 }} {...props} />,
 
@@ -89,11 +78,7 @@ const components = {
 }
 
 export const Provider = ({ children }) => (
-  <Box
-    margin="0 auto"
-    maxWidth="960px"
-    padding="1.45rem 1.0875rem 1.45rem"
-  >
+  <Box margin="0 auto" maxWidth="960px" padding="1.45rem 1.0875rem 1.45rem">
     <MDXProvider components={components}>{children}</MDXProvider>
   </Box>
 )
