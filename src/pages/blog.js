@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import { Box, Badge } from "@chakra-ui/react"
 import Layout from "../components/layout"
 import { TimeIcon, ViewIcon } from "@chakra-ui/icons"
-import { SizeEnums, ColorEnums } from "../lib/style-utils"
+import { SizeEnums } from "../lib/style-utils"
 
 function IndexPageQuery({ data }) {
   const query = useStaticQuery(graphql`
@@ -23,14 +23,10 @@ function IndexPageQuery({ data }) {
       }
     }
   `)
-
   const {
     allMdx: { nodes },
   } = query
-
   const { SMALL, LARGE, EXTRALARGE, XXL } = SizeEnums
-
-  const { GRAY } = ColorEnums
 
   function _renderPosts() {
     return nodes.map(
@@ -68,13 +64,12 @@ function IndexPageQuery({ data }) {
                 alignItems="center"
                 position="relative"
               >
-                <Box as="span" color={GRAY} fontSize={SMALL}>
+                <Box as="span" fontSize={SMALL}>
                   <ViewIcon margin="2" />
                   {timeToRead} min read
                 </Box>
                 <Box
                   as="span"
-                  color={GRAY}
                   fontSize="sm"
                   position="absolute"
                   right="0"

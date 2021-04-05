@@ -4,7 +4,7 @@ import { Link } from "@chakra-ui/react"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
 import Layout from "../components/layout"
 import { request } from "@octokit/request"
-import { SizeEnums, ColorEnums } from "../lib/style-utils"
+import { SizeEnums } from "../lib/style-utils"
 import { useStaticQuery, graphql } from "gatsby"
 
 const { LARGE, EXTRALARGE, XXL } = SizeEnums
