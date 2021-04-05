@@ -1,7 +1,7 @@
 ---
 title: "Rust trick"
 date: "2021-02-10"
-author: Villager Liao
+author: kkshen
 ---
 
 # Tricks for faster coding

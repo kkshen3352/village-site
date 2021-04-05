@@ -8,6 +8,15 @@ author: kkshen
 
 #### 面天山、向天山步道 2021-03-28.
 
+##
+
+```
+幸虧上山前 都有再騎腳踏車練腳力
+入在登山口後 側邊尋覓 樹枝來當登山杖
+
+里程: 6~7公里 行程: 4hr內
+```
+
 | 基本資料 |                                 |
 | -------- | ------------------------------- |
 | 步道類型 | 郊山步道                        |
@@ -27,5 +36,7 @@ author: kkshen
 ##
 
 ![images](https://scontent.ftpe7-2.fna.fbcdn.net/v/t1.6435-9/167900385_4656124414404354_7607733789275877562_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=0debeb&_nc_ohc=FQrgVqYkpN0AX-F5RJL&_nc_ht=scontent.ftpe7-2.fna&oh=dc4355c76a558bb812dc505fd3f5beb8&oe=608F9DA2 "路邊撿來的竹仗")
+
+###### #陽明山 #面天山 #向天山步道 #nikon #d750 #24120mm
 
 ##### 資料來源:[健行筆記](https://hiking.biji.co/index.php?q=trail&act=detail&id=660)
