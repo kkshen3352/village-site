@@ -1,9 +1,19 @@
 import React from "react"
-import { Link, Box, Flex } from "@chakra-ui/react"
+import {
+  Link,
+  Box,
+  Flex,
+  Tabs,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+} from "@chakra-ui/react"
 import Layout from "../components/layout"
 import { SizeEnums } from "../lib/style-utils"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
 import App from "../components/redux-calc/index"
+import Hairmap from "./projects/"
 
 function SecondPageQuert({
   title = "React-Redux 實現計算機",
@@ -47,73 +57,97 @@ function SecondPageQuert({
 
   return (
     <Layout>
-      <Flex display={{ base: "column", lg: "flex" }}>
-        <Flex flexDirection="column" alignItems="center">
-          <Box as="h1" fontSize="32px" textShadow="#FC0 1px 0 10px">
-            Redux Calculator
-          </Box>
-          <App />
-        </Flex>
-        <Box
-          maxW={XXL}
-          borderWidth="1px"
-          borderRadius={LARGE}
-          overflow="hidden"
-          margin="5"
-        >
-          <Box padding="2rem">
-            <Box
-              as="h1"
-              fontWeight="semibold"
-              fontSize={{ base: `${LARGE}`, lg: `${EXTRALARGE}` }}
-            >
-              {title}
-            </Box>
-            <Box
-              margin="5px"
-              marginTop="1"
-              fontSize={{ base: `${SMALL}`, lg: `${LARGE}` }}
-            >
-              {main.map(({ text, ation }, i) => (
-                <Box key={i}>
-                  <Flex
-                    margin="5px"
-                    paddingTop="5px"
-                    fontSize={{ base: "14px", lg: "18px" }}
-                  >
+      <Tabs>
+        <TabList>
+          <Tab>計算機</Tab>
+          <Tab>html/css3切版</Tab>
+          {/* <Tab>Three</Tab> */}
+        </TabList>
+
+        <TabPanels>
+          <TabPanel>
+            <p>
+              <Flex display={{ base: "column", lg: "flex" }}>
+                <Flex flexDirection="column" alignItems="center">
+                  <Box as="h1" fontSize="32px" textShadow="#FC0 1px 0 10px">
+                    Redux Calculator
+                  </Box>
+                  <App />
+                </Flex>
+                <Box
+                  maxW={XXL}
+                  borderWidth="1px"
+                  borderRadius={LARGE}
+                  overflow="hidden"
+                  margin="5"
+                >
+                  <Box padding="2rem">
                     <Box
+                      as="h1"
                       fontWeight="semibold"
-                      width={{ base: "200px", lg: "150px" }}
-                      marginRight={{ base: "5px", lg: "15px" }}
+                      fontSize={{ base: `${LARGE}`, lg: `${EXTRALARGE}` }}
                     >
-                      ● {text}
+                      {title}
                     </Box>
-                    <Box width="330px">{ation}</Box>
-                  </Flex>
+                    <Box
+                      margin="5px"
+                      marginTop="1"
+                      fontSize={{ base: `${SMALL}`, lg: `${LARGE}` }}
+                    >
+                      {main.map(({ text, ation }, i) => (
+                        <Box key={i}>
+                          <Flex
+                            margin="5px"
+                            paddingTop="5px"
+                            fontSize={{ base: "14px", lg: "18px" }}
+                          >
+                            <Box
+                              fontWeight="semibold"
+                              width={{ base: "200px", lg: "150px" }}
+                              marginRight={{ base: "5px", lg: "15px" }}
+                            >
+                              ● {text}
+                            </Box>
+                            <Box width="330px">{ation}</Box>
+                          </Flex>
+                        </Box>
+                      ))}
+                    </Box>
+                    <Box
+                      display="flex"
+                      margintop="10"
+                      alignItems="center"
+                      position="relative"
+                    >
+                      <Box
+                        as="span"
+                        fontSize="sm"
+                        position="absolute"
+                        paddingTop="40px"
+                        buttom="-10px"
+                        right="0"
+                      >
+                        Latest Updated:
+                        {date}
+                      </Box>
+                    </Box>
+                  </Box>
                 </Box>
-              ))}
-            </Box>
-            <Box
-              display="flex"
-              margintop="10"
-              alignItems="center"
-              position="relative"
-            >
-              <Box
-                as="span"
-                fontSize="sm"
-                position="absolute"
-                paddingTop="40px"
-                buttom="-10px"
-                right="0"
-              >
-                Latest Updated:
-                {date}
-              </Box>
-            </Box>
-          </Box>
-        </Box>
-      </Flex>
+              </Flex>
+            </p>
+          </TabPanel>
+          <TabPanel>
+            <p>
+              <Hairmap />
+            </p>
+          </TabPanel>
+          {/* <TabPanel>
+            <p>three!</p>
+          </TabPanel> */}
+        </TabPanels>
+      </Tabs>
+
+      {/* <Link to="/demo/projects"></Link> */}
     </Layout>
   )
 }

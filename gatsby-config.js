@@ -51,9 +51,9 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          posts: require.resolve("./src/components/md/posts-layout.js"),
+          posts: require.resolve(`${__dirname}/src/components/md/posts-layout.js`),
           default: require.resolve(
-            "./src/components/md/default-page-layout.js"
+            `${__dirname}/src/components/md/default-page-layout.js`
           ),
         },
         // shouldBlockNodeFromTransformation(node) {

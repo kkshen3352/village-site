@@ -1,12 +1,10 @@
 import React from "react"
-// import { graphql } from "graphql"
-import { Provider } from "./provider"
-// import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../layout"
 // import Header from "../header"
 // import Footer from "../footer"
 import { Link } from "gatsby"
 import { Box } from "@chakra-ui/react"
+import Provider from "./provider.js"
 export default ({ children }) => (
   <>
     <Layout>
