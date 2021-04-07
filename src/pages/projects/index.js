@@ -52,7 +52,7 @@ export default function Hairmap() {
                 <li className="icon">
                   <img
                     className="iconhig"
-                    src="images/icon_searchbar_location.png"
+                    src={require("./images/icon_searchbar_location.png")}
                     alt=""
                   />
                   <p className="borderbox-pp">找地區</p>
@@ -214,7 +214,7 @@ export default function Hairmap() {
                 </Box>
               </Box>
               <Box>
-                <button className="btn d-flex"></button>
+                <button className="btnbottom"></button>
               </Box>
             </Box>
           </Box>

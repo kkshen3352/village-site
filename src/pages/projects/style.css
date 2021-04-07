@@ -143,7 +143,7 @@ a:active {
 
 .iconimgback {
   position: relative;
-  right: -25px;
+  right: -0px;
   background: lightcoral;
 }
 
@@ -209,7 +209,9 @@ a:active {
   margin: -130px auto 0px;
   text-shadow: 3px 6px 8px rgb(0, 0, 0);
 }
-
+.btnbottom {
+  float: right;
+}
 .btn {
   width: 65px;
   float: right;
@@ -339,11 +341,6 @@ a:active {
   .h3 {
     font-size: 14px;
     color: black;
-  }
-  .iconimgback {
-    position: relative;
-    right: -25px;
-    background: lightcoral;
   }
   .setting-img {
     display: block;
