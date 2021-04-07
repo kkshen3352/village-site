@@ -30,7 +30,7 @@ const Footer = ({ username }) => {
             </Link>
           </Box>
         </Flex>
-        <Box>
+        <Box color="#3b5998">
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">gatsby</a>
