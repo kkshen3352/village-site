@@ -18,19 +18,19 @@ const Footer = ({ username }) => {
       height="100px"
     >
       <footer>
-        <Flex alignItems="center" justifyContent="center" margin="5px">
+        <Flex alignItems="center" justifyContent="center" margin="5px" >
           <Box>
             <Link href={`https://github.com/${username}`} isExternal>
-              <GitHubicon />
+              <GitHubicon fontSize="40px"/>
             </Link>
           </Box>
           <Box marginLeft="15px">
             <Link href={`https://www.instagram.com/${username}`} isExternal>
-              <Instagramicon />
+              <Instagramicon fontSize="40px"/>
             </Link>
           </Box>
         </Flex>
-        <Box color="#3b5998">
+        <Box>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">gatsby</a>

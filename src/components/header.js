@@ -50,7 +50,9 @@ const Header = ({ siteTitle }) => {
           <Box display={{ base: "none", lg: "flex" }} marginTop="5px">
             {links.map(({ path, name }, i) => (
               <Box key={`key-${i}`} marginLeft="2rem">
-                <Link to={path}>{name}</Link>
+                <Link as="a" to={path}>
+                  {name}
+                </Link>
               </Box>
             ))}
           </Box>
