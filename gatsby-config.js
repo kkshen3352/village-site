@@ -28,23 +28,23 @@ module.exports = {
         icon: resolve(`./images/kklogo.png`), // This path is relative to the root of the site.
       },
     },
-    // `gatsby-plugin-glslify`,
-    // // this (optional) plugin enables Progressive Web App + Offline functionality
-    // // To learn more, visit: https://gatsby.dev/offline
-    // // `gatsby-plugin-offline`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `posts`,
-    //     path: `${__dirname}/src/pages/posts/`,
-    //   },
-    // },
-    // {
-    //   resolve: "gatsby-plugin-page-creator",
-    //   options: {
-    //     path: `${__dirname}/src/pages/posts/`,
-    //   },
-    // },
+    `gatsby-plugin-glslify`,
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/pages/posts/`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/src/pages/posts/`,
+      },
+    },
     `gatsby-remark-images`,
     {
       resolve: `gatsby-plugin-mdx`,
