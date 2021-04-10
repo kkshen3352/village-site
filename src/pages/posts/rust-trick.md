@@ -1,7 +1,7 @@
 ---
 title: "Rust trick"
 date: "2021-02-10"
-author: kkshen
+author: kkshen3352
 ---
 
 # Tricks for faster coding
