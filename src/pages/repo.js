@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Box, Badge } from "@chakra-ui/react"
+import { Box, Badge, Flex } from "@chakra-ui/react"
 import { Link } from "@chakra-ui/react"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
 import Layout from "../components/layout"
@@ -36,7 +36,7 @@ const RepoPage = () => {
       setrepoData(result?.data)
     }
     resRepo()
-  },)
+  })
 
   return (
     <Layout>
@@ -55,11 +55,11 @@ const RepoPage = () => {
               margin="5"
             >
               <Box padding="4">
-                <Box d="flex" alignItems="baseline">
+                <Flex alignItems="baseline">
                   <Badge borderRadius="full" colorScheme="teal">
                     {login}
                   </Badge>
-                </Box>
+                </Flex>
                 <Box as="h1" fontWeight="semibold" fontSize={EXTRALARGE}>
                   <Link href={html_url} isExternal>
                     {name}
@@ -67,23 +67,23 @@ const RepoPage = () => {
                   </Link>
                 </Box>
                 <Box
-                  margin="1.5rem 0"
-                  marginTop="1"
                   as="p"
+                  margin="1.5rem 0rem"
+                  marginTop="1"
                   fontSize={LARGE}
                   isTruncated
                 >
                   {description}
                 </Box>
-                <Box
-                  display="flex"
+                <Flex
+                  // display="flex"
                   margintop="10"
                   alignItems="center"
                   position="relative"
                 >
-                  <Box
+                  <Flex
                     as="span"
-                    display="flex"
+                    // display="flex"
                     alignItems="center"
                     justifyItems="center"
                     fontSize="sm"
@@ -96,8 +96,8 @@ const RepoPage = () => {
                       updated_at.slice(5, 7) +
                       "-" +
                       updated_at.slice(8, 10)}
-                  </Box>
-                </Box>
+                  </Flex>
+                </Flex>
               </Box>
             </Box>
           )

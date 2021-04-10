@@ -18,22 +18,39 @@ const Footer = ({ username }) => {
       height="100px"
     >
       <footer>
-        <Flex alignItems="center" justifyContent="center" margin="5px" >
-          <Box>
+        <Flex alignItems="center" justifyContent="center" margin="5px">
+          <Box
+            _hover={{
+              color: "#3b5998",
+            }}
+          >
             <Link href={`https://github.com/${username}`} isExternal>
-              <GitHubicon fontSize="40px"/>
+              <GitHubicon fontSize="40px" />
             </Link>
           </Box>
-          <Box marginLeft="15px">
+          <Box
+            marginLeft="15px"
+            _hover={{
+              color: "#3b5998",
+            }}
+          >
             <Link href={`https://www.instagram.com/${username}`} isExternal>
-              <Instagramicon fontSize="40px"/>
+              <Instagramicon fontSize="40px" />
             </Link>
           </Box>
         </Flex>
         <Box>
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">gatsby</a>
+          <Link
+            href="https://www.gatsbyjs.org"
+            _hover={{
+              color: "#3b5998",
+            }}
+            isExternal
+          >
+            gatsby
+          </Link>
         </Box>
       </footer>
     </Flex>

@@ -52,12 +52,12 @@ const components = {
   // inlineCode: props => <Code colorScheme="gray.100" {...props} />,
   code: props => <CodeBlock colorScheme="gray.100" {...props} />,
 
-  table: props => <Box as="table" border="2px solid black" {...props} />,
-  thead: props => <Box as="thead" border="1px solid black" {...props} />,
-  tr: props => <Box as="tr" border="1px solid black" {...props} />,
-  th: props => <Box as="th" border="1px solid black" {...props} />,
-  tbody: props => <Box as="tbody" border="1px solid black" {...props} />,
-  td: props => <Box as="td" border="1px solid black" {...props} />,
+  table: props => <Box as="table" border="2px solid black" boxShadow="-1px -1px 3px white"{...props} />,
+  thead: props => <Box as="thead" border="1px solid black" boxShadow="1px -1px 5px white"{...props} />,
+  tr: props => <Box as="tr" border="1px solid black" boxShadow="1px 1px 1px white"{...props} />,
+  th: props => <Box as="th" border="1px solid black" boxShadow="3px 2px 3px white"{...props} />,
+  tbody: props => <Box as="tbody" border="1px solid black" boxShadow="3px 2px 10px white"{...props} />,
+  td: props => <Box as="td" border="1px solid black" boxShadow="3px 2px 3px white"{...props} />,
 
   blockquote: props => (
     <Box

@@ -5,7 +5,7 @@ import "./style.css"
 export default function Hairmap() {
   return (
     <>
-      <Box as="body" className="body">
+      <Box className="body">
         <Box as="heard" className="main-heard">
           <Flex className="wrapper d-flex">
             <img
