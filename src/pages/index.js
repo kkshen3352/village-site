@@ -8,13 +8,12 @@ import { Gatsbyicon } from "../icon/gatsbyicon"
 import { Chakraicon } from "../icon/chakrsicon"
 import { Graphqlicon } from "../icon/graphqlicon"
 import { Emotionicon } from "../icon/emotionicon"
-import urlGoogle2 from "../images/DSC_7875.jpg"
+import urlGoogle2 from "../images/DSC_7875_1.jpg"
 
 function IndexPage({ data }) {
   const {
     site: { pathPrefix },
   } = data
-  
   return (
     <Layout m="5">
       <SEO title="Home" />

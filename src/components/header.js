@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react"
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons"
 import { SizeEnums, ColorEnums } from "../lib/style-utils"
+import "../pages/projects/style.css"
 
 const links = [
   { name: "Blog", path: "/blog" },
@@ -61,17 +62,15 @@ const Header = ({ siteTitle }) => {
                   color: "#3b5998",
                 }}
               >
-                <Link as="a" to={path}>
-                  {name}
-                </Link>
+                <Link to={path}>{name}</Link>
               </Box>
             ))}
           </Box>
           <Box
             onClick={toggleColorMode}
-            size="sm"
+            size={LARGE}
             position="absolute"
-            size="lg"
+            margin="0px 10px 0px"
             right={{ base: "6.5rem", lg: "2rem" }}
           >
             {colorMode === "light" ? (
