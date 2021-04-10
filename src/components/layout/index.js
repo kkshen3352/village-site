@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
           flexDirection="column"
           minHeight="calc(100vh - 200px)"
         >
-          <main>{children}</main>
+          <Box>{children}</Box>
         </Flex>
         <Footer username={data.site.siteMetadata.username} />
       </Box>

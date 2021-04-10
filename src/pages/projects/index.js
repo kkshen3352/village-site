@@ -6,7 +6,7 @@ export default function Hairmap() {
   return (
     <>
       <Box className="body">
-        <Box as="heard" className="main-heard">
+        <Box className="main-heard">
           <Flex className="wrapper d-flex">
             <img
               className="logo"
@@ -14,20 +14,20 @@ export default function Hairmap() {
               alt="sss"
             />
             <li className="heardtext">
-              <a href="">找髮型</a>
+              <a href="/demo">找髮型</a>
             </li>
             <li className="heardtext">
-              <a href="">找設計師</a>
+              <a href="/demo">找設計師</a>
             </li>
             <li className="heardtext">
-              <a href="">美髮誌</a>
+              <a href="/demo">美髮誌</a>
             </li>
             <Box className="hiddenbox"></Box>
             <li>
-              <a href="">註冊</a>
+              <a href="/demo">註冊</a>
             </li>
             <li>
-              <a href="">登入</a>
+              <a href="/demo">登入</a>
             </li>
             <li>
               <img
@@ -214,7 +214,7 @@ export default function Hairmap() {
                 </Box>
               </Box>
               <Box>
-                <button className="btnbottom"></button>
+                <Box as="button" className="btnbottom"></Box>
               </Box>
             </Box>
           </Box>

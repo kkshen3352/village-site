@@ -50,13 +50,14 @@ function IndexPage({ data }) {
           borderRadius="99px"
           objectFit="cover"
           opacity="0.6"
-          boxSize={{ base: "330px", lg: "600px" }}
+          maxWidth="100%"
+          boxSize={{base: "370px", lg: "710px" }}
           src={urlGoogle2}
           alt={urlGoogle2}
         />
       </Flex>
       <Box paddingTop={{ base: "3rem", lg: "2rem" }}>
-        <marquee
+        <Box as="marquee"
           direction="left"
           height="60"
           scrollamount="10"
@@ -113,7 +114,7 @@ function IndexPage({ data }) {
               </Box>
             </Flex>
           </Box>
-        </marquee>
+        </Box>
       </Box>
     </Layout>
   )

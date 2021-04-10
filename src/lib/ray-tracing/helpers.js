@@ -16,7 +16,7 @@ export function setRectangle(x, y, width, height) {
   return [x1, y1, x2, y1, x1, y2, x1, y2, x2, y1, x2, y2]
 }
 
-function hitSphere(center, radius, ray) {
+export function hitSphere(center, radius, ray) {
   const oc = ray.origin().subtractVector(center)
   const a = dot(ray.direction(), ray.direction())
   const b = 2.0 * dot(oc, ray.direction())
@@ -40,7 +40,9 @@ export function randomInUnitSphere() {
 }
 
 function color(r, world, depth) {
-  const { hitAnything, closestSoFar, hitRecord } = world.hit(
+  const { hitAnything, 
+    // closestSoFar,
+     hitRecord } = world.hit(
     r,
     0.0,
     Infinity,

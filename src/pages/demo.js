@@ -66,7 +66,7 @@ function SecondPageQuert({
 
         <TabPanels>
           <TabPanel>
-            <Box as="p">
+            <Box as="h6">
               <Flex display={{ base: "column", lg: "flex" }}>
                 <Flex flexDirection="column" alignItems="center">
                   <Box as="h1" fontSize="32px" textShadow="#FC0 1px 0 10px">
@@ -137,7 +137,7 @@ function SecondPageQuert({
             </Box>
           </TabPanel>
           <TabPanel>
-            <Box as="p">
+            <Box as="h6">
               <Hairmap />
             </Box>
           </TabPanel>
