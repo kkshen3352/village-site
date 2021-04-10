@@ -25,7 +25,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: resolve(`./images/kklogo.png`), // This path is relative to the root of the site.
+        icon: require.resolve(`./src/images/kklogo.png`), // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-glslify`,
