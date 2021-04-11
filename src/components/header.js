@@ -22,7 +22,7 @@ const links = [
   { name: "Repo", path: "/repo" },
   { name: "About", path: "/about" },
 ]
-const { LARGE, EXTRALARGE } = SizeEnums
+const { SMALL,BAIMIDDLE,LARGE, EXTRALARGE } = SizeEnums
 const { BLACK, WHITE } = ColorEnums
 
 const Header = ({ siteTitle }) => {
@@ -48,7 +48,7 @@ const Header = ({ siteTitle }) => {
                 color: "#3b5998",
               }}
             >
-              <Link to="/" width={{ base: "240px", ms: "300px", lg: "390px" }}>
+              <Link to="/" width={{ base: "240px", sm: "300px", lg: "390px" }}>
                 {siteTitle}
               </Link>
             </Box>
@@ -68,10 +68,10 @@ const Header = ({ siteTitle }) => {
           </Box>
           <Box
             onClick={toggleColorMode}
-            size={LARGE}
+            size={{base:`${SMALL}`,sm:`${SMALL}` ,lg:`${LARGE}`}}
             position="absolute"
             margin="0px 10px 0px"
-            right={{ base: "6.5rem", lg: "2rem" }}
+            right={{ base: "5.5rem",md:"5rem", lg: "2rem" }}
           >
             {colorMode === "light" ? (
               <IconButton
@@ -91,7 +91,8 @@ const Header = ({ siteTitle }) => {
               </IconButton>
             )}
           </Box>
-          <Menu closeOnSelect={false}>
+          <Menu closeOnSelect={false}
+          >
             <MenuButton
               display={{ base: "block", lg: "none" }}
               margin="1rem"
@@ -100,7 +101,7 @@ const Header = ({ siteTitle }) => {
               as={IconButton}
               aria-label="Menu"
               icon={<HamburgerIcon />}
-              size={LARGE}
+              // size={{base:`${LARGE}`,md:`${LARGE}` ,lg:`${LARGE}`}}
               variant="outline"
               background="black"
               _hover={{

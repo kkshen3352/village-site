@@ -1,6 +1,10 @@
 /* * {
   box-sizing: border-box;
 } */
+div {
+  /* font-family: "Noto Sans JP", sans-serif; */
+  font-family: "Noto Sans TC", sans-serif;
+}
 
 .body {
   background: #eee;

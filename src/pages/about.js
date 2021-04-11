@@ -33,7 +33,7 @@ const SecondPage = ({ data }) => {
             as="img"
             borderRadius="full"
             objectFit="cover"
-            boxSize={{ base: "90px", lg: "150px" }}
+            boxSize={{ base: "100px", lg: "200px" }}
             src={Kshenimg}
             alt={Kshenimg}
           />
@@ -42,7 +42,7 @@ const SecondPage = ({ data }) => {
           </Box>
         </Box>
         <Flex flexDirection="column" fontSize={{ base: "14px", lg: "20px" }}>
-          <Flex margin="1" marginTop={{ lg: "35px" }}>
+          <Flex margin="1" marginTop={{ base:"5px",lg: "55px" }}>
             <IconButton
               variant="outline"
               colorScheme="teal"
