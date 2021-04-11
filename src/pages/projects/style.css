@@ -1,6 +1,6 @@
-/* * {
+* {
   box-sizing: border-box;
-} */
+}
 div {
   /* font-family: "Noto Sans JP", sans-serif; */
   font-family: "Noto Sans TC", sans-serif;
@@ -214,7 +214,18 @@ li > a:active {
   text-shadow: 3px 6px 8px rgb(0, 0, 0);
 }
 .btnbottom {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 50%;
   float: right;
+}
+.btnbottom:hover {
+  background: #3b5998;
+  color: white;
 }
 .btn {
   width: 65px;
@@ -302,6 +313,7 @@ li > a:active {
 }
 
 .footlist {
+  max-width: 100%;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -446,11 +458,22 @@ li > a:active {
       padding: 3px;
       border: 4px solid pink;
     }
+
     .storetext {
       position: relative;
       padding-right: -60px;
       margin-right: -60px;
       left: -60px;
+    }
+
+    .textti4 {
+      width: 250px;
+    }
+    .footlistlogo {
+      align-items: center;
+      justify-content: center;
+      width: 260px;
+      height: 120px;
     }
   }
 }

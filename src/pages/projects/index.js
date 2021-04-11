@@ -1,5 +1,6 @@
 import React from "react"
 import { Box, Flex } from "@chakra-ui/react"
+import { Link } from "gatsby"
 import "./style.css"
 
 export default function Hairmap() {
@@ -11,7 +12,7 @@ export default function Hairmap() {
             <img
               className="logo"
               src={require("./images/logo.png")}
-              alt="sss"
+              alt={require("./images/logo.png")}
             />
             <li className="heardtext">
               <a href="/demo">找髮型</a>
@@ -32,7 +33,7 @@ export default function Hairmap() {
             <li>
               <img
                 src={require("./images/setting.png")}
-                alt=""
+                alt={require("./images/setting.png")}
                 className="setting-img"
               />
             </li>
@@ -44,7 +45,7 @@ export default function Hairmap() {
               <img
                 className="imgbox1"
                 src={require("./images/logo_icon_g.svg")}
-                alt=""
+                alt={require("./images/logo_icon_g.svg")}
               />
               <h1 className="imgbox1 h1">煩惱髮型嗎</h1>
               <h3 className="imgbox1 h3">給你最多髮型靈感及在地優秀設計師</h3>
@@ -53,19 +54,21 @@ export default function Hairmap() {
                   <img
                     className="iconhig"
                     src={require("./images/icon_searchbar_location.png")}
-                    alt=""
+                    alt={require("./images/icon_searchbar_location.png")}
                   />
                   <p className="borderbox-pp">找地區</p>
                 </li>
                 <Box className="borderbox"></Box>
-                <li><p className="borderbox-pp borderbox-pp-view">搜尋髮型主題</p></li>
+                <li>
+                  <p className="borderbox-pp borderbox-pp-view">搜尋髮型主題</p>
+                </li>
                 <Box className="borderbox2"></Box>
                 <Flex className="iconimgback d-flex">
                   <li className="icon">
                     <img
                       className="iconhig iconhig2"
                       src={require("./images/icon_searchbar_search.png")}
-                      alt=""
+                      alt={require("./images/icon_searchbar_search.png")}
                     />
                     <p className="borderbox-pp borderbox-pp-view">去逛逛</p>
                   </li>
@@ -74,12 +77,18 @@ export default function Hairmap() {
 
               <Flex className="iconback d-flex">
                 <Box className="mediaicon1">
-                  <img src={require("./images/icon_search.png")} alt="" />
+                  <img
+                    src={require("./images/icon_search.png")}
+                    alt={require("./images/icon_search.png")}
+                  />
                   <Box className="navtextbox">在地設計師作品輕鬆找</Box>
                 </Box>
 
                 <Box className="mediaicon1">
-                  <img src={require("./images/icon_fashion.png")} alt="" />
+                  <img
+                    src={require("./images/icon_fashion.png")}
+                    alt={require("./images/icon_fashion.png")}
+                  />
                   <Box className="navtextbox">
                     流行髮型
                     <br />
@@ -88,7 +97,10 @@ export default function Hairmap() {
                 </Box>
 
                 <Box className="mediaicon1">
-                  <img src={require("./images/icon_book.png")} alt="" />
+                  <img
+                    src={require("./images/icon_book.png")}
+                    alt={require("./images/icon_book.png")}
+                  />
                   <Box className="navtextbox">即時溝通預約</Box>
                 </Box>
               </Flex>
@@ -97,12 +109,24 @@ export default function Hairmap() {
                 <h1>熱門主題</h1>
                 <Box className="wrapper d-flex box4-1-img box4-2">
                   <Box className="wrapper d-flex box4-1 box4-1-img box4-2">
-                    <img src={require("./images/22736_8.jpg")} alt="" />
-                    <img src={require("./images/9743_2.jpg")} alt="" />
+                    <img
+                      src={require("./images/22736_8.jpg")}
+                      alt={require("./images/22736_8.jpg")}
+                    />
+                    <img
+                      src={require("./images/9743_2.jpg")}
+                      alt={require("./images/9743_2.jpg")}
+                    />
                   </Box>
                   <Box className="wrapper d-flex box4-1 box4-1-img box4-2">
-                    <img src={require("./images/3425_14.jpg")} alt="" />
-                    <img src={require("./images/14366_18.jpg")} alt="" />
+                    <img
+                      src={require("./images/3425_14.jpg")}
+                      alt={require("./images/3425_14.jpg")}
+                    />
+                    <img
+                      src={require("./images/14366_18.jpg")}
+                      alt={require("./images/14366_18.jpg")}
+                    />
                   </Box>
                 </Box>
 
@@ -121,9 +145,18 @@ export default function Hairmap() {
               <Box className="asidetop wrapper">
                 <h1>趨勢話題</h1>
                 <Flex className="box4-2 wrapper d-flex">
-                  <img src={require("./images/128141.jpg")} alt="" />
-                  <img src={require("./images/138974.jpg")} alt="" />
-                  <img src={require("./images/141965.jpg")} alt="" />
+                  <img
+                    src={require("./images/128141.jpg")}
+                    alt={require("./images/128141.jpg")}
+                  />
+                  <img
+                    src={require("./images/138974.jpg")}
+                    alt={require("./images/138974.jpg")}
+                  />
+                  <img
+                    src={require("./images/141965.jpg")}
+                    alt={require("./images/141965.jpg")}
+                  />
                 </Flex>
                 <Flex className="box4-3 wrapper d-flex">
                   <h5>鬆感的劉海!配上極捲的捲度!反而...</h5>
@@ -137,12 +170,18 @@ export default function Hairmap() {
                   <img
                     className="storeimg "
                     src={require("./images/phones.png")}
-                    alt=""
+                    alt={require("./images/phones.png")}
                   />
                   <Box className="storetext">
                     <h2>快速找到好髮型</h2>
-                    <img src={require("./images/btn_app_ios.png")} alt="" />
-                    <img src={require("./images/btn_app_android.png")} alt="" />
+                    <img
+                      src={require("./images/btn_app_ios.png")}
+                      alt={require("./images/btn_app_ios.png")}
+                    />
+                    <img
+                      src={require("./images/btn_app_android.png")}
+                      alt={require("./images/btn_app_android.png")}
+                    />
                     <h5>下載並註冊就可以開始發表作品囉!</h5>
                   </Box>
                 </Flex>
@@ -169,7 +208,10 @@ export default function Hairmap() {
 
                 <Flex className="footlist wrapper d-flex">
                   <Box className="footlistlogo d-flex">
-                    <img src={require("./images/logo_icon_g.svg")} alt="" />
+                    <img
+                      src={require("./images/logo_icon_g.svg")}
+                      alt={require("./images/logo_icon_g.svg")}
+                    />
                     <p>
                       Hair Mpa美髮地圖團隊致力於打造出最貼心實用的美髮資訊交流
                       社群，讓美髮時光成為每個仁生命中的美好時刻。
@@ -177,30 +219,42 @@ export default function Hairmap() {
                   </Box>
                   <Box className="footlist1-1">
                     <Flex className="d-flex">
-                      <img src={require("./images/email.svg")} alt="" />
+                      <img
+                        src={require("./images/email.svg")}
+                        alt={require("./images/email.svg")}
+                      />
                       <br />
                       <p>聯絡我們</p>
                     </Flex>
 
                     <Flex className="d-flex">
-                      <img src={require("./images/facebook_g.svg")} alt="" />
+                      <img
+                        src={require("./images/facebook_g.svg")}
+                        alt={require("./images/facebook_g.svg")}
+                      />
                       <p>粉絲專業</p>
                     </Flex>
                   </Box>
                   <Box className="footlist1-1">
                     <Flex className="d-flex">
-                      <img src={require("./images/ios.svg")} alt="" />
+                      <img
+                        src={require("./images/ios.svg")}
+                        alt={require("./images/ios.svg")}
+                      />
                       <br />
                       <p>IOS</p>
                     </Flex>
                     <Flex className="d-flex">
-                      <img src={require("./images/android.svg")} alt="" />
+                      <img
+                        src={require("./images/android.svg")}
+                        alt={require("./images/android.svg")}
+                      />
                       <p>Android</p>
                     </Flex>
                   </Box>
 
                   {/* <Flex className="btnimg d-flex">
-                    <img src={require("./images/btn_join.png")} alt="" />
+                    <img src={require("./images/btn_join.png")} alt={require("./images/btn_join.png")} />
                   </Flex>
                   <Box className="h666">
                     <h6>設計師加入</h6>
@@ -212,10 +266,11 @@ export default function Hairmap() {
                     使用者條款與隱私政策
                   </p>
                 </Box>
+                <Link to="/demo" className="btnbottom">
+                  Top
+                </Link>
               </Box>
-              <Box>
-                <Box as="button" className="btnbottom"></Box>
-              </Box>
+              <Box></Box>
             </Box>
           </Box>
         </Box>

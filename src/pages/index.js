@@ -216,7 +216,7 @@ function IndexPage({ data }) {
               _hover={{ color: "#3b5998" }}
             >
               
-              <Link to="/about">view →</Link>
+              <Link to="/about">come in →</Link>
             </Button>
           </Flex>
         </Box>

@@ -22,13 +22,13 @@ const links = [
   { name: "Repo", path: "/repo" },
   { name: "About", path: "/about" },
 ]
-const { SMALL,BAIMIDDLE,LARGE, EXTRALARGE } = SizeEnums
+const { SMALL, LARGE, EXTRALARGE } = SizeEnums
 const { BLACK, WHITE } = ColorEnums
 
 const Header = ({ siteTitle }) => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
-    <header>
+    <Box as="header" alignContent="center" justifyItems="center">
       <Box
         as="nav"
         display="flex"
@@ -68,10 +68,12 @@ const Header = ({ siteTitle }) => {
           </Box>
           <Box
             onClick={toggleColorMode}
-            size={{base:`${SMALL}`,sm:`${SMALL}` ,lg:`${LARGE}`}}
+            size={{ base: `${SMALL}`, sm: `${SMALL}`, lg: `${LARGE}` }}
+            alignContent="center"
+            justifyItems="center"
             position="absolute"
             margin="0px 10px 0px"
-            right={{ base: "5.5rem",md:"5rem", lg: "2rem" }}
+            right={{ base: "4.5rem", md: "4rem", lg: "2rem" }}
           >
             {colorMode === "light" ? (
               <IconButton
@@ -91,11 +93,9 @@ const Header = ({ siteTitle }) => {
               </IconButton>
             )}
           </Box>
-          <Menu closeOnSelect={false}
-          >
+          <Menu closeOnSelect={false}>
             <MenuButton
               display={{ base: "block", lg: "none" }}
-              margin="1rem"
               position="absolute"
               right="5"
               as={IconButton}
@@ -135,7 +135,7 @@ const Header = ({ siteTitle }) => {
           </Menu>
         </Flex>
       </Box>
-    </header>
+    </Box>
   )
 }
 
