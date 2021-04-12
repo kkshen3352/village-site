@@ -9,10 +9,12 @@ import Kshenimg from "../images/S__16711685.jpg"
 const SecondPage = ({ data }) => {
   const {
     site: {
-      siteMetadata: { title, 
-        // description, 
-        // author, 
-        username },
+      siteMetadata: {
+        title,
+        // description,
+        // author,
+        username,
+      },
     },
   } = data
 
@@ -22,18 +24,24 @@ const SecondPage = ({ data }) => {
       <Box
         as="h1"
         fontSize="28px"
-        marginLeft={{ lg: "33px" }}
         textAlign={{ base: "center", lg: "left" }}
+        marginLeft={{lg:"40px"}}
       >
         About Me
       </Box>
-      <Flex margin="1rem">
-        <Box paddingRight="2rem">
+      <Flex 
+      flexDirection={{base:"column",lg:"row"}}
+      margin={{base:"0 auto"}}
+      alignItems={{base:"center"}}
+
+      >
+        <Box 
+        >
           <Box
             as="img"
             borderRadius="full"
             objectFit="cover"
-            boxSize={{ base: "100px", lg: "200px" }}
+            boxSize={{ base: "180px", lg: "200px" }}
             src={Kshenimg}
             alt={Kshenimg}
           />
@@ -41,8 +49,14 @@ const SecondPage = ({ data }) => {
             {username}
           </Box>
         </Box>
-        <Flex flexDirection="column" fontSize={{ base: "14px", lg: "20px" }}>
-          <Flex margin="1" marginTop={{ base:"5px",lg: "55px" }}>
+        <Flex
+          flexDirection="column"
+          paddingLeft={{base:"0rem",lg:"1rem"}}
+          fontSize={{ base: "14px", lg: "20px" }}
+          position={{ base: "relative", lg: "none" }}
+          top={{ base: "0rem",lg:"-2.5rem" }}
+        >
+          <Flex margin="1" marginTop={{ base: "5px", lg: "55px" }}>
             <IconButton
               variant="outline"
               colorScheme="teal"

@@ -29,14 +29,14 @@ function IndexPage({ data }) {
         >
           <Box
             as="h1"
-            fontSize={{ base: "21px",sm:"48px", lg: "68px" }}
+            fontSize={{ base: "21px", sm: "48px", lg: "68px" }}
             textAlign="center"
           >
             Hi people
           </Box>
           <Box
             as="h1"
-            fontSize={{ base: "21px",sm:"38px", lg: "58px" }}
+            fontSize={{ base: "18px", sm: "38px", lg: "58px" }}
             color="{##8a4baf}"
           >
             Welcome to the new {""}
@@ -183,7 +183,8 @@ function IndexPage({ data }) {
             Repo
             <Box as="p" fontSize="18px" height="110px">
               List Github Repositories <br />
-              使用 request API 列出我的 Github 儲存庫，顯示內容並連結到對應專案。
+              使用 request API 列出我的 Github
+              儲存庫，顯示內容並連結到對應專案。
             </Box>
             <Button
               width="120px"
@@ -197,8 +198,8 @@ function IndexPage({ data }) {
         </Flex>
         <Box marginTop="2rem">
           <Flex
-            as="h1"
-            width={{ base: "auto", lg: "420px" }}
+            width={{ base: "200px", sm: "250px", lg: "250px" }}
+            height={{ base: "200px", sm: "250px", lg: "250px" }}
             fontSize="32px"
             textAlign="center"
             margin="0 auto"
@@ -206,18 +207,19 @@ function IndexPage({ data }) {
             border="1px solid black"
             borderRadius="full"
             boxShadow="1px 2px 15px rgb(144, 144, 144, 0.9)"
+            _hover={{ color: "#fc0", background: "#3b5998" }}
           >
-            <img src={require("../images/kklogo.png")} alt="kkshen3352" />
-            About me
-            <Button
-              width={{ base: "auto", lg: "120px" }}
-              justifyContent="center"
-              margin="1rem auto"
-              _hover={{ color: "#3b5998" }}
-            >
-              
-              <Link to="/about">come in →</Link>
-            </Button>
+            <Box
+              as="img"
+              src={require("../images/kklogo.png")}
+              alt="kkshen3352"
+              position="relative"
+              left="-15px"
+              borde="1px solid red"
+            />
+            <Box position="relative" top="-20px">
+              <Link to="/about">About me</Link>
+            </Box>
           </Flex>
         </Box>
       </Box>
