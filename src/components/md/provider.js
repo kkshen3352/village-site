@@ -11,7 +11,7 @@ import {
   // Code
 } from "@chakra-ui/react"
 // import { jsx, css } from "@emotion/react"
-// import Custom-heading from "./custom-heading"
+// import Heading from "./heading"
 import CodeBlock from "./code-block"
 
 const shortcodes = { Link }

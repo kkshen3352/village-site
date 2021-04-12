@@ -23,8 +23,8 @@ export default ({ children, className }) => {
       code={children}
       language={language}
     >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style, padding: "20px", overflow: "auto"}}>
+      {({ className, tokens, getLineProps, getTokenProps }) => (
+        <pre className={className} style={{ padding: "20px" }}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
