@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Box, Flex } from "@chakra-ui/react"
 import Header from "../header"
 import Footer from "../footer"
+import ScrollArrow from "../arrtop"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,20 +25,19 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
   return (
     <>
       <Box>
         <Header siteTitle={data.site.siteMetadata.title} />
         <Flex
           margin="0 auto"
-          maxWidth="960px"
-          padding="1.45rem 1.0875rem 1.45rem"
+          maxWidth="1920px"
           flexDirection="column"
           minHeight="calc(100vh - 200px)"
         >
           <Box>{children}</Box>
         </Flex>
+        <ScrollArrow />
         <Footer username={data.site.siteMetadata.username} />
       </Box>
     </>

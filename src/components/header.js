@@ -40,10 +40,18 @@ const Header = ({ siteTitle }) => {
         background={BLACK}
         color={WHITE}
       >
-        <Flex alignItems="center" width="960px" margin="0 auto">
+        <Flex
+          alignItems="center"
+          justifyContent="left"
+          width="960px"
+          margin="0 auto"
+        >
           <Heading as="h4" size={EXTRALARGE} marginLeft="1rem">
             <Box
-              margin="1rem"
+              margin="2rem"
+              width="140px"
+              height="50px"
+              color="white"
               _hover={{
                 color: "#3b5998",
               }}
@@ -58,6 +66,7 @@ const Header = ({ siteTitle }) => {
               <Box
                 key={`key-${i}`}
                 marginLeft="2rem"
+                width="100px"
                 _hover={{
                   color: "#3b5998",
                 }}

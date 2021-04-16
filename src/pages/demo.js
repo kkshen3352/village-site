@@ -57,97 +57,104 @@ function SecondPageQuert({
 
   return (
     <Layout>
-      <Tabs>
-        <TabList>
-          <Tab>計算機</Tab>
-          <Tab>html/css3切版</Tab>
-          {/* <Tab>Three</Tab> */}
-        </TabList>
+      <Box
+        maxWidth="960px"
+        padding="1.45rem 1.0875rem 1.45rem"
+        margin="0 auto"
+      >
+        <Tabs>
+          <TabList
+            width={{ base: "225px", lg: "600px" }}
+          >
+            <Tab>計算機</Tab>
+            <Tab>html/css3切版</Tab>
+            {/* <Tab>Three</Tab> */}
+          </TabList>
 
-        <TabPanels>
-          <TabPanel>
-            <Box as="h6">
-              <Flex display={{ base: "column", lg: "flex" }}>
-                <Flex flexDirection="column" alignItems="center">
-                  <Box as="h1" fontSize="32px" textShadow="#FC0 1px 0 10px">
-                    Redux Calculator
-                  </Box>
-                  <App />
-                </Flex>
-                <Box
-                  maxW={XXL}
-                  borderWidth="1px"
-                  borderRadius={LARGE}
-                  overflow="hidden"
-                  margin="5"
-                >
-                  <Box padding="2rem">
-                    <Box
-                      as="h1"
-                      fontWeight="semibold"
-                      fontSize={{ base: `${LARGE}`, lg: `${EXTRALARGE}` }}
-                    >
-                      {title}
+          <TabPanels>
+            <TabPanel>
+              <Box as="h6">
+                <Flex display={{ base: "column", lg: "flex" }}>
+                
+                  <Flex flexDirection="column" alignItems="center">
+                    <Box as="h1" fontSize="32px" textShadow="#FC0 1px 0 10px">
+                      Redux Calculator
                     </Box>
-                    <Box
-                      margin="5px"
-                      marginTop="1"
-                      fontSize={{ base: `${SMALL}`, lg: `${LARGE}` }}
-                    >
-                      {main.map(({ text, ation }, i) => (
-                        <Box key={i}>
-                          <Flex
-                            margin="5px"
-                            paddingTop="5px"
-                            fontSize={{ base: "14px", lg: "18px" }}
-                          >
-                            <Box
-                              fontWeight="semibold"
-                              width={{ base: "200px", lg: "150px" }}
-                              marginRight={{ base: "5px", lg: "15px" }}
-                            >
-                              ● {text}
-                            </Box>
-                            <Box width="330px">{ation}</Box>
-                          </Flex>
-                        </Box>
-                      ))}
-                    </Box>
-                    <Box
-                      display="flex"
-                      margintop="10"
-                      alignItems="center"
-                      position="relative"
-                    >
+                    <App />
+                  </Flex>
+                  <Box
+                    maxW={XXL}
+                    borderWidth="1px"
+                    borderRadius={LARGE}
+                    overflow="hidden"
+                    margin="5"
+                  >
+                    <Box padding="2rem">
                       <Box
-                        as="span"
-                        fontSize="sm"
-                        position="absolute"
-                        paddingTop="40px"
-                        buttom="-10px"
-                        right="0"
+                        as="h1"
+                        fontWeight="semibold"
+                        fontSize={{ base: `${LARGE}`, lg: `${EXTRALARGE}` }}
                       >
-                        Latest Updated:
-                        {date}
+                        {title}
+                      </Box>
+                      <Box
+                        margin="5px"
+                        marginTop="1"
+                        fontSize={{ base: `${SMALL}`, lg: `${LARGE}` }}
+                      >
+                        {main.map(({ text, ation }, i) => (
+                          <Box key={i}>
+                            <Flex
+                              margin="5px"
+                              paddingTop="5px"
+                              fontSize={{ base: "14px", lg: "18px" }}
+                            >
+                              <Box
+                                fontWeight="semibold"
+                                width={{ base: "200px", lg: "150px" }}
+                                marginRight={{ base: "5px", lg: "15px" }}
+                              >
+                                ● {text}
+                              </Box>
+                              <Box width="330px">{ation}</Box>
+                            </Flex>
+                          </Box>
+                        ))}
+                      </Box>
+                      <Box
+                        display="flex"
+                        margintop="10"
+                        alignItems="center"
+                        position="relative"
+                      >
+                        <Box
+                          as="span"
+                          fontSize="sm"
+                          position="absolute"
+                          paddingTop="40px"
+                          buttom="-10px"
+                          right="0"
+                        >
+                          Latest Updated:
+                          {date}
+                        </Box>
                       </Box>
                     </Box>
                   </Box>
-                </Box>
-              </Flex>
-            </Box>
-          </TabPanel>
-          <TabPanel>
-            <Box as="h6">
-              <Hairmap />
-            </Box>
-          </TabPanel>
-          {/* <TabPanel>
+                </Flex>
+              </Box>
+            </TabPanel>
+            <TabPanel>
+              <Box as="h6">
+                <Hairmap />
+              </Box>
+            </TabPanel>
+            {/* <TabPanel>
             <p>three!</p>
           </TabPanel> */}
-        </TabPanels>
-      </Tabs>
-
-      {/* <Link to="/demo/projects"></Link> */}
+          </TabPanels>
+        </Tabs>
+      </Box>
     </Layout>
   )
 }
