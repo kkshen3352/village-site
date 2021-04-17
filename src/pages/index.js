@@ -21,23 +21,20 @@ function IndexPage({ siteTitle }) {
   const style = { maxWidth: "1920px" }
   console.log("sssssss", siteTitle)
   return (
-    // <Layout m="5">
-
     <Box maxWidth="1920px">
       <Layout wrap="none">
-        {/* <Header /> */}
         <SEO title="Home" />
         <Flex flexDirection="column">
           <Box
             maxWidth="1920px"
             width="100%"
-            width={{ base: "340px", lg: "960px" }}
-            height={{ base: "210px", lg: "500px" }}
+            width={{ base: "220px", lg: "460px" }}
+            height={{ base: "180px", lg: "500px" }}
             flexDirection="column"
-            fontSize={{ base: "24px", lg: "48px" }}
+            fontSize={{ base: "24px", sm: "42px", lg: "48px" }}
             position="absolute"
-            top={{ base: "150px", sm: "300px", lg: "400px" }}
-            left={{ base: "50px", sm: "120px", lg: "300px" }}
+            top={{ base: "200px", sm: "400px", lg: "400px" }}
+            left={{ base: "60px", sm: "120px", lg: "300px" }}
             zIndex="1"
           >
             <Box as="p" fontSize="18px">
@@ -68,7 +65,8 @@ function IndexPage({ siteTitle }) {
           </Box>
           <Box
             as="img"
-            maxHeight="850px"
+            maxHeight={{ lg: "850px" }}
+            height={{ base: "570px", sm: "720px", lg: "900px" }}
             objectFit="cover"
             src={urlGoogle2}
             alt={urlGoogle2}
@@ -84,8 +82,12 @@ function IndexPage({ siteTitle }) {
             <Flex
               alignItems="center"
               justifyContent="center"
-              fontSize={{ base: "18px", lg: "24px" }}
-              margin={{ base: "3rem", lg: "5rem auto 3rem 0" }}
+              fontSize={{ base: "18px", sm: "20px", lg: "24px" }}
+              margin={{
+                base: "4.5rem 0 4.5rem",
+                sm: "6rem",
+                lg: "5rem auto 3rem 0",
+              }}
             >
               Enjoy my website design works!
             </Flex>
@@ -103,19 +105,22 @@ function IndexPage({ siteTitle }) {
               >
                 <Box
                   as="img"
-                  maxWidth={{ base: "414px", lg: "450px" }}
+                  maxWidth={{ base: "340px", sm: "530px", lg: "450px" }}
                   width="100%"
-                  height="300px"
+                  height={{ sm: "400px", lg: "300px" }}
                   margin="0 auto"
                   src={require("../images/triphome.jpg")}
                   alt={require("../images/triphome.jpg")}
                   objectFit="cover"
                   margin={{ base: "0 auto", lg: "0 2rem" }}
+                  borderRadius="10px"
+                  border={{ base: "1px solid black" }}
+                  boxShadow={{ base: "1px 1px 7px 3px #aaaaaa" }}
                 />
                 <Box
                   as="p"
                   fontSize={{ base: "18px", lg: "24px" }}
-                  margin="1rem"
+                  margin={{ base: "2rem 0", lg: "1rem" }}
                 >
                   旅歷 - 會員登入
                 </Box>
@@ -128,19 +133,22 @@ function IndexPage({ siteTitle }) {
               >
                 <Box
                   as="img"
-                  maxWidth={{ base: "414px", lg: "450px" }}
+                  maxWidth={{ base: "340px", sm: "530px", lg: "450px" }}
                   width="100%"
-                  height="300px"
+                  height={{ lg: "300px" }}
                   margin="0 auto"
                   src={require("../images/tripindex.jpg")}
                   alt={require("../images/tripindex.jpg")}
                   objectFit="cover"
                   margin={{ base: "0 auto", lg: "0 2rem" }}
+                  borderRadius="10px"
+                  border={{ base: "1px solid black" }}
+                  boxShadow={{ base: "1px 1px 7px 3px #aaaaaa" }}
                 />
                 <Box
                   as="p"
                   fontSize={{ base: "18px", lg: "24px" }}
-                  margin="1rem"
+                  margin={{ base: "2rem 0", lg: "1rem" }}
                 >
                   旅歷 - 會員中心
                 </Box>
@@ -153,7 +161,7 @@ function IndexPage({ siteTitle }) {
               >
                 <Box
                   as="img"
-                  maxWidth={{ base: "414px", lg: "450px" }}
+                  maxWidth={{ base: "340px", sm: "530px", lg: "450px" }}
                   width="100%"
                   height="300px"
                   margin="0 auto"
@@ -161,11 +169,18 @@ function IndexPage({ siteTitle }) {
                   alt={require("../images/tripsig.jpg")}
                   objectFit="cover"
                   margin={{ base: "0 auto", lg: "0 2rem" }}
+                  borderRadius="10px"
+                  border={{ base: "1px solid black" }}
+                  boxShadow={{ base: "1px 1px 7px 3px #aaaaaa" }}
                 />
                 <Box
                   as="p"
                   fontSize={{ base: "18px", lg: "24px" }}
-                  margin="1rem"
+                  margin={{
+                    base: "2rem 0 4rem",
+                    sm: "2rem 0 5rem",
+                    lg: "1rem",
+                  }}
                 >
                   旅歷 - 會員註冊
                 </Box>
@@ -201,7 +216,7 @@ function IndexPage({ siteTitle }) {
                 zIndex="1"
                 position="absolute"
                 color="white"
-                width={{ base: "390px", lg: "520px" }}
+                width={{ base: "305px", lg: "520px" }}
                 height="400px"
                 display="flex"
                 flexDirection="column"
@@ -234,9 +249,9 @@ function IndexPage({ siteTitle }) {
               </Box>
               <Box
                 as="img"
-                maxWidth={{ base: "414px", sm: "758px", lg: "634.1px" }}
+                maxWidth={{ base: "414px", sm: "768px", lg: "634.1px" }}
                 width="100%"
-                height={{ base: "400px", lg: "500px" }}
+                height={{ base: "400px", lg: "550px" }}
                 src={require("../images/altumcode-P2SkP_PXhlU-unsplash.jpg")}
                 alt={require("../images/altumcode-P2SkP_PXhlU-unsplash.jpg")}
                 objectFit="cover"
@@ -247,7 +262,7 @@ function IndexPage({ siteTitle }) {
                 zIndex="1"
                 position="absolute"
                 color="black"
-                width={{ base: "390px", lg: "520px" }}
+                width={{ base: "305px", lg: "520px" }}
                 height="400px"
                 display="flex"
                 flexDirection="column"
@@ -278,9 +293,9 @@ function IndexPage({ siteTitle }) {
               </Box>
               <Box
                 as="img"
-                maxWidth={{ base: "414px", sm: "758px", lg: "634.1px" }}
+                maxWidth={{ base: "414px", sm: "768px", lg: "634.1px" }}
                 width="100%"
-                height={{ base: "400px", lg: "500px" }}
+                height={{ base: "400px", lg: "550px" }}
                 background="#55848B"
                 src={require("../images/artem-sapegin-b18TRXc8UPQ-unsplash.jpg")}
                 alt={require("../images/artem-sapegin-b18TRXc8UPQ-unsplash.jpg")}
@@ -292,7 +307,7 @@ function IndexPage({ siteTitle }) {
                 zIndex="1"
                 position="absolute"
                 color="white"
-                width={{ base: "390px", lg: "520px" }}
+                width={{ base: "305px", lg: "520px" }}
                 height="400px"
                 display="flex"
                 flexDirection="column"
@@ -323,9 +338,9 @@ function IndexPage({ siteTitle }) {
               </Box>
               <Box
                 as="img"
-                maxWidth={{ base: "414px", sm: "758px", lg: "634.1px" }}
+                maxWidth={{ base: "414px", sm: "768px", lg: "634.1px" }}
                 width="100%"
-                height={{ base: "400px", lg: "500px" }}
+                height={{ base: "400px", lg: "550px" }}
                 src={require("../images/emile-perron-xrVDYZRGdw4-unsplash.jpg")}
                 alt={require("../images/emile-perron-xrVDYZRGdw4-unsplash.jpg")}
                 objectFit="cover"
@@ -344,14 +359,19 @@ function IndexPage({ siteTitle }) {
           margin={{ base: "0 auto" }}
         >
           <Flex
-            maxWidth={{ base: "414px", lg: "1910px" }}
+            maxWidth={{
+              base: "340px",
+              sm: "530px",
+              lg: "1910px",
+              xl: "1024px",
+            }}
             height="110px"
             fontSize={{ base: "24px", lg: "36px" }}
             color="white"
             alignItems="center"
             justifyContent={{ base: "center", lg: "left" }}
-            margin={{ base: "0 auto", lg: "0 300px" }}
-            marginRight={{ base: "0 auto", lg: "350px" }}
+            margin={{ base: "0 auto", lg: "0 150px", xl: "0 300px" }}
+            marginRight={{ base: "0 auto", lg: "0", xl: "300px" }}
           >
             Learn more about me
           </Flex>
@@ -366,7 +386,7 @@ function IndexPage({ siteTitle }) {
             alignItems="center"
             justifyContent="center"
             border="1px solid white"
-            marginLeft={{ base: "0", lg: "250px" }}
+            marginLeft={{ base: "0", lg: "150px", xl: "250px" }}
             margin={{ base: "0 auto" }}
             _hover={{ color: "black", background: "white" }}
           >
@@ -376,7 +396,7 @@ function IndexPage({ siteTitle }) {
         <Flex
           maxWidth="1920px"
           width="100%"
-          height={{ base: "350px", lg: "150px" }}
+          height={{ base: "350px",sm:"350px", lg: "150px" }}
           background="#333333"
           alignItems="center"
           justifyContent="center"
@@ -384,52 +404,47 @@ function IndexPage({ siteTitle }) {
           margin={{ base: "0 auto" }}
         >
           <Box
-            width="1000px"
+            width={{ xl: "800px" }}
             height="148px"
             color="white"
-            borderTop="1px solid #707070"
-            borderBottom="1px solid #707070"
+            borderTop={{ base:"none",xl: "1px solid #707070" }}
+            borderBottom={{
+              base: "none",
+              sm:"none",
+              lg:"none",
+              xl: "1px solid #707070",
+            }}
           >
             <Box
               display="flex"
               marginTop="4rem"
               alignItems="center"
-              justifyContent={{ base: "center", lg: "right" }}
-              marginLeft={{ base: "0", lg: "5rem" }}
+              justifyContent={{ base: "center", lg: "center", xl: "right" }}
+              marginLeft={{ base: "none", lg: "0", xl: "5rem" }}
             >
               This Blog is built with …{" "}
             </Box>
           </Box>
           <Box
-            width="200px"
+            width={{lg:"none",xl:"200px"}}
             height="148px"
-            border={{ base: "none", lg: "1px solid #707070" }}
-            
+            border={{ base: "none", lg: "none", xl: "1px solid #707070" }}
           />
           <Box
-            width="398px"
+            width={{ xl: "auto" }}
             height="148px"
-            textAlign={{ base: "center", lg: "right" }}
+            textAlign={{ base: "center", lg: "center",xl:"right" }}
             color="white"
-            borderTop={{ base: "none", lg: "1px solid #707070" }}
-            borderBottom={{ base: "none", lg: "1px solid #707070" }}
-            
+            display={{ base: "flex", sm: "flex" }}
+            borderTop={{ base: "none", sm: "none", lg: "1px solid #707070" }}
+            borderBottom={{ base: "none", xl: "1px solid #707070" }}
+            marginLeft={{ sm: "-12rem" }}
           >
             <Box
-              display={{ base: "block", sm: "flex", lg: "none" }}
-              marginTop={{ base: "-4rem" ,sm:"2rem"}}
-              marginLeft={{sm:"-1.5rem"}}
-            >
-              If you have any further questions,
-              <br />
-              feel free to contact me{" "}
-            </Box>
-            <Box
-              marginTop={{ base: "0", lg: "4rem" }}
-              marginLeft={{ base: "0", lg: "3rem" }}
-              alignItems="center"
-              justifyContent="center"
-              display={{ base: "none", lg: "flex" }}
+              display={{ base: "flex", sm: "flex", lg:"flex",xl: "flex" }}
+              alignItems={{lg:"center"}}
+              marginTop={{ lg: "-4rem", xl: "3.5rem" }}
+              marginLeft={{ lg: "-2rem", xl: "14rem" }}
             >
               If you have any further questions,
               <br />
