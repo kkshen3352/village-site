@@ -41,7 +41,6 @@ function IndexPageQuery({ data }) {
           <Box
             key={id}
             maxW={XXL}
-            width="100%"
             borderWidth="1px"
             borderRadius={LARGE}
             overflow="hidden"
