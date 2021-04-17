@@ -38,56 +38,61 @@ function IndexPageQuery({ data }) {
         frontmatter: { title, date, author },
       }) => {
         return (
-          <Flex
-            maxWidth="960px"
-            padding="1.45rem 1.0875rem 1.45rem"
-            alignItems="center"
-            justifyContent="center"
-            margin="0 auto"
+          <Box
+            key={id}
+            maxW={XXL}
+            width="100%"
+            borderWidth="1px"
+            borderRadius={LARGE}
+            overflow="hidden"
+            margin="5"
           >
-            <Box
-              key={id}
-              maxW={XXL}
-              borderWidth="1px"
-              borderRadius={LARGE}
-              overflow="hidden"
-              margin="5"
-            >
-              <Box padding="4">
-                <Box d="flex" alignItems="baseline">
-                  <Badge borderRadius="full" colorScheme="teal">
-                    {author}
-                  </Badge>
+            <Box padding="4">
+              <Box d="flex" alignItems="baseline">
+                <Badge borderRadius="full" colorScheme="teal">
+                  {author}
+                </Badge>
+              </Box>
+              <Box as="h1" fontWeight="semibold" fontSize={EXTRALARGE}>
+                <Link to={`/posts/${slug}`}>{title}</Link>
+              </Box>
+              <Box marginTop="1" as="p" fontSize={LARGE}>
+                {excerpt}
+              </Box>
+              <Box
+                display="flex"
+                margintop="10"
+                alignItems="center"
+                position="relative"
+              >
+                <Box as="span" fontSize={SMALL}>
+                  <ViewIcon margin="2" />
+                  {timeToRead} min read
                 </Box>
-                <Box as="h1" fontWeight="semibold" fontSize={EXTRALARGE}>
-                  <Link to={`/posts/${slug}`}>{title}</Link>
-                </Box>
-                <Box marginTop="1" as="p" fontSize={LARGE}>
-                  {excerpt}
-                </Box>
-                <Box
-                  display="flex"
-                  margintop="10"
-                  alignItems="center"
-                  position="relative"
-                >
-                  <Box as="span" fontSize={SMALL}>
-                    <ViewIcon margin="2" />
-                    {timeToRead} min read
-                  </Box>
-                  <Box as="span" fontSize="sm" position="absolute" right="0">
-                    <TimeIcon margin="2" />
-                    {date}
-                  </Box>
+                <Box as="span" fontSize="sm" position="absolute" right="0">
+                  <TimeIcon margin="2" />
+                  {date}
                 </Box>
               </Box>
             </Box>
-          </Flex>
+          </Box>
         )
       }
     )
   }
-  return <Layout>{_renderPosts()}</Layout>
+  return (
+    <Layout>
+      <Box
+        maxWidth="960px"
+        padding="1.45rem 1.0875rem 1.45rem"
+        alignItems="center"
+        justifyContent="center"
+        margin="0 auto"
+      >
+        {_renderPosts()}
+      </Box>
+    </Layout>
+  )
 }
 
 export default IndexPageQuery
