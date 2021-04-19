@@ -11,7 +11,7 @@ const Camera = ({
   gamma,
   width,
   distance,
-  tilt,
+  // tilt,
   scale,
   onChange,
 }) => {

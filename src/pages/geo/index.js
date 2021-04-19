@@ -1,8 +1,10 @@
 import React, { Component } from "react"
-import Slider from "../../components/slider"
+// import Slider from "../../components/slider"
 import Canvas from "./canvas"
 import Camera from "./camera"
-import { projection, outline, graticule, land110, land50 } from "./utils"
+import { projection, outline, graticule, land110, 
+  // land50
+ } from "../../lib/geo/utils"
 
 class GeoPage extends Component {
   constructor() {
@@ -37,7 +39,7 @@ class GeoPage extends Component {
       projection,
       lambda,
       phi,
-      gamma,
+      // gamma,
       rotate,
       distance,
       tilt,
@@ -74,8 +76,12 @@ class GeoPage extends Component {
       </div>
     )
   }
-  componentDidUpdate(prevProps, prevState) {
-    const { projection, lambda, phi, gamma } = this.state
+  componentDidUpdate(
+    // prevProps, 
+    prevState) {
+    const { 
+      // projection, 
+      lambda, phi, gamma } = this.state
     const { _update } = this
     const isRotationChange =
       lambda !== prevState.lambda ||
